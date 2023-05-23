@@ -1,0 +1,98 @@
+﻿@model WebApplication20.Models.App_Allocation
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>App_Allocation</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AllocationYear)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AllocationYear)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AllocationDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AllocationDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AllocationLetter)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AllocationLetter)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AllocationLetterFileName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AllocationLetterFileName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdatedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdatedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdatedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sys_Month.MonthName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sys_Month.MonthName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sys_PlotType.PlotType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sys_PlotType.PlotType)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AllocationID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,471 @@
+﻿@model WebApplication20.Models.App_Applicant
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Details";
+}
+
+<div>
+   
+    <div class="content-wrapper">
+
+        <!--<h3 class="mb-3" style="margin-left: 35px;"><span class="badge badge-primary badge-pill">Create new Applicant<span class="mdi mdi-account-edit"></span></span></h3>-->
+        <div class="content">
+            <!-- For Components documentaion -->
+
+
+            <div class="row">
+                <div class="col-xl-6" style="color:mediumpurple">
+                    <!-- ====================================
+                        ——— 1st FORM
+                ===================================== -->
+
+                    <div class="card card-default">
+                        <div class="card-header">
+                         
+                            <h4><span class="badge badge-primary badge-pill">APPLICANT DETAILS<span class="mdi mdi-account-edit"></span></span></h4>
+
+                        </div>
+                        <div class="card-body">
+                            <div class="collapse" id="collapse-from-validation">
+                                <pre class="language-html mb-4">
+                             </pre>
+                            </div>
+
+                            <div>
+                                <div class="form-row">
+                                    <div class="col-xl-6">
+                                        <div class="mb-5">
+                                            <label class="text-dark font-weight-medium">SURNAME</label>
+                                            <div class="input-group mb-3">
+                                                @Html.DisplayFor(model => model.Surname)
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+                                    <div class="col-xl-6">
+                                        <div class="mb-5">
+
+
+                                            <label class="text-dark font-weight-medium">NAME</label>
+                                            <div class="input-group mb-3">
+                                                @Html.DisplayFor(model => model.Firstname)
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-xl-6">
+                                        <div class="mb-5">
+
+                                            <label class="text-dark font-weight-medium">ID. NUMBER / COMPANY NO</label>
+
+                                            <div class="input-group mb-3">
+                                                @Html.DisplayFor(model => model.IDNumber)
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+
+
+
+
+                                    <div class="col-md-12 mb-">
+                                    </div>
+
+
+                                    <div class="col-xl-6">
+                                        <div class="mb-5">
+
+                                            <label class="text-dark font-weight-medium">RESIDENTIAL ADDRESS</label>
+
+                                            <div class="input-group mb-3">
+                                                @Html.DisplayFor(model => model.ResidentialAddress)
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-xl-6">
+                                        <div class="mb-5">
+
+                                            <label class="text-dark font-weight-medium">POSTAL ADDRESS</label>
+
+                                            <div class="input-group mb-3">
+                                                @Html.DisplayFor(model => model.PostalAddress)
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                                    <!---->
+                                    <div class="col-md-12 mb-">
+                                    </div>
+
+
+                                    <div class="col-xl-6">
+                                        <div class="mb-5">
+
+                                            <label class="text-dark font-weight-medium">TELEPHONE NUMBER</label>
+
+                                            <div class="input-group mb-3">
+                                                @Html.DisplayFor(model => model.TelephoneNumber)
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-xl-6">
+                                        <div class="mb-5">
+
+                                            <label class="text-dark font-weight-medium">FAX NUMBER</label>
+
+                                            <div class="input-group mb-3">
+                                                @Html.DisplayFor(model => model.FaxNumber)
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="col-md-12 mb-">
+                                    </div>
+
+
+                                    <div class="col-xl-6">
+                                        <div class="mb-5">
+
+                                            <label class="text-dark font-weight-medium">EMAIL ADDRESS</label>
+
+                                            <div class="input-group mb-3">
+                                                @Html.DisplayFor(model => model.EmailAddress)
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-xl-6">
+                                        <div class="mb-5">
+
+                                            <label class="text-dark font-weight-medium">OCCUPATION</label>
+
+                                            <div class="input-group mb-3">
+                                                @Html.DisplayFor(model => model.Occupation)
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="col-md-12 mb-">
+                                    </div>
+
+
+                                    <div class="col-xl-6">
+                                        <div class="mb-5">
+
+                                            <label class="text-dark font-weight-medium">INCOME PER MONTH</label>
+
+                                            <div class="input-group mb-3">
+                                                @Html.DisplayFor(model => model.IncomePerMonth)
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-xl-6">
+                                        <div class="mb-5">
+
+                                            <label class="text-dark font-weight-medium">EMPLOYER NAME</label>
+
+                                            <div class="input-group mb-3">
+                                                @Html.DisplayFor(model => model.NameOfEmployer)
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+
+
+
+                                    <div class="col-xl-6">
+                                        <div class="mb-5">
+
+                                            <label class="text-dark font-weight-medium">SIGNATURE</label>
+
+                                            <div class="radioLabel">
+                                                @Html.DisplayFor(model => model.SignedByApplicant)
+
+
+
+
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <br />
+
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+                <div class="col-xl-6">
+                    <!-- ====================================
+                     ——— 2nd FORM
+                ===================================== -->
+                    <div class="card card-default">
+                        <div class="card-header">
+                            <h4><span class="badge badge-primary badge-pill">SPOUSE’S/NEXT OF KIN DETAILS<span class="mdi mdi-account-edit"></span></span></h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="collapse" id="collapse-from-validation">
+                                <pre class="language-html mb-4">
+                             </pre>
+                            </div>
+
+                            <div>
+                                <div class="form-row">
+                                    <div class="col-xl-6">
+                                        <div class="mb-5">
+                                            <label class="text-dark font-weight-medium">SURNAME</label>
+                                            <div class="input-group mb-3">
+                                                @Html.DisplayFor(model => model.SpouseSurname)
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+                                    <div class="col-xl-6">
+                                        <div class="mb-5">
+
+
+                                            <label class="text-dark font-weight-medium">FIRST NAME</label>
+                                            <div class="input-group mb-3">
+                                                @Html.DisplayFor(model => model.SpouseFirstname)
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-xl-6">
+                                        <div class="mb-5">
+
+                                            <label class="text-dark font-weight-medium">ID. NUMBER / COMPANY NO:</label>
+
+                                            <div class="input-group mb-3">
+                                                @Html.DisplayFor(model => model.SpouseIDNumber)
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+
+
+
+
+                                    <div class="col-md-12 mb-">
+                                    </div>
+
+
+                                    <div class="col-xl-6">
+                                        <div class="mb-5">
+
+                                            <label class="text-dark font-weight-medium">RESIDENTIAL ADDRESS</label>
+
+                                            <div class="input-group mb-3">
+                                                @Html.DisplayFor(model => model.SpouseResidentialAddress)
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-xl-6">
+                                        <div class="mb-5">
+
+                                            <label class="text-dark font-weight-medium">POSTAL ADDRESS</label>
+
+                                            <div class="input-group mb-3">
+                                                @Html.DisplayFor(model => model.SpousePostalAddress)
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                                    <!---->
+                                    <div class="col-md-12 mb-">
+                                    </div>
+
+
+                                    <div class="col-xl-6">
+                                        <div class="mb-5">
+
+                                            <label class="text-dark font-weight-medium">TELEPHONE NUMBER</label>
+
+                                            <div class="input-group mb-3">
+                                                @Html.DisplayFor(model => model.SpouseTelephoneNumber)
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-xl-6">
+                                        <div class="mb-5">
+
+                                            <label class="text-dark font-weight-medium">FAX NUMBER</label>
+
+                                            <div class="input-group mb-3">
+                                                @Html.DisplayFor(model => model.SpouseFaxNumber)
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="col-md-12 mb-">
+                                    </div>
+
+
+                                    <div class="col-xl-6">
+                                        <div class="mb-5">
+
+                                            <label class="text-dark font-weight-medium">EMAIL ADDRESS</label>
+
+                                            <div class="input-group mb-3">
+                                                @Html.DisplayFor(model => model.SpouseEmailAddress)
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-xl-6">
+                                        <div class="mb-5">
+
+                                            <label class="text-dark font-weight-medium">OCCUPATION</label>
+
+                                            <div class="input-group mb-3">
+                                                @Html.DisplayFor(model => model.SpouseOccupation)
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="col-md-12 mb-">
+                                    </div>
+
+
+                                    <div class="col-xl-6">
+                                        <div class="mb-5">
+
+                                            <label class="text-dark font-weight-medium">INCOME PER MONTH</label>
+
+                                            <div class="input-group mb-3">
+                                                @Html.DisplayFor(model => model.SpouseIncomePerMonth)
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-xl-6">
+                                        <div class="mb-5">
+
+                                            <label class="text-dark font-weight-medium">EMPLOYER NAME</label>
+
+                                            <div class="input-group mb-3">
+                                                @Html.DisplayFor(model => model.SpouseNameOfEmployer)
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+
+
+
+                                    <div class="col-xl-6">
+                                        <div class="mb-5">
+
+                                            <label class="text-dark font-weight-medium">SIGNATURE</label>
+
+
+                                            <div class="radioLabel">
+                                                @Html.DisplayFor(model => model.SignedBySpouse)
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-xl-6">
+                                        <div class="mb-5">
+
+                                            <label class="text-dark font-weight-medium">APPLICATION DATE</label>
+
+
+                                            <div class="radioLabel">
+                                                @Html.DisplayFor(model => model.ApplicationDate)
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+
+                                <br />
+
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<p>
+
+    @Html.ActionLink("Back to List", "Index")<br />
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ApplicantID })
+
+</p>

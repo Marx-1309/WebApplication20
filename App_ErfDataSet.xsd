@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="App_ErfDataSet" targetNamespace="http://tempuri.org/App_ErfDataSet.xsd" xmlns:mstns="http://tempuri.org/App_ErfDataSet.xsd" xmlns="http://tempuri.org/App_ErfDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="PMISConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="PMISConnectionString1 (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.PMISConnectionString1.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vWApp_ErfTableAdapter" GeneratorDataComponentClassName="vWApp_ErfTableAdapter" Name="vWApp_Erf" UserDataComponentName="vWApp_ErfTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="PMISConnectionString1 (Web.config)" DbObjectName="PMIS.dbo.vWApp_Erf" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ErfNumber, ErfArea, ErfTownship, PlotType, ErfSize, ErfComment FROM dbo.vWApp_Erf</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ErfNumber" DataSetColumn="ErfNumber" />
+              <Mapping SourceColumn="ErfArea" DataSetColumn="ErfArea" />
+              <Mapping SourceColumn="ErfTownship" DataSetColumn="ErfTownship" />
+              <Mapping SourceColumn="PlotType" DataSetColumn="PlotType" />
+              <Mapping SourceColumn="ErfSize" DataSetColumn="ErfSize" />
+              <Mapping SourceColumn="ErfComment" DataSetColumn="ErfComment" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="App_ErfDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="App_ErfDataSet" msprop:Generator_DataSetName="App_ErfDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="vWApp_Erf" msprop:Generator_RowEvHandlerName="vWApp_ErfRowChangeEventHandler" msprop:Generator_RowDeletedName="vWApp_ErfRowDeleted" msprop:Generator_RowDeletingName="vWApp_ErfRowDeleting" msprop:Generator_RowEvArgName="vWApp_ErfRowChangeEvent" msprop:Generator_TablePropName="vWApp_Erf" msprop:Generator_RowChangedName="vWApp_ErfRowChanged" msprop:Generator_RowChangingName="vWApp_ErfRowChanging" msprop:Generator_TableClassName="vWApp_ErfDataTable" msprop:Generator_RowClassName="vWApp_ErfRow" msprop:Generator_TableVarName="tablevWApp_Erf" msprop:Generator_UserTableName="vWApp_Erf">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ErfNumber" msprop:Generator_ColumnPropNameInRow="ErfNumber" msprop:Generator_ColumnPropNameInTable="ErfNumberColumn" msprop:Generator_ColumnVarNameInTable="columnErfNumber" msprop:Generator_UserColumnName="ErfNumber">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ErfArea" msprop:Generator_ColumnPropNameInRow="ErfArea" msprop:Generator_ColumnPropNameInTable="ErfAreaColumn" msprop:Generator_ColumnVarNameInTable="columnErfArea" msprop:Generator_UserColumnName="ErfArea">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ErfTownship" msprop:Generator_ColumnPropNameInRow="ErfTownship" msprop:Generator_ColumnPropNameInTable="ErfTownshipColumn" msprop:Generator_ColumnVarNameInTable="columnErfTownship" msprop:Generator_UserColumnName="ErfTownship">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PlotType" msprop:Generator_ColumnPropNameInRow="PlotType" msprop:Generator_ColumnPropNameInTable="PlotTypeColumn" msprop:Generator_ColumnVarNameInTable="columnPlotType" msprop:Generator_UserColumnName="PlotType">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ErfSize" msprop:Generator_ColumnPropNameInRow="ErfSize" msprop:Generator_ColumnPropNameInTable="ErfSizeColumn" msprop:Generator_ColumnVarNameInTable="columnErfSize" msprop:Generator_UserColumnName="ErfSize" type="xs:long" />
+              <xs:element name="ErfComment" msprop:Generator_ColumnPropNameInRow="ErfComment" msprop:Generator_ColumnPropNameInTable="ErfCommentColumn" msprop:Generator_ColumnVarNameInTable="columnErfComment" msprop:Generator_UserColumnName="ErfComment" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,126 @@
+﻿@model IEnumerable<WebApplication20.Models.Sys_ErfCost>
+
+@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Index";
+}
+
+
+<!-- ====================================
+       ——— CONTENT WRAPPER
+       ===================================== -->
+<!-- Table Product -->
+
+<div class="content-wrapper">
+
+    <div class="content">
+        <div class="row">
+            <div class="col-12">
+                <div class="card card-default">
+                    <div class="card-header">
+                        <h3><span class="badge badge-primary badge-pill">ERF AREA<span class="mdi mdi-account-multiple-outline"></span></span></h3>
+                        <a class="mb-1 btn btn-outline-primary" href="/Sys_ErfCost/Create">Create New</a>
+                    </div>
+                    <div class="card-body">
+                        <table id="productsTable" class="table table-hover table-product" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th><label>Cost Per Sqm(㎡)</label></th>
+                                    <th><label>Admin Fees(N$)</label></th>
+                                    <th><label>Plot Type</label></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td class="py-0">
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.CostPerSqm)
+                                        </td>
+                                        <td>@Html.DisplayFor(modelItem => item.AdminFees)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Sys_PlotType.PlotType)</td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <a class="dropdown-toggle icon-burger-mini" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                                                   aria-haspopup="true" aria-expanded="false">
+                                                </a>
+
+                                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+                                                    <a class="dropdown-item" href="/Sys_ErfCost/Details/@item.ErfCostID">Details</a>
+                                                    <a class="dropdown-item" href="/Sys_ErfCost/Edit/@item.ErfCostID">Update</a>
+                                                    <a class="dropdown-item deleteRecord" data-id="@item.ErfCostID" href="javascript:void(0)">Delete</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $(".deleteRecord").on('click', function (e) {
+            e.preventDefault();
+
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+
+                    let sys_ErfCost = $(this).attr('data-id');
+                    $.ajax(
+                        {
+                            url: '/Sys_ErfCost/Delete',
+                            type: 'POST',
+                            data: { id: sys_ErfCost },
+                            success: function (response) {
+                                if (response.status == true) {
+                                    Swal.fire(
+                                        'Deleted!',
+                                        'Your record has been deleted.',
+                                        'success'
+                                    )
+
+                                    setTimeout(() => {
+                                        window.location.reload();
+                                    }, 3000);
+                                } else {
+                                    alert(response.message);
+                                    return;
+                                }
+                            },
+                            error: function () {
+                                alert('Please refresh your page, id is missing to delete the record.')
+                            }
+                        }
+                    );
+                }
+            })
+        });
+    });
+</script>
+
+
+
+
+

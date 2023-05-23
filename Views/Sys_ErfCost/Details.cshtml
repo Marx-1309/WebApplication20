@@ -1,0 +1,100 @@
+﻿@model WebApplication20.Models.Sys_ErfCost
+
+@{
+    ViewBag.Title = "Create";
+}
+
+
+@*@Html.AntiForgeryToken()*@
+
+<div class="form-horizontal">
+    <div class="row">
+        <div class="col-xl-6">
+            <!-- ====================================
+                    ——— 1st FORM
+            ===================================== -->
+
+            <div class="card card-default">
+                <div class="card-header">
+                    <h2 style="color: rebeccapurple;font-weight: bold">ERF COST</h2>
+
+                </div>
+                <div class="card-body">
+                    <div class="collapse" id="collapse-from-validation">
+                        <pre class="language-html mb-4">
+                             </pre>
+                    </div>
+
+                    <div>
+                        <div class="form-row">
+                            <div class="col-xl-6">
+                                <div class="mb-5">
+                                    <label class="text-dark font-weight-medium" >PLOT TYPE</label>
+                                    <div class="input-group mb-3"  style="color:mediumpurple" >
+                                        @Html.DisplayFor(model => model.Sys_PlotType.PlotType)
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-6">
+                                <div class="mb-5">
+
+                                    <label class="text-dark font-weight-medium" style="color:mediumpurple" >COST PER SQUARE METER(N$/㎡)</label>
+                                  
+                                    <div class="input-group mb-3" style="color:mediumpurple">
+                                        @Html.DisplayFor(model => model.CostPerSqm)
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 mb-">
+                            </div>
+
+
+                            <div class="col-xl-6">
+                                <div class="mb-5">
+
+                                    <label class="text-dark font-weight-medium"  >ADMIN FEES</label>
+
+                                    <div class="input-group mb-3" style="color:mediumpurple">
+                                        @Html.DisplayFor(model => model.AdminFees)
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 mb-">
+                            </div>
+
+                            <div class="col-md-12 mb-">
+                            </div>
+
+                            <div class="col-md-12 mb-">
+                            </div>
+
+                        </div>
+                        <br />
+
+
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+    </div>
+   
+ 
+</div>
+
+<br />
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ErfCostID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

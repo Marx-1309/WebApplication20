@@ -1,0 +1,81 @@
+﻿@model IEnumerable<WebApplication20.Models.App_Financial>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EstimatedCostOfConstruction)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QualifiedLoanAmount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IntendedCommencementDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UpdatedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UpdatedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.App_Applicant.Surname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sys_PaymentMethod.PaymentMethod)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.EstimatedCostOfConstruction)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QualifiedLoanAmount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IntendedCommencementDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UpdatedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UpdatedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.App_Applicant.Surname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sys_PaymentMethod.PaymentMethod)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.FinancialID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.FinancialID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.FinancialID })
+        </td>
+    </tr>
+}
+
+</table>

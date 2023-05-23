@@ -1,0 +1,529 @@
+﻿@model WebApplication20.Models.App_Applicant
+
+@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Create";
+}
+@using (Html.BeginForm())
+{
+
+
+
+
+
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="content-wrapper">
+
+            <!--<h3 class="mb-3" style="margin-left: 35px;"><span class="badge badge-primary badge-pill">Create new Applicant<span class="mdi mdi-account-edit"></span></span></h3>-->
+
+
+            <div class="content">
+                <!-- For Components documentaion -->
+
+                <form>
+                    <div class="row">
+                        <div class="col-xl-6">
+                            <!-- ====================================
+                                    ——— 1st FORM
+                            ===================================== -->
+
+                            <div class="card card-default">
+                                <div class="card-header">
+                                    <h2 style="color: rebeccapurple;font-weight: bold">APPLICANT’S DETAILS</h2>
+
+
+
+
+                                </div>
+                                <div class="card-body">
+                                    <div class="collapse" id="collapse-from-validation">
+                                        <pre class="language-html mb-4">
+                             </pre>
+                                    </div>
+
+                                    <div>
+                                        <div class="form-row">
+                                            <div class="col-xl-6">
+                                                <div class="mb-5">
+                                                    <label class="text-dark font-weight-medium">SURNAME</label>
+                                                    <div class="input-group mb-3">
+                                                        @Html.EditorFor(model => model.Surname, new { htmlAttributes = new { @class = "form-control rounded-pill", @placeholder = "Enter Applicant  Surname", required = "required" } })
+                                                        @Html.ValidationMessageFor(model => model.Surname, "", new { @class = "text-danger" })
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+
+                                            <div class="col-xl-6">
+                                                <div class="mb-5">
+
+
+                                                    <label class="text-dark font-weight-medium">NAME</label>
+                                                    <div class="input-group mb-3">
+                                                        @Html.EditorFor(model => model.Firstname, new { htmlAttributes = new { @class = "form-control rounded-pill", @placeholder = "Enter Applicant  Firstname", required = "required" } })
+                                                        @Html.ValidationMessageFor(model => model.Firstname, "", new { @class = "text-danger" })
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-xl-6">
+                                                <div class="mb-5">
+
+                                                    <label class="text-dark font-weight-medium">ID. NUMBER / COMPANY NO</label>
+
+                                                    <div class="input-group mb-3">
+                                                        @Html.EditorFor(model => model.IDNumber, new { htmlAttributes = new { @class = "form-control rounded-pill", @placeholder = "Enter Applicant  IDNumber", required = "required" } })
+                                                        @Html.ValidationMessageFor(model => model.IDNumber, "", new { @class = "text-danger" })
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+
+
+
+
+
+                                            <div class="col-md-12 mb-">
+                                            </div>
+
+
+                                            <div class="col-xl-6">
+                                                <div class="mb-5">
+
+                                                    <label class="text-dark font-weight-medium">RESIDENTIAL ADDRESS</label>
+
+                                                    <div class="input-group mb-3">
+                                                        @Html.TextAreaFor(model => model.ResidentialAddress, new { htmlAttributes = new { @class = "form-control rounded-pill", @placeholder = "Enter Applicant  ResidentialAddress", required = "required" } })
+                                                        @Html.ValidationMessageFor(model => model.ResidentialAddress, "", new { @class = "text-danger" })
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-xl-6">
+                                                <div class="mb-5">
+
+                                                    <label class="text-dark font-weight-medium">POSTAL ADDRESS</label>
+
+                                                    <div class="input-group mb-3">
+                                                        @Html.TextAreaFor(model => model.PostalAddress, new { htmlAttributes = new { @class = "form-control rounded-pill", @placeholder = "Enter Applicant  PostalAddress", required = "required" } })
+                                                        @Html.ValidationMessageFor(model => model.PostalAddress, "", new { @class = "text-danger" })
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+
+                                            <!---->
+                                            <div class="col-md-12 mb-">
+                                            </div>
+
+
+                                            <div class="col-xl-6">
+                                                <div class="mb-5">
+
+                                                    <label class="text-dark font-weight-medium">TELEPHONE NUMBER</label>
+
+                                                    <div class="input-group mb-3">
+                                                        @Html.EditorFor(model => model.TelephoneNumber, new { htmlAttributes = new { @class = "form-control rounded-pill", @placeholder = "Enter Applicant  TelephoneNumber", required = "required" } })
+                                                        @Html.ValidationMessageFor(model => model.TelephoneNumber, "", new { @class = "text-danger" })
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-xl-6">
+                                                <div class="mb-5">
+
+                                                    <label class="text-dark font-weight-medium">FAX NUMBER</label>
+
+                                                    <div class="input-group mb-3">
+                                                        @Html.EditorFor(model => model.FaxNumber, new { htmlAttributes = new { @class = "form-control rounded-pill", @placeholder = "Enter Applicant  FaxNumber", required = "required" } })
+                                                        @Html.ValidationMessageFor(model => model.FaxNumber, "", new { @class = "text-danger" })
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+
+
+                                            <div class="col-md-12 mb-">
+                                            </div>
+
+
+                                            <div class="col-xl-6">
+                                                <div class="mb-5">
+
+                                                    <label class="text-dark font-weight-medium">EMAIL ADDRESS</label>
+
+                                                    <div class="input-group mb-3">
+                                                        @Html.EditorFor(model => model.EmailAddress, new { htmlAttributes = new { @class = "form-control rounded-pill", @placeholder = "Enter Applicant  TelephoneNumber", required = "required" } })
+                                                        @Html.ValidationMessageFor(model => model.EmailAddress, "", new { @class = "text-danger" })
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-xl-6">
+                                                <div class="mb-5">
+
+                                                    <label class="text-dark font-weight-medium">OCCUPATION</label>
+
+                                                    <div class="input-group mb-3">
+                                                        @Html.EditorFor(model => model.Occupation, new { htmlAttributes = new { @class = "form-control rounded-pill", @placeholder = "Enter Applicant  FaxNumber", required = "required" } })
+                                                        @Html.ValidationMessageFor(model => model.Occupation, "", new { @class = "text-danger" })
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+
+
+                                            <div class="col-md-12 mb-">
+                                            </div>
+
+
+                                            <div class="col-xl-6">
+                                                <div class="mb-5">
+
+                                                    <label class="text-dark font-weight-medium">INCOME PER MONTH</label>
+
+                                                    <div class="input-group mb-3">
+                                                        @Html.EditorFor(model => model.IncomePerMonth, new { htmlAttributes = new { @class = "form-control rounded-pill", @placeholder = "Enter Income Per Month", required = "required" } })
+                                                        @Html.ValidationMessageFor(model => model.IncomePerMonth, "", new { @class = "currency" })
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-xl-6">
+                                                <div class="mb-5">
+
+                                                    <label class="text-dark font-weight-medium">EMPLOYER NAME</label>
+
+                                                    <div class="input-group mb-3">
+                                                        @Html.EditorFor(model => model.NameOfEmployer, new { htmlAttributes = new { @class = "form-control rounded-pill", @placeholder = "Enter NameOfEmployer", required = "required" } })
+                                                        @Html.ValidationMessageFor(model => model.NameOfEmployer, "", new { @class = "text-danger" })
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+
+
+
+
+                                            <div class="col-xl-6">
+                                                <div class="mb-5">
+
+                                                    <label class="text-dark font-weight-medium">SIGNATURE</label>
+
+                                                    <div class="radioLabel">
+                                                        @Html.RadioButtonFor(model => model.SignedByApplicant, "true")
+                                                        @Html.Label("Signed")
+                                                        <br />
+                                                        @Html.RadioButtonFor(model => model.SignedByApplicant, "false")
+                                                        @Html.Label("Not Signed")
+
+
+
+
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <br />
+
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+                        <div class="col-xl-6">
+                            <!-- ====================================
+                                 ——— 2nd FORM
+                            ===================================== -->
+                            <div class="card card-default">
+                                <div class="card-header">
+                                    <h2 style="color: rebeccapurple;font-weight: bold">SPOUSE’S/NEXT OF KIN DETAILS</h2>
+
+
+
+
+                                </div>
+                                <div class="card-body">
+                                    <div class="collapse" id="collapse-from-validation">
+                                        <pre class="language-html mb-4">
+                             </pre>
+                                    </div>
+
+                                    <div>
+                                        <div class="form-row">
+                                            <div class="col-xl-6">
+                                                <div class="mb-5">
+                                                    <label class="text-dark font-weight-medium">SURNAME</label>
+                                                    <div class="input-group mb-3">
+                                                        @Html.EditorFor(model => model.SpouseSurname, new { htmlAttributes = new { @class = "form-control rounded-pill", @placeholder = "Enter Applicant  Surname", required = "required" } })
+                                                        @Html.ValidationMessageFor(model => model.SpouseSurname, "", new { @class = "text-danger" })
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+
+                                            <div class="col-xl-6">
+                                                <div class="mb-5">
+
+
+                                                    <label class="text-dark font-weight-medium">FIRST NAME</label>
+                                                    <div class="input-group mb-3">
+                                                        @Html.EditorFor(model => model.SpouseFirstname, new { htmlAttributes = new { @class = "form-control rounded-pill", @placeholder = "Enter Applicant  Firstname", required = "required" } })
+                                                        @Html.ValidationMessageFor(model => model.SpouseFirstname, "", new { @class = "text-danger" })
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-xl-6">
+                                                <div class="mb-5">
+
+                                                    <label class="text-dark font-weight-medium">ID. NUMBER / COMPANY NO:</label>
+
+                                                    <div class="input-group mb-3">
+                                                        @Html.EditorFor(model => model.SpouseIDNumber, new { htmlAttributes = new { @class = "form-control rounded-pill", @placeholder = "Enter Applicant  IDNumber", required = "required" } })
+                                                        @Html.ValidationMessageFor(model => model.SpouseIDNumber, "", new { @class = "text-danger" })
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+
+
+
+
+
+                                            <div class="col-md-12 mb-">
+                                            </div>
+
+
+                                            <div class="col-xl-6">
+                                                <div class="mb-5">
+
+                                                    <label class="text-dark font-weight-medium">RESIDENTIAL ADDRESS</label>
+
+                                                    <div class="input-group mb-3">
+                                                        @Html.TextAreaFor(model => model.SpouseResidentialAddress, new { htmlAttributes = new { @class = "form-control rounded-pill", @placeholder = "Enter Applicant  ResidentialAddress", required = "required" } })
+                                                        @Html.ValidationMessageFor(model => model.SpouseResidentialAddress, "", new { @class = "text-danger" })
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-xl-6">
+                                                <div class="mb-5">
+
+                                                    <label class="text-dark font-weight-medium">POSTAL ADDRESS</label>
+
+                                                    <div class="input-group mb-3">
+                                                        @Html.TextAreaFor(model => model.SpousePostalAddress, new { htmlAttributes = new { @class = "form-control rounded-pill", @placeholder = "Enter Applicant  PostalAddress", required = "required" } })
+                                                        @Html.ValidationMessageFor(model => model.SpousePostalAddress, "", new { @class = "text-danger" })
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+
+                                            <!---->
+                                            <div class="col-md-12 mb-">
+                                            </div>
+
+
+                                            <div class="col-xl-6">
+                                                <div class="mb-5">
+
+                                                    <label class="text-dark font-weight-medium">TELEPHONE NUMBER</label>
+
+                                                    <div class="input-group mb-3">
+                                                        @Html.EditorFor(model => model.SpouseTelephoneNumber, new { htmlAttributes = new { @class = "form-control rounded-pill", @placeholder = "Enter Applicant  TelephoneNumber", required = "required" } })
+                                                        @Html.ValidationMessageFor(model => model.SpouseTelephoneNumber, "", new { @class = "text-danger" })
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-xl-6">
+                                                <div class="mb-5">
+
+                                                    <label class="text-dark font-weight-medium">FAX NUMBER</label>
+
+                                                    <div class="input-group mb-3">
+                                                        @Html.EditorFor(model => model.SpouseFaxNumber, new { htmlAttributes = new { @class = "form-control rounded-pill", @placeholder = "Enter Applicant  FaxNumber", required = "required" } })
+                                                        @Html.ValidationMessageFor(model => model.SpouseFaxNumber, "", new { @class = "text-danger" })
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+
+
+                                            <div class="col-md-12 mb-">
+                                            </div>
+
+
+                                            <div class="col-xl-6">
+                                                <div class="mb-5">
+
+                                                    <label class="text-dark font-weight-medium">EMAIL ADDRESS</label>
+
+                                                    <div class="input-group mb-3">
+                                                        @Html.EditorFor(model => model.SpouseEmailAddress, new { htmlAttributes = new { @class = "form-control rounded-pill", @placeholder = "Enter Applicant  TelephoneNumber", required = "required" } })
+                                                        @Html.ValidationMessageFor(model => model.SpouseEmailAddress, "", new { @class = "text-danger" })
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-xl-6">
+                                                <div class="mb-5">
+
+                                                    <label class="text-dark font-weight-medium">OCCUPATION</label>
+
+                                                    <div class="input-group mb-3">
+                                                        @Html.EditorFor(model => model.SpouseOccupation, new { htmlAttributes = new { @class = "form-control rounded-pill", @placeholder = "Enter Applicant  FaxNumber", required = "required" } })
+                                                        @Html.ValidationMessageFor(model => model.SpouseOccupation, "", new { @class = "text-danger" })
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+
+
+                                            <div class="col-md-12 mb-">
+                                            </div>
+
+
+                                            <div class="col-xl-6">
+                                                <div class="mb-5">
+
+                                                    <label class="text-dark font-weight-medium">INCOME PER MONTH</label>
+
+                                                    <div class="input-group mb-3">
+                                                        @Html.EditorFor(model => model.SpouseIncomePerMonth, new { htmlAttributes = new { @class = "form-control rounded-pill", @placeholder = "Enter Income Per Month", required = "required" } })
+                                                        @Html.ValidationMessageFor(model => model.SpouseIncomePerMonth, "", new { @class = "currency" })
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-xl-6">
+                                                <div class="mb-5">
+
+                                                    <label class="text-dark font-weight-medium">EMPLOYER NAME</label>
+
+                                                    <div class="input-group mb-3">
+                                                        @Html.EditorFor(model => model.SpouseNameOfEmployer, new { htmlAttributes = new { @class = "form-control rounded-pill", @placeholder = "Enter NameOfEmployer", required = "required" } })
+                                                        @Html.ValidationMessageFor(model => model.SpouseNameOfEmployer, "", new { @class = "text-danger" })
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+
+
+
+
+                                            <div class="col-xl-6">
+                                                <div class="mb-5">
+
+                                                    <label class="text-dark font-weight-medium">SIGNATURE</label>
+
+
+                                                    <div class="radioLabel">
+                                                        @Html.RadioButtonFor(model => model.SignedBySpouse, "true")
+                                                        @Html.Label("Signed")
+                                                        <br />
+                                                        @Html.RadioButtonFor(model => model.SignedBySpouse, "false")
+                                                        @Html.Label("Not Signed")
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+
+
+                                        <br />
+
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </form>
+
+
+
+
+
+                <!-- ====================================
+                ——— 3rd FORM(ADMIN , OWNERSHIP & )
+                     ===================================== -->
+                
+                </div>
+            </div>
+
+        </div>
+
+        <button class="btn btn-primary btn-pill mr-2" type="submit" style="margin-left: 35px;">Submit</button>
+  
+
+}
+
+<!--Testing Form-->
+<!--Testing Form-->
+<br />
+<div>
+
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@*section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }*@
+

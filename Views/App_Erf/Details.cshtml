@@ -1,0 +1,247 @@
+﻿@model WebApplication20.Models.App_Erf
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+
+
+<div>
+
+    <div class="content-wrapper">
+
+        <!--<h3 class="mb-3" style="margin-left: 35px;"><span class="badge badge-primary badge-pill">Create new Applicant<span class="mdi mdi-account-edit"></span></span></h3>-->
+        <div class="content">
+            <!-- For Components documentaion -->
+
+
+            <div class="row">
+                <div class="col-xl-6" style="color:mediumpurple">
+                    <!-- ====================================
+                            ——— 1st FORM
+                    ===================================== -->
+
+                    <div class="card card-default">
+                        <div class="card-header">
+                            <h3><span class="badge badge-primary badge-pill">ERF DETAILS<span class="mdi mdi-account-edit"></span></span></h3>
+
+                        </div>
+                        <div class="card-body">
+                            <div class="collapse" id="collapse-from-validation">
+                                <pre class="language-html mb-4">
+                             </pre>
+                            </div>
+
+                            <div>
+                                <div class="form-row">
+                                    <div class="col-xl-6">
+                                        <div class="mb-5">
+                                            <label class="text-dark font-weight-medium">ERF NUMBER</label>
+                                            <div class="input-group mb-3">
+                                                @Html.DisplayFor(model => model.ErfNumber)
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+                                    <div class="col-xl-6">
+                                        <div class="mb-5">
+
+
+                                            <label class="text-dark font-weight-medium">ERF SIZE</label>
+                                            <div class="input-group mb-3">
+                                                @Html.DisplayFor(model => model.ErfSize)
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-xl-6">
+                                        <div class="mb-5">
+
+                                            <label class="text-dark font-weight-medium">ERF AREA</label>
+
+                                            <div class="input-group mb-3">
+                                                @Html.DisplayFor(model => model.Sys_ErfArea.ErfArea)
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+
+
+
+
+                                    @*<div class="col-md-12 mb-">
+                                        </div>*@
+
+
+                                    <div class="col-xl-6">
+                                        <div class="mb-5">
+
+                                            <label class="text-dark font-weight-medium">PLOT TYPE</label>
+
+                                            <div class="input-group mb-3">
+                                                @Html.DisplayFor(model => model.Sys_PlotType.PlotType)
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-xl-6">
+                                        <div class="mb-5">
+
+                                            <label class="text-dark font-weight-medium">ERF TOWNSHIP</label>
+
+                                            <div class="input-group mb-3">
+                                                @Html.DisplayFor(model => model.Sys_ErfTownship.ErfTownship)
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                                    <!---->
+                                    <div class="col-md-12 mb-">
+                                    </div>
+
+
+                                    <div class="col-xl-6">
+                                        <div class="mb-5">
+
+                                            <label class="text-dark font-weight-medium">ERF COMMENT</label>
+
+                                            <div class="input-group mb-3">
+                                                @Html.DisplayFor(model => model.ErfComment)
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <br />
+
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+                <div class="col-xl-6">
+                     @*====================================
+                         ——— 2nd FORM
+                    =====================================*@ 
+                    <div class="card card-default">
+                            <div class="card-header">
+                                <h2 style="color: rebeccapurple;font-weight: bold">Calculations </h2>
+
+
+
+
+                            </div>
+                            <div class="card-body">
+                                <div class="collapse" id="collapse-from-validation">
+                                    <pre class="language-html mb-4">
+                                 </pre>
+                                </div>
+
+                                <div>
+                                    <div class="form-row" style="color:mediumpurple">
+                                        <div class="col-xl-6">
+                                            <div class="mb-5">
+
+
+                                                <label class="text-dark font-weight-medium">ERF ADMIN FEES</label>
+                                                <div class="input-group mb-3">
+                                                    @Html.DisplayFor(model => model.ErfAdminFees)
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-xl-6">
+                                            <div class="mb-5">
+
+                                                <label class="text-dark font-weight-medium"><b style="color:red">ERF TOTAL PURCHASE PRICE</b></label>
+
+                                                <div class="input-group mb-3">
+                                                    @Html.DisplayFor(model => model.ErfTotalPurchasePrice)
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+
+
+
+
+
+
+
+                                        <div class="col-xl-6">
+                                            <div class="mb-5">
+
+                                                <label class="text-dark font-weight-medium">ERF VAT</label>
+
+                                                <div class="input-group mb-3">
+                                                    @Html.DisplayFor(model => model.ErfVat)
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+
+
+
+
+
+                                        <div class="col-md-12 mb-">
+                                        </div>
+
+                                        <div class="col-xl-6">
+                                            <div class="mb-5">
+                                                <label class="text-dark font-weight-medium">ERF PURCHASE PRICE</label>
+                                                <div class="input-group mb-3">
+                                                    @Html.DisplayFor(model => model.ErfPurchasePrice)
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+
+                                    </div>
+
+
+
+                                    <br />
+
+
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<p>
+
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ErfNumberID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

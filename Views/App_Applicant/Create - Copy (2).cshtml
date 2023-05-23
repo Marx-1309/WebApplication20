@@ -1,0 +1,1346 @@
+﻿@model WebApplication20.VeiwModel.Application_FinancialVM
+
+@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Create";
+}
+<link href="~/Content/dropzone/dropzone.css" rel="stylesheet" />
+<style>
+    .spad {
+        padding-top: 150px !important;
+    }
+
+    .BFImage {
+        font-size: 0;
+    }
+
+    .BeforeImages {
+        font-size: 0;
+    }
+
+    .AfterImages {
+        font-size: 0;
+    }
+
+    /* .AddedBeforeImg img {
+        width: 100%;
+    }
+
+    .AddedBeforeImg {
+        width: calc(100% / 4);
+        display: inline-block;
+        position: relative;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        padding-right: 10px;
+    }
+
+        .AddedBeforeImg .cssImg {
+            width: 100%;
+            height: 150px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .AddedBeforeImg i {
+            color: red;
+            position: absolute;
+            top: 0px;
+            z-index: 99;
+            font-size: 18px;
+            right: 7px;
+            opacity: 0;
+            visibility: hidden;
+            padding: 10px;
+            cursor: pointer;
+            transition: all 0.5s;
+        }
+
+        .AddedBeforeImg:hover i {
+            opacity: 1 !important;
+            visibility: visible !important;
+        }*/
+
+    .AddedAfterImg img {
+        width: 100%;
+    }
+
+    .AddedAfterImg {
+        width: calc(100% / 4);
+        display: inline-block;
+        position: relative;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        padding-right: 10px;
+    }
+
+        .AddedAfterImg .cssImg {
+            width: 100%;
+            height: 150px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .AddedAfterImg i {
+            color: red;
+            position: absolute;
+            top: 0px;
+            z-index: 99;
+            font-size: 18px;
+            right: 7px;
+            opacity: 0;
+            visibility: hidden;
+            padding: 10px;
+            cursor: pointer;
+            transition: all 0.5s;
+        }
+
+        .AddedAfterImg:hover i {
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+
+    .redColor {
+        color: red;
+    }
+
+    .fa-upload {
+        font-size: 50px;
+        padding-bottom: 40px;
+    }
+
+    .cancelBtnGroup {
+        margin-bottom: 25px !important;
+    }
+
+    .cancelBtnArea {
+        margin-left: 87.66667%;
+    }
+</style>
+
+@using (Html.BeginForm("CreateApplicantwithFinancialDetails", "App_Applicant", FormMethod.Post, new { enctype = "multipart/form-data", @id = "frmApp_Applicant" }))
+{
+    @*@Html.AntiForgeryToken()*@
+
+    <div class="form-horizontal">
+
+        @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })*@
+
+        <div class="content-wrapper">
+
+            <!--<h3 class="mb-3" style="margin-left: 35px;"><span class="badge badge-primary badge-pill">Create new Applicant<span class="mdi mdi-account-edit"></span></span></h3>-->
+            <div class="content">
+                <!-- For Components documentaion -->
+
+
+                <div class="row">
+                    <div class="col-xl-6">
+                        <!-- ====================================
+                                ——— 1st FORM
+                        ===================================== -->
+
+                        <div class="card card-default">
+                            <div class="card-header">
+                                <h2 style="color: rebeccapurple;font-weight: bold">APPLICANT’S DETAILS</h2>
+
+                            </div>
+                            <div class="card-body">
+                                <div class="collapse" id="collapse-from-validation">
+                                    <pre class="language-html mb-4">
+                             </pre>
+                                </div>
+
+                                <div>
+                                    <div class="form-row">
+                                        <div class="col-xl-6">
+                                            <div class="mb-5">
+                                                <label class="text-dark font-weight-medium">SURNAME</label>
+                                                <div class="input-group mb-3">
+                                                    @Html.EditorFor(model => model.App_Applicants.Surname, new { htmlAttributes = new { @class = "form-control rounded-pill", @placeholder = "Enter Applicant  Surname", required = "required" } })
+                                                    @Html.ValidationMessageFor(model => model.App_Applicants.Surname, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+
+                                        <div class="col-xl-6">
+                                            <div class="mb-5">
+
+
+                                                <label class="text-dark font-weight-medium">NAME</label>
+                                                <div class="input-group mb-3">
+                                                    @Html.EditorFor(model => model.App_Applicants.Firstname, new { htmlAttributes = new { @class = "form-control rounded-pill", @placeholder = "Enter Applicant  Firstname", required = "required" } })
+                                                    @Html.ValidationMessageFor(model => model.App_Applicants.Firstname, "", new { @class = "text-danger" })
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-xl-6">
+                                            <div class="mb-5">
+
+                                                <label class="text-dark font-weight-medium">ID. NUMBER / COMPANY NO</label>
+
+                                                <div class="input-group mb-3">
+                                                    @Html.EditorFor(model => model.App_Applicants.IDNumber, new { htmlAttributes = new { @class = "form-control rounded-pill", @placeholder = "Enter Applicant  IDNumber", required = "required" } })
+                                                    @Html.ValidationMessageFor(model => model.App_Applicants.IDNumber, "", new { @class = "text-danger" })
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+
+
+
+
+
+                                        <div class="col-md-12 mb-">
+                                        </div>
+
+
+                                        <div class="col-xl-6">
+                                            <div class="mb-5">
+
+                                                <label class="text-dark font-weight-medium">RESIDENTIAL ADDRESS</label>
+
+                                                <div class="input-group mb-3">
+                                                    @Html.TextAreaFor(model => model.App_Applicants.ResidentialAddress, new { htmlAttributes = new { @class = "form-control rounded-pill", @placeholder = "Enter Applicant  ResidentialAddress", required = "required" } })
+                                                    @Html.ValidationMessageFor(model => model.App_Applicants.ResidentialAddress, "", new { @class = "text-danger" })
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-xl-6">
+                                            <div class="mb-5">
+
+                                                <label class="text-dark font-weight-medium">POSTAL ADDRESS</label>
+
+                                                <div class="input-group mb-3">
+                                                    @Html.TextAreaFor(model => model.App_Applicants.PostalAddress, new { htmlAttributes = new { @class = "form-control rounded-pill", @placeholder = "Enter Applicant  PostalAddress", required = "required" } })
+                                                    @Html.ValidationMessageFor(model => model.App_Applicants.PostalAddress, "", new { @class = "text-danger" })
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+
+                                        <!---->
+                                        <div class="col-md-12 mb-">
+                                        </div>
+
+
+                                        <div class="col-xl-6">
+                                            <div class="mb-5">
+
+                                                <label class="text-dark font-weight-medium">TELEPHONE NUMBER</label>
+
+                                                <div class="input-group mb-3">
+                                                    @Html.EditorFor(model => model.App_Applicants.TelephoneNumber, new { htmlAttributes = new { @class = "form-control rounded-pill", @placeholder = "Enter Applicant  TelephoneNumber", required = "required" } })
+                                                    @Html.ValidationMessageFor(model => model.App_Applicants.TelephoneNumber, "", new { @class = "text-danger" })
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-xl-6">
+                                            <div class="mb-5">
+
+                                                <label class="text-dark font-weight-medium">FAX NUMBER</label>
+
+                                                <div class="input-group mb-3">
+                                                    @Html.EditorFor(model => model.App_Applicants.FaxNumber, new { htmlAttributes = new { @class = "form-control rounded-pill", @placeholder = "Enter Applicant  FaxNumber", required = "required" } })
+                                                    @Html.ValidationMessageFor(model => model.App_Applicants.FaxNumber, "", new { @class = "text-danger" })
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="col-md-12 mb-">
+                                        </div>
+
+
+                                        <div class="col-xl-6">
+                                            <div class="mb-5">
+
+                                                <label class="text-dark font-weight-medium">EMAIL ADDRESS</label>
+
+                                                <div class="input-group mb-3">
+                                                    @Html.EditorFor(model => model.App_Applicants.EmailAddress, new { htmlAttributes = new { @class = "form-control rounded-pill", @placeholder = "Enter Applicant  TelephoneNumber", required = "required" } })
+                                                    @Html.ValidationMessageFor(model => model.App_Applicants.EmailAddress, "", new { @class = "text-danger" })
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-xl-6">
+                                            <div class="mb-5">
+
+                                                <label class="text-dark font-weight-medium">OCCUPATION</label>
+
+                                                <div class="input-group mb-3">
+                                                    @Html.EditorFor(model => model.App_Applicants.Occupation, new { htmlAttributes = new { @class = "form-control rounded-pill", @placeholder = "Enter Applicant  FaxNumber", required = "required" } })
+                                                    @Html.ValidationMessageFor(model => model.App_Applicants.Occupation, "", new { @class = "text-danger" })
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="col-md-12 mb-">
+                                        </div>
+
+
+                                        <div class="col-xl-6">
+                                            <div class="mb-5">
+
+                                                <label class="text-dark font-weight-medium">INCOME PER MONTH</label>
+
+                                                <div class="input-group mb-3">
+                                                    @Html.EditorFor(model => model.App_Applicants.IncomePerMonth, new { htmlAttributes = new { @class = "form-control rounded-pill", @placeholder = "Enter Income Per Month", required = "required" } })
+                                                    @Html.ValidationMessageFor(model => model.App_Applicants.IncomePerMonth, "", new { @class = "currency" })
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-xl-6">
+                                            <div class="mb-5">
+
+                                                <label class="text-dark font-weight-medium">EMPLOYER NAME</label>
+
+                                                <div class="input-group mb-3">
+                                                    @Html.EditorFor(model => model.App_Applicants.NameOfEmployer, new { htmlAttributes = new { @class = "form-control rounded-pill", @placeholder = "Enter NameOfEmployer", required = "required" } })
+                                                    @Html.ValidationMessageFor(model => model.App_Applicants.NameOfEmployer, "", new { @class = "text-danger" })
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+
+
+
+
+                                        <div class="col-xl-6">
+                                            <div class="mb-5">
+
+                                                <label class="text-dark font-weight-medium">SIGNATURE</label>
+
+                                                <div class="radioLabel">
+                                                    @Html.RadioButtonFor(model => model.App_Applicants.SignedByApplicant, "true")
+                                                    @Html.Label("Signed")
+                                                    <br />
+                                                    @Html.RadioButtonFor(model => model.App_Applicants.SignedByApplicant, "false")
+                                                    @Html.Label("Not Signed")
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+                                    </div>
+                                    <br />
+
+
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+                    <div class="col-xl-6">
+                        <!-- ====================================
+                             ——— 2nd FORM
+                        ===================================== -->
+                        <div class="card card-default">
+                            <div class="card-header">
+                                <h2 style="color: rebeccapurple;font-weight: bold">SPOUSE’S/NEXT OF KIN DETAILS</h2>
+
+
+
+
+                            </div>
+                            <div class="card-body">
+                                <div class="collapse" id="collapse-from-validation">
+                                    <pre class="language-html mb-4">
+                             </pre>
+                                </div>
+
+                                <div>
+                                    <div class="form-row">
+                                        <div class="col-xl-6">
+                                            <div class="mb-5">
+                                                <label class="text-dark font-weight-medium">SURNAME</label>
+                                                <div class="input-group mb-3">
+                                                    @Html.EditorFor(model => model.App_Applicants.SpouseSurname, new { htmlAttributes = new { @class = "form-control rounded-pill", @placeholder = "Enter Applicant  Surname" } })
+                                                    @Html.ValidationMessageFor(model => model.App_Applicants.SpouseSurname, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+
+                                        <div class="col-xl-6">
+                                            <div class="mb-5">
+
+
+                                                <label class="text-dark font-weight-medium">FIRST NAME</label>
+                                                <div class="input-group mb-3">
+                                                    @Html.EditorFor(model => model.App_Applicants.SpouseFirstname, new { htmlAttributes = new { @class = "form-control rounded-pill", @placeholder = "Enter Applicant  Firstname" } })
+                                                    @Html.ValidationMessageFor(model => model.App_Applicants.SpouseFirstname, "", new { @class = "text-danger" })
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-xl-6">
+                                            <div class="mb-5">
+
+                                                <label class="text-dark font-weight-medium">ID. NUMBER / COMPANY NO:</label>
+
+                                                <div class="input-group mb-3">
+                                                    @Html.EditorFor(model => model.App_Applicants.SpouseIDNumber, new { htmlAttributes = new { @class = "form-control rounded-pill", @placeholder = "Enter Applicant  IDNumber" } })
+                                                    @Html.ValidationMessageFor(model => model.App_Applicants.SpouseIDNumber, "", new { @class = "text-danger" })
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+
+
+
+
+
+                                        <div class="col-md-12 mb-">
+                                        </div>
+
+
+                                        <div class="col-xl-6">
+                                            <div class="mb-5">
+
+                                                <label class="text-dark font-weight-medium">RESIDENTIAL ADDRESS</label>
+
+                                                <div class="input-group mb-3">
+                                                    @Html.TextAreaFor(model => model.App_Applicants.SpouseResidentialAddress, new { htmlAttributes = new { @class = "form-control rounded-pill", @placeholder = "Enter Applicant  ResidentialAddress" } })
+                                                    @Html.ValidationMessageFor(model => model.App_Applicants.SpouseResidentialAddress, "", new { @class = "text-danger" })
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-xl-6">
+                                            <div class="mb-5">
+
+                                                <label class="text-dark font-weight-medium">POSTAL ADDRESS</label>
+
+                                                <div class="input-group mb-3">
+                                                    @Html.TextAreaFor(model => model.App_Applicants.SpousePostalAddress, new { htmlAttributes = new { @class = "form-control rounded-pill", @placeholder = "Enter Applicant  PostalAddress" } })
+                                                    @Html.ValidationMessageFor(model => model.App_Applicants.SpousePostalAddress, "", new { @class = "text-danger" })
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+
+                                        <!---->
+                                        <div class="col-md-12 mb-">
+                                        </div>
+
+
+                                        <div class="col-xl-6">
+                                            <div class="mb-5">
+
+                                                <label class="text-dark font-weight-medium">TELEPHONE NUMBER</label>
+
+                                                <div class="input-group mb-3">
+                                                    @Html.EditorFor(model => model.App_Applicants.SpouseTelephoneNumber, new { htmlAttributes = new { @class = "form-control rounded-pill", @placeholder = "Enter Applicant  TelephoneNumber" } })
+                                                    @Html.ValidationMessageFor(model => model.App_Applicants.SpouseTelephoneNumber, "", new { @class = "text-danger" })
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-xl-6">
+                                            <div class="mb-5">
+
+                                                <label class="text-dark font-weight-medium">FAX NUMBER</label>
+
+                                                <div class="input-group mb-3">
+                                                    @Html.EditorFor(model => model.App_Applicants.SpouseFaxNumber, new { htmlAttributes = new { @class = "form-control rounded-pill", @placeholder = "Enter Applicant  FaxNumber" } })
+                                                    @Html.ValidationMessageFor(model => model.App_Applicants.SpouseFaxNumber, "", new { @class = "text-danger" })
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="col-md-12 mb-">
+                                        </div>
+
+
+                                        <div class="col-xl-6">
+                                            <div class="mb-5">
+
+                                                <label class="text-dark font-weight-medium">EMAIL ADDRESS</label>
+
+                                                <div class="input-group mb-3">
+                                                    @Html.EditorFor(model => model.App_Applicants.SpouseEmailAddress, new { htmlAttributes = new { @class = "form-control rounded-pill", @placeholder = "Enter Applicant  TelephoneNumber" } })
+                                                    @Html.ValidationMessageFor(model => model.App_Applicants.SpouseEmailAddress, "", new { @class = "text-danger" })
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-xl-6">
+                                            <div class="mb-5">
+
+                                                <label class="text-dark font-weight-medium">OCCUPATION</label>
+
+                                                <div class="input-group mb-3">
+                                                    @Html.EditorFor(model => model.App_Applicants.SpouseOccupation, new { htmlAttributes = new { @class = "form-control rounded-pill", @placeholder = "Enter Applicant  FaxNumber" } })
+                                                    @Html.ValidationMessageFor(model => model.App_Applicants.SpouseOccupation, "", new { @class = "text-danger" })
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="col-md-12 mb-">
+                                        </div>
+
+
+                                        <div class="col-xl-6">
+                                            <div class="mb-5">
+
+                                                <label class="text-dark font-weight-medium">INCOME PER MONTH</label>
+
+                                                <div class="input-group mb-3">
+                                                    @Html.EditorFor(model => model.App_Applicants.SpouseIncomePerMonth, new { htmlAttributes = new { @class = "form-control rounded-pill", @placeholder = "Enter Income Per Month" } })
+                                                    @Html.ValidationMessageFor(model => model.App_Applicants.SpouseIncomePerMonth, "", new { @class = "currency" })
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-xl-6">
+                                            <div class="mb-5">
+
+                                                <label class="text-dark font-weight-medium">EMPLOYER NAME</label>
+
+                                                <div class="input-group mb-3">
+                                                    @Html.EditorFor(model => model.App_Applicants.SpouseNameOfEmployer, new { htmlAttributes = new { @class = "form-control rounded-pill", @placeholder = "Enter NameOfEmployer" } })
+                                                    @Html.ValidationMessageFor(model => model.App_Applicants.SpouseNameOfEmployer, "", new { @class = "text-danger" })
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+
+
+
+
+                                        <div class="col-xl-6">
+                                            <div class="mb-5">
+
+                                                <label class="text-dark font-weight-medium">SIGNATURE</label>
+
+
+                                                <div class="radioLabel">
+                                                    @Html.RadioButtonFor(model => model.App_Applicants.SignedBySpouse, "true")
+                                                    @Html.Label("Signed")
+                                                    <br />
+                                                    @Html.RadioButtonFor(model => model.App_Applicants.SignedBySpouse, "false")
+                                                    @Html.Label("Not Signed")
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+
+                                    <br />
+
+
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+
+
+
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+    @*<div style="padding-left: 30px;padding-right:760px">*@
+    <div class="card card-default">
+        <div class="card-header">
+            <h2 style="color: rebeccapurple;font-weight: bold">DESCRIPTION OF ERVEN/PLOT</h2>
+
+            <a class="btn mdi mdi-code-tags" data-toggle="collapse" href="#collapse-nav-pull-justified" role="button"
+               aria-expanded="false" aria-controls="collapse-nav-pull-justified"> </a>
+
+
+        </div>
+        <div class="card-body">
+            <div class="collapse" id="collapse-nav-pull-justified">
+                <pre class="language-html mb-4">
+
+          </pre>
+            </div>
+            <div class="border p-6">
+                <ul class="nav nav-pills mb-3 justify-content-between" id="pills-tab" role="tablist">
+
+                    <li class="nav-item">
+                        <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#PlotTypeID" role="tab"
+                           aria-controls="pills-home" aria-selected="true">ERF/PROPERTY</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#App_ExistingOwnership" role="tab"
+                           aria-controls="pills-profile" aria-selected="false"> OWNERSHIP</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#App_Financial" role="tab"
+                           aria-controls="pills-profile" aria-selected="false">FINACIAL</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#App_AttachmentDocuments" role="tab"
+                           aria-controls="pills-profile" aria-selected="false">DOCUMENTS</a>
+                    </li>
+
+
+                </ul>
+                <div class="tab-content mt-5" id="nav-tabContent">
+
+
+                    <div class="tab-pane fade show active" id="PlotTypeID" role="tabpanel" aria-labelledby="pills-home-tab">
+                        <div class="form-horizontal">
+                            <div class="form-row">
+
+
+
+                                <div class="col-xl-6">
+                                    <div class="mb-5">
+
+                                        <label class="text-dark font-weight-medium">PLOT TYPE</label>
+
+                                        <div class="input-group mb-3">
+                                            @Html.DropDownListFor(model => model.App_Applicants.PlotTypeID, ViewBag.PlotTypeID as SelectList, htmlAttributes: new { @class = "form-control rounded-pill", @placeholder = "Enter Your FirstName", required = "required" })
+                                            @Html.ValidationMessageFor(model => model.App_Applicants.PlotTypeID, "", new { @class = "text-danger" })
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                                <div class="col-xl-6">
+                                    <div class="mb-5">
+
+                                        <label class="text-dark font-weight-medium">ERF SIZE</label>
+
+                                        <div class="input-group mb-3">
+                                            @Html.DropDownListFor(model => model.App_Applicants.ErfSizeID, ViewBag.ErfSizeID as SelectList, htmlAttributes: new { @class = "form-control rounded-pill", @placeholder = "Enter Your FirstName", required = "required" })
+                                            @Html.ValidationMessageFor(model => model.App_Applicants.ErfSizeID, "", new { @class = "text-danger" })
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                                <div class="col-xl-6">
+                                    <div class="mb-5">
+
+                                        <label class="text-dark font-weight-medium">APPLICATION DATE</label>
+                                        <div class="input-group mb-3">
+                                            @Html.EditorFor(model => model.App_Applicants.ApplicationDate, new { htmlAttributes = new { @class = "form-control rounded-pill", @placeholder = "Enter  ApplicationDate", required = "required", @type = "date" } })
+                                            @Html.ValidationMessageFor(model => model.App_Applicants.ApplicationDate, "", new { @class = "text-danger" })
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="tab-pane fade" id="App_ExistingOwnership" role="tabpanel" aria-labelledby="nav-profile-tab">
+                        <div class="form-horizontal">
+
+
+
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                            @*<div class="form-group">
+                                    @Html.LabelFor(model => model.App_ExistingOwnerships.ApplicantID, "ApplicantID", htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="input-group mb-3">
+                                        @Html.DropDownList("ApplicantID", null, htmlAttributes: new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.App_Applicants.ApplicantID, "", new { @class = "text-danger" })
+
+                                    </div>
+                                </div>*@
+                            <div class="form-row">
+                                <div class="col-xl-6">
+                                    <div class="mb-5">
+                                        <label class="text-dark font-weight-medium">ERF NUMBER</label>
+                                        <div class="input-group mb-3">
+                                            @Html.DropDownListFor(model => model.App_ExistingOwnerships.ErfNumberID, ViewBag.ErfNumberID as SelectList, "--Select Erf--", htmlAttributes: new { @class = "form-control rounded-pill" })
+                                            @Html.ValidationMessageFor(model => model.App_ExistingOwnerships.ErfNumberID, "", new { @class = "text-danger" })
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+                                <div class="col-xl-6">
+                                    <div class="mb-5">
+                                        <label class="text-dark font-weight-medium">REFERENCE NUMBER</label>
+                                        <div class="input-group mb-3">
+                                            @Html.EditorFor(model => model.App_ExistingOwnerships.ReferenceNumber, new { htmlAttributes = new { @class = "form-control rounded-pill" } })
+                                            @Html.ValidationMessageFor(model => model.App_ExistingOwnerships.ReferenceNumber, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-6">
+                                    <div class="mb-5">
+                                        <label class="text-dark font-weight-medium">IMPROVEMENT</label>
+                                        <div class="input-group mb-3">
+                                            @Html.EditorFor(model => model.App_ExistingOwnerships.Improvement, new { htmlAttributes = new { @class = "form-control rounded-pill" } })
+                                            @Html.ValidationMessageFor(model => model.App_ExistingOwnerships.Improvement, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-6">
+                                    <div class="mb-5">
+                                        <label class="text-dark font-weight-medium">LEASE AGGREEMENT</label>
+                                        <div class="input-group mb-3">
+                                            @Html.EditorFor(model => model.App_ExistingOwnerships.LeaseAggreement, new { htmlAttributes = new { @class = "form-control rounded-pill" } })
+                                            @Html.ValidationMessageFor(model => model.App_ExistingOwnerships.LeaseAggreement, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-6">
+                                    <div class="mb-5">
+                                        <label class="text-dark font-weight-medium">OUTSTANDING AMOUNT(N$)</label>
+                                        <div class="input-group mb-3">
+                                            @Html.EditorFor(model => model.App_ExistingOwnerships.OutstandingAmount, new { htmlAttributes = new { @class = "form-control rounded-pill" } })
+                                            @Html.ValidationMessageFor(model => model.App_ExistingOwnerships.OutstandingAmount, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-6">
+                                    <div class="mb-5">
+                                        <label class="text-dark font-weight-medium">DATE OF FIRST OCCUPATION</label>
+                                        <div class="input-group mb-3">
+                                            @Html.EditorFor(model => model.App_ExistingOwnerships.DateOfFirstOccupation, new { htmlAttributes = new { @class = "form-control rounded-pill", @type = "date" } })
+                                            @Html.ValidationMessageFor(model => model.App_ExistingOwnerships.DateOfFirstOccupation, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-6">
+                                    <div class="mb-5">
+                                        <label class="text-dark font-weight-medium">WHO IS OCCUPYING THE ERF</label>
+                                        <div class="input-group mb-3">
+                                            @Html.EditorFor(model => model.App_ExistingOwnerships.WhoIsOccupyingTheErf, new { htmlAttributes = new { @class = "form-control rounded-pill" } })
+                                            @Html.ValidationMessageFor(model => model.App_ExistingOwnerships.WhoIsOccupyingTheErf, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-xl-6">
+                                    <div class="mb-5">
+                                        <label class="text-dark font-weight-medium">WHO IS RESPONSIBLE FOR PAYMENT</label>
+                                        <div class="input-group mb-3">
+                                            @Html.EditorFor(model => model.App_ExistingOwnerships.WhoIsResponsibleForPayment, new { htmlAttributes = new { @class = "form-control rounded-pill" } })
+                                            @Html.ValidationMessageFor(model => model.App_ExistingOwnerships.WhoIsResponsibleForPayment, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="tab-pane fade" id="App_Financial" role="tabpanel" aria-labelledby="nav-profile-tab">
+
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @*<div class="form-group">
+                                @Html.LabelFor(model => model.App_Financials.ApplicantID, "ApplicantID", htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="input-group mb-3">
+                                    @Html.DropDownListFor(model => model.App_Financials.ApplicantID, ViewBag.ApplicantID as SelectList, htmlAttributes: new { @class = "form-control rounded-pill" })
+                                    @Html.ValidationMessageFor(model => model.App_Financials.ApplicantID, "", new { @class = "text-danger" })
+                                </div>
+                            </div>*@        <div class="form-horizontal">
+                            <div class="form-row">
+                                <div class="col-xl-6">
+                                    <div class="mb-5">
+                                        <label class="text-dark font-weight-medium">PAYMENT METHOD </label>
+                                        <div class="input-group mb-3">
+                                            @Html.DropDownListFor(model => model.App_Financials.PaymentMethodID, ViewBag.PaymentMethodID as SelectList, htmlAttributes: new { @class = "form-control rounded-pill" })
+                                            @Html.ValidationMessageFor(model => model.App_Financials.PaymentMethodID, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-6">
+                                    <div class="mb-5">
+                                        <label class="text-dark font-weight-medium">ESTIMATED COST OF CONSTRUCTION</label>
+                                        <div class="input-group mb-3">
+                                            @Html.EditorFor(model => model.App_Financials.EstimatedCostOfConstruction, new { htmlAttributes = new { @class = "form-control rounded-pill" } })
+                                            @Html.ValidationMessageFor(model => model.App_Financials.EstimatedCostOfConstruction, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-6">
+                                    <div class="mb-5">
+                                        <label class="text-dark font-weight-medium">QUALIFIED LOAN AMOUNT</label>
+                                        <div class="input-group mb-3">
+                                            @Html.EditorFor(model => model.App_Financials.QualifiedLoanAmount, new { htmlAttributes = new { @class = "form-control rounded-pill" } })
+                                            @Html.ValidationMessageFor(model => model.App_Financials.QualifiedLoanAmount, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-6">
+                                    <div class="mb-5">
+                                        <label class="text-dark font-weight-medium">INTENDED COMMENCEMENT DATE</label>
+                                        <div class="input-group mb-3">
+                                            @Html.EditorFor(model => model.App_Financials.IntendedCommencementDate, new { htmlAttributes = new { @class = "form-control rounded-pill", @type = "date" } })
+                                            @Html.ValidationMessageFor(model => model.App_Financials.IntendedCommencementDate, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="tab-pane fade" id="App_AttachmentDocuments" role="tabpanel" aria-labelledby="nav-profile-tab">
+
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @*<div class="form-group">
+                                @Html.LabelFor(model => model.App_AttachmentDocuments.ApplicantID, "ApplicantID", htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="input-group mb-3">
+                                    @Html.DropDownListFor(model => model.App_AttachmentDocuments.ApplicantID, ViewBag.ApplicantID as SelectList, htmlAttributes: new { @class = "form-control rounded-pill" })
+                                    @Html.ValidationMessageFor(model => model.App_AttachmentDocuments.ApplicantID, "", new { @class = "text-danger" })
+                                </div>
+                            </div>*@
+
+                        <!--<div class="form-horizontal">
+                        <div class="form-row">
+                            <div class="col-xl-6">
+                                <div class="mb-5">
+                                    <label class="text-dark font-weight-medium">ATTACHMENT DOCUMENT TYPE</label>
+                                    <div class="input-group mb-3">
+                                        @Html.DropDownListFor(model => model.App_AttachmentDocuments.AttachmentDocumentTypeID, ViewBag.AttachmentDocumentTypeID as SelectList, htmlAttributes: new { @class = "form-control rounded-pill", name = "mange[]" })
+                                        @Html.ValidationMessageFor(model => model.App_AttachmentDocuments.AttachmentDocumentTypeID, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-xl-6">
+                                <div class="mb-5">
+                                    <label class="text-dark font-weight-medium">ATTACHMENT DOCUMENT FILE NAME</label>
+                                    <div class="input-group mb-3">
+                                        @Html.EditorFor(model => model.App_AttachmentDocuments.AttachmentDocumentFileName, new { htmlAttributes = new { @class = "form-control rounded-pill" } })
+                                        @Html.ValidationMessageFor(model => model.App_AttachmentDocuments.AttachmentDocumentFileName, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="mb-5">
+                                    <label class="text-dark font-weight-medium">ATTACHMENT DOCUMENT</label>
+                                    <div class="input-group mb-3">
+                                        <div class="custom-file mb-2">
+                                            <input type="file" name="file" id="file" class="form-control rounded-pill" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-6">
+                                <div class="mb-5">
+                                    <label class="text-dark font-weight-medium"></label>
+                                    <div class="input-group mb-3">
+                                        <div class="custom-file mb-2">-->
+                        @*<input type="file" name="file" id="file" class="form-control rounded-pill" />*@
+                        <!--</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <form action="" method="post" enctype="">
+                                    <div id="dynamic_field2">
+                                        <div class="form-row">
+                                            <div class="col">
+                                                <td><button type="button" name="add" id="add2" class="btn btn-success"><i class="fa fa-plus"></i> ADD MORE DOCUMENTS</button></td>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+
+
+                            </div>
+                        </div>-->
+
+                        <h4 class="mb-3 font-weight-bold">Upload the following documents by clicking on below tabs.</h4>
+
+                        <div class="accordion" id="accordionExample">
+                            <div class="card">
+                                <div class="card-header" id="headingOne">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#IdDoc" aria-expanded="true" aria-controls="IdDoc">
+                                            ID Document
+                                        </button>
+                                    </h2>
+                                </div>
+
+                                <div id="IdDoc" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <div class="row ">
+                                            <div class="col-md-12">
+                                                <div id="imgUploader">
+                                                    <form id="LogoForm" novalidate="novalidate">
+                                                        <div class="wrapper-btn">
+                                                            @*<div class="file-uploaded">
+                                                                    <span class="fa fa-upload">
+                                                                    </span>
+                                                                    <span class="file-Title">Click to Upload File Here</span>
+                                                                </div>*@
+                                                            <input name="IdDoc_attachments" class="btn btn-info" onchange="ReadDoc(this,'IdDoc_files');" id="IdDoc_attachments" type="file" data-folderid="" data-role="upload" multiple="multiple" autocomplete="off">
+                                                            <span hidden id="ErrorImage" class="redColor">Please Upload minimum one Image.</span>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <div class="IdDoc_files"></div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingTwo">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#Marriage_cert" aria-expanded="false" aria-controls="Marriage_cert">
+                                            Marriage Certificate
+                                        </button>
+                                    </h2>
+                                </div>
+                                <div id="Marriage_cert" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <div class="row ">
+                                            <div class="col-md-12">
+                                                <div id="imgUploader">
+                                                    <form id="LogoForm" novalidate="novalidate">
+                                                        <div class="wrapper-btn">
+                                                            @*<div class="file-uploaded">
+                                                                    <span class="fa fa-upload">
+                                                                    </span>
+                                                                    <span class="file-Title">Click to Upload File Here</span>
+                                                                </div>*@
+                                                            <input name="Marriage_cert_attachments" class="btn btn-info" onchange="ReadDoc(this,'Marriage_cert_files');" id="Marriage_cert_attachments" type="file" data-folderid="" data-role="upload" multiple="multiple" autocomplete="off">
+                                                            <span hidden id="ErrorImage" class="redColor">Please Upload minimum one Image.</span>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <div class="Marriage_cert_files"></div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingThree">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#IdDocSpouse" aria-expanded="false" aria-controls="IdDocSpouse">
+                                            ID Document of Spouse
+                                        </button>
+                                    </h2>
+                                </div>
+                                <div id="IdDocSpouse" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                    <div class="card-body">
+
+                                        <div class="row ">
+                                            <div class="col-md-12">
+                                                <div id="imgUploader">
+                                                    <form id="LogoForm" novalidate="novalidate">
+                                                        <div class="wrapper-btn">
+                                                            @*<div class="file-uploaded">
+                                                                    <span class="fa fa-upload">
+                                                                    </span>
+                                                                    <span class="file-Title">Click to Upload File Here</span>
+                                                                </div>*@
+                                                            <input name="IdDocSpouse_attachments" class="btn btn-info" onchange="ReadDoc(this,'IdDocSpouse_files');" id="IdDocSpouse_attachments" type="file" data-folderid="" data-role="upload" multiple="multiple" autocomplete="off">
+                                                            <span hidden id="ErrorImage" class="redColor">Please Upload minimum one Image.</span>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <div class="IdDocSpouse_files"></div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header" id="headingThree">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#Comp_Reg_cert" aria-expanded="false" aria-controls="Comp_Reg_cert">
+                                            Companies or Close Cooperation Registeration Certificate
+                                        </button>
+                                    </h2>
+                                </div>
+                                <div id="Comp_Reg_cert" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                    <div class="card-body">
+
+                                        <div class="row ">
+                                            <div class="col-md-12">
+                                                <div id="imgUploader">
+                                                    <form id="LogoForm" novalidate="novalidate">
+                                                        <div class="wrapper-btn">
+                                                            @*<div class="file-uploaded">
+                                                                    <span class="fa fa-upload">
+                                                                    </span>
+                                                                    <span class="file-Title">Click to Upload File Here</span>
+                                                                </div>*@
+                                                            <input name="Comp_Reg_cert_attachments" class="btn btn-info" onchange="ReadDoc(this,'Comp_Reg_cert_files');" id="Comp_Reg_cert_attachments" type="file" data-folderid="" data-role="upload" multiple="multiple" autocomplete="off">
+                                                            <span hidden id="ErrorImage" class="redColor">Please Upload minimum one Image.</span>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <div class="Comp_Reg_cert_files"></div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingThree">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#BPlan" aria-expanded="false" aria-controls="BPlan">
+                                            A Business Plan and a Building Plan
+                                        </button>
+                                    </h2>
+                                </div>
+                                <div id="BPlan" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                    <div class="card-body">
+
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div id="imgUploader">
+                                                    <form id="LogoForm" novalidate="novalidate">
+                                                        <div class="wrapper-btn">
+                                                            @*<div class="file-uploaded">
+                                                                    <span class="fa fa-upload">
+                                                                    </span>
+                                                                    <span class="file-Title">Click to Upload File Here</span>
+                                                                </div>*@
+                                                            <input name="BPlan_attachments" class="btn btn-info" onchange="ReadDoc(this,'BPlan_files');" id="BPlan_attachments" type="file" data-folderid="" data-role="upload" multiple="multiple" autocomplete="off">
+                                                            <span hidden id="ErrorImage" class="redColor">Please Upload minimum one Image.</span>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <div class="BPlan_files"></div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="POF">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#POFDoc" aria-expanded="false" aria-controls="POFDoc">
+                                            Proof of funding or income (latest payslip or bank statement)
+                                        </button>
+                                    </h2>
+                                </div>
+                                <div id="POFDoc" class="collapse" aria-labelledby="POF" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div id="imgUploader">
+                                                    <form id="LogoForm" novalidate="novalidate">
+                                                        <div class="wrapper-btn">
+                                                            @*<div class="file-uploaded">
+                                                                    <span class="fa fa-upload">
+                                                                    </span>
+                                                                    <span class="file-Title">Click to Upload File Here</span>
+                                                                </div>*@
+                                                            <input name="POFDoc_attachments" class="btn btn-info" onchange="ReadDoc(this,'POFDoc_files');" id="POFDoc_attachments" type="file" data-folderid="" data-role="upload" multiple="multiple" autocomplete="off">
+                                                            <span hidden id="ErrorImage" class="redColor">Please Upload minimum one Image.</span>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <div class="POFDoc_files"></div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*<form action="/Customer/UploadCustomerFile" method="post" enctype="multipart/form-data" style="display: inline-grid;padding-left:100px">*@
+        <button id="btnSave" class="btn btn-success btn-sm mb-2 float-center" type="button"><i class="fa fa-upload"></i> Create Applicant</button>
+    @*</form>*@
+}
+<br />
+<div>
+</div>
+
+@*section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }*@
+
+<script src="~/Content/dropzone/dropzone.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#Beforeattachments:file").change(function () {
+            $("#BeforepreviewImg").show();
+        });
+        $("#Afterattachments:file").change(function () {
+            $("#AfterpreviewImg").show();
+        });
+    });
+
+    //var BeforeReadImg = function (input) {
+
+    //    IsImage(input);
+
+    //    if (input.files && input.files[0]) {
+    //        var reader = new FileReader();
+
+    //        reader.onload = function (e) {
+    //            var num = Date.now();
+    //            $('.BeforeImages').append(" <div class='AddedBeforeImg' id='BeforeDiv" + num + "'><div class='cssImg Befimg' id='BeforeImgPreview" + num + "' ></div ><i class='fa fa-trash-o' onclick='ImageBeforeDeleteEvent(" + num + ")'></i> </div>");
+    //            $('#BeforeImgPreview' + num).attr('style', 'background-image: url("' + e.target.result + '")');
+    //            $('#BeforeImgPreview' + num).attr('data-index', e.target.result);
+    //            $('#BeforeImgPreview' + num).attr('data-id', input.files[0].name);
+    //        };
+    //        reader.readAsDataURL(input.files[0]);
+    //    }
+    //};
+
+    var ReadDoc = function (input, img_container) {
+
+        //  IsImage(input);
+
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                var num = Date.now();
+                $('.' + img_container).append(" <div class='AddedAfterImg' id='AfterDiv" + num + "'><div class='cssImg Aftimg' id='ImgPreview" + num + "' ></div ><i class='fa fa-trash-o' onclick='ImageAfterDeleteEvent(" + num + ")'></i> </div>");
+                $('#ImgPreview' + num).attr('style', 'background-image: url("' + e.target.result + '")');
+                $('#ImgPreview' + num).attr('data-index', e.target.result);
+                $('#ImgPreview' + num).attr('data-id', input.files[0].name);
+
+                //$(".AfterImages").after("<div>"+input.files[0].name+"</div>");
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+    };
+
+    $('#btnSave').on('click', function () {
+
+
+        //var Id_doc_array = new Array();
+        //var marriage_vertificate_array = new Array();
+        //var marriage_vertificate_array = new Array();
+        //var id_doc_souse_array = new Array();
+        //var comp_reg_certificate_array = new Array();
+        //var business_plan_array = new Array();
+        //var proof_of_funding_array = new Array();
+
+        //var temp = "";
+        //$(".IdDoc_files > .AddedAfterImg").each(function () {
+        //    var afterSelected = $(this).find('.Aftimg:eq(0)').attr('data-id');
+        //    var afterBase = $(this).find('.Aftimg:eq(0)').attr('data-index');
+        //    AfterArray.push(afterSelected)
+        //    AfterArray.push(afterBase)
+        //})
+
+        //$.each(BeforeArray, function (index, element) {
+        //    if (BeforeArray[index] == undefined || BeforeArray[index] == "") {
+        //        temp = "NotOk";
+        //    }
+        //});
+
+        //$.each(AfterArray, function (index, element) {
+        //    if (AfterArray[index] == undefined || AfterArray[index] == "") {
+        //        temp = "NotOk";
+        //    }
+        //});
+
+
+        //if (ComparisonName == null || ComparisonName == "") {
+        //    toastr.error("Name Is Required");
+        //}
+
+        //else if (ComparisonDesc == null || ComparisonDesc == "") {
+        //    toastr.error("Description Is Required");
+        //}
+
+        //else if (temp == "NotOk" || BeforeArray.length == 0 || AfterArray.length == 0) {
+        //    toastr.error("Images Are Required");
+        //}
+
+        //else if (BeforeArray.length != AfterArray.length) {
+        //    toastr.error("Number of  Images in before and after should be same");
+        //}
+        //else {
+        //$('#savebaf').prop("disabled", true);
+        $.ajax({
+            url: '/App_Applicant/Create',
+            type: 'POST',
+            dataType: 'json',
+            contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+            data: { frmApp_Applicant: $("#frmApp_Applicant").serialize() },
+            success: function (response) {
+                if (response.success == true) {
+                    debugger;
+                  //  toastr.success("Saved Successfully");
+                  //  window.location = '/BeforeAfterImages/Index/';
+                }
+                else {
+                   // toastr.error("There is a problem while uploading image, please check all images are in correct format");
+                }
+            }
+        })
+        //  }
+        // $('#savebaf').prop("disabled", false);
+        // $('#savebaf').val("Save");
+    });
+
+    function ImageBeforeDeleteEvent(item) {
+        var $item = $('#BeforeDiv' + item);
+        $item.remove();
+    }
+
+    function ImageAfterDeleteEvent(item) {
+        var $item = $('#AfterDiv' + item);
+        $item.remove();
+    }
+
+
+    var IsImage = function (inputFile) {
+        var file = inputFile.files[0];
+        var fileType = file["type"];
+        const validImageTypes = ["image/gif", "image/jpeg", "image/png", "image/tiff", "image/pjp", "image/pjpeg", "image/jfif", "image/tif"];
+        if ($.inArray(fileType, validImageTypes) < 0) {
+            toastr.error("Only Images are accepted");
+            return false;
+        }
+    }
+
+        //var i = 1;
+        //$('#add').click(function () {
+        //    i++;
+        //    $('#dynamic_field').append('<div class="form-row" id="row' + i + '"> <div class="col"><input type="text" class="form-control rounded-pill" name="durchgefuhrte_arbeiten[]"> </div> <div class="col"> <input type="text" class="form-control rounded-pill" name="von[]"> </div> <div class="col"> <input type="text" class="form-control rounded-pill" name="bis[]"> </div> <div class="col"> <input type="text" class="form-control rounded-pill" name="std[]"> </div> <div class="col"> <td><button type="button" name="add" class="btn btn-danger btn_remove" id="' + i + '"><i class="fa fa fa-trash"></i></button></td> </div> </div>');
+        //});
+        //$(document).on('click', '.btn_remove', function () {
+        //    var button_id = $(this).attr("id");
+
+        //    $('#row' + button_id + '').remove();
+        //});
+
+
+
+        //$('#add2').click(function () {
+        //    i++;
+        //    $('#dynamic_field2').append('<div class="form-row"  id="row2' + i + '"> <div class="col"> <input type="text" class="form-control rounded-pill" name="mange[]"> </div> <div class="col"> <input type="text" class="form-control rounded-pill"  name="bezeichnung[]"> </div> <div class="col"> <input type="text" class="form-control rounded-pill" name="art_nr[]"> </div> <div class="col"> <td><button type="button" name="add" class="btn btn-danger btn_remove2" id="' + i + '"><i class="fa fa fa-trash"></i></button></td> </div> </div>');
+        //});
+        //$(document).on('click', '.btn_remove2', function () {
+        //    var button_id = $(this).attr("id");
+
+        //    $('#row2' + button_id + '').remove();
+        //});
+
+
+        //$('#add3').click(function () {
+        //    i++;
+        //    $('#dynamic_field3').append('<div class="form-row" id="row3' + i + '"> <div class="col"> <input type="text" class="form-control rounded-pill"  name="offene_pukte[]"> </div> <div class="col"> <input type="text" class="form-control rounded-pill" name="intern[]"> </div> <div class="col"> <td><button type="button" name="add"  class="btn btn-danger btn_remove3" id="' + i + '"><i class="fa fa fa-trash"></i></button></td> </div> </div>');
+        //});
+        //$(document).on('click', '.btn_remove3', function () {
+        //    var button_id = $(this).attr("id");
+
+        //    $('#row3' + button_id + '').remove();
+        //});
+
+
+    //});
+
+</script>

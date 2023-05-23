@@ -1,0 +1,87 @@
+﻿@model IEnumerable<WebApplication20.Models.App_AllocationData>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AllocationReason)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AllocationLetter)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AllocationLetterFileName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UpdatedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UpdatedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.App_Allocation.AllocationLetterFileName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.App_Applicant.Surname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.App_Erf.ErfNumber)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AllocationReason)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AllocationLetter)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AllocationLetterFileName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UpdatedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UpdatedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.App_Allocation.AllocationLetterFileName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.App_Applicant.Surname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.App_Erf.ErfNumber)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AllocationDataID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AllocationDataID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AllocationDataID })
+        </td>
+    </tr>
+}
+
+</table>

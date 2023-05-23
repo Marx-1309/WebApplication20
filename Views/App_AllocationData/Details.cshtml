@@ -1,0 +1,98 @@
+﻿@model WebApplication20.Models.App_AllocationData
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>App_AllocationData</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AllocationReason)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AllocationReason)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AllocationLetter)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AllocationLetter)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AllocationLetterFileName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AllocationLetterFileName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdatedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdatedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdatedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.App_Allocation.AllocationLetterFileName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.App_Allocation.AllocationLetterFileName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.App_Applicant.Surname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.App_Applicant.Surname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.App_Erf.ErfNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.App_Erf.ErfNumber)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AllocationDataID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

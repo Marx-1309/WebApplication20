@@ -1,0 +1,222 @@
+﻿@model WebApplication20.Models.App_Erf
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>App_Erf</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ErfNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ErfNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ErfComment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ErfComment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdatedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdatedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdatedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ErfPurchasePrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ErfPurchasePrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ErfAdminFees)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ErfAdminFees)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ErfVat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ErfVat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StageAllocation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StageAllocation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StageSale)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StageSale)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StageRegistration)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StageRegistration)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StageValuation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StageValuation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ErfTotalPurchasePrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ErfTotalPurchasePrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sys_ErfArea.ErfArea)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sys_ErfArea.ErfArea)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sys_ErfTownship.ErfTownship)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sys_ErfTownship.ErfTownship)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sys_PlotType.PlotType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sys_PlotType.PlotType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ErfSize)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ErfSize)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <a class="dropdown-item deleteRecord" href="javascript:void(0)">Delete</a>
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $(".deleteRecord").on('click', function (e) {
+            e.preventDefault();
+
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+
+                    let erfnumber_id = $(this).attr('data-id');
+                    $.ajax(
+                        {
+                            url: '/App_Erf/Delete',
+                            type: 'POST',
+                            data: { id: erfnumber_id },
+                            success: function (response) {
+                                if (response.status == true) {
+                                    Swal.fire(
+                                        'Deleted!',
+                                        'Your record has been deleted.',
+                                        'success'
+                                    )
+
+                                    setTimeout(() => {
+                                        window.location.reload();
+                                    }, 3000);
+                                } else {
+                                    alert(response.message);
+                                    return;
+                                }
+                            },
+                            error: function () {
+                                alert('Please refresh your page, id is missing to delete the record.')
+                            }
+                        }
+                    );
+                }
+            })
+        });
+    });
+</script>

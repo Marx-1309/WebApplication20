@@ -1,0 +1,96 @@
+﻿@model WebApplication20.Models.App_Financial
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>App_Financial</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EstimatedCostOfConstruction)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EstimatedCostOfConstruction)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QualifiedLoanAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QualifiedLoanAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IntendedCommencementDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IntendedCommencementDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdatedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdatedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdatedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.App_Applicant.Surname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.App_Applicant.Surname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sys_PaymentMethod.PaymentMethod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sys_PaymentMethod.PaymentMethod)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

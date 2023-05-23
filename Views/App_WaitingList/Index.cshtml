@@ -1,0 +1,51 @@
+﻿@model IEnumerable<WebApplication20.Models.App_WaitingList>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.WaitingListNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserDefined1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserDefined2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.App_Applicant.Surname)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.WaitingListNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserDefined1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserDefined2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.App_Applicant.Surname)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.WaitingListID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.WaitingListID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.WaitingListID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,2506 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="PMISModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="App_AcknowledgementData">
+          <Key>
+            <PropertyRef Name="AcknowledgmentDataID" />
+          </Key>
+          <Property Name="AcknowledgmentDataID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AcknowledgmentID" Type="bigint" Nullable="false" />
+          <Property Name="ApplicantID" Type="bigint" Nullable="false" />
+          <Property Name="AcknowledgmentLetter" Type="image" />
+          <Property Name="AcknowledgmentLetterFileName" Type="nchar" MaxLength="100" />
+          <Property Name="CreatedBy" Type="nchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="UpdatedBy" Type="nchar" MaxLength="50" />
+          <Property Name="UpdatedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="App_Acknowledgment">
+          <Key>
+            <PropertyRef Name="AcknowledgmentID" />
+          </Key>
+          <Property Name="AcknowledgmentID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MonthID" Type="bigint" Nullable="false" />
+          <Property Name="AcknowledmentYear" Type="bigint" Nullable="false" />
+          <Property Name="AcknowledmentDate" Type="datetime" Nullable="false" />
+          <Property Name="AcknowledgmentLetter" Type="image" />
+          <Property Name="AcknowledgmentLetterFileName" Type="nchar" MaxLength="100" />
+          <Property Name="CreatedBy" Type="nchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="UpdatedBy" Type="nchar" MaxLength="50" />
+          <Property Name="UpdatedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="App_Allocation">
+          <Key>
+            <PropertyRef Name="AllocationID" />
+          </Key>
+          <Property Name="AllocationID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PlotTypeID" Type="bigint" Nullable="false" />
+          <Property Name="MonthID" Type="bigint" Nullable="false" />
+          <Property Name="AllocationYear" Type="bigint" Nullable="false" />
+          <Property Name="AllocationDate" Type="datetime" Nullable="false" />
+          <Property Name="AllocationLetter" Type="image" />
+          <Property Name="AllocationLetterFileName" Type="nchar" MaxLength="100" />
+          <Property Name="CreatedBy" Type="nchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="UpdatedBy" Type="nchar" MaxLength="50" />
+          <Property Name="UpdatedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="App_AllocationData">
+          <Key>
+            <PropertyRef Name="AllocationDataID" />
+          </Key>
+          <Property Name="AllocationDataID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AllocationID" Type="bigint" Nullable="false" />
+          <Property Name="ApplicantID" Type="bigint" Nullable="false" />
+          <Property Name="ErfNumberID" Type="bigint" Nullable="false" />
+          <Property Name="AllocationReason" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="AllocationLetter" Type="image" />
+          <Property Name="AllocationLetterFileName" Type="nchar" MaxLength="100" />
+          <Property Name="CreatedBy" Type="nchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="UpdatedBy" Type="nchar" MaxLength="50" />
+          <Property Name="UpdatedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="App_Applicant">
+          <Key>
+            <PropertyRef Name="ApplicantID" />
+          </Key>
+          <Property Name="ApplicantID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Surname" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="Firstname" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="IDNumber" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="ResidentialAddress" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="PostalAddress" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="TelephoneNumber" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="FaxNumber" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="EmailAddress" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="Occupation" Type="nchar" MaxLength="200" Nullable="false" />
+          <Property Name="IncomePerMonth" Type="money" Nullable="false" />
+          <Property Name="NameOfEmployer" Type="nchar" MaxLength="500" Nullable="false" />
+          <Property Name="SpouseSurname" Type="nchar" MaxLength="100" />
+          <Property Name="SpouseFirstname" Type="nchar" MaxLength="100" />
+          <Property Name="SpouseIDNumber" Type="nchar" MaxLength="50" />
+          <Property Name="SpouseResidentialAddress" Type="nvarchar" MaxLength="500" />
+          <Property Name="SpousePostalAddress" Type="nvarchar" MaxLength="500" />
+          <Property Name="SpouseTelephoneNumber" Type="nchar" MaxLength="50" />
+          <Property Name="SpouseFaxNumber" Type="nchar" MaxLength="50" />
+          <Property Name="SpouseEmailAddress" Type="nchar" MaxLength="100" />
+          <Property Name="SpouseOccupation" Type="nchar" MaxLength="200" />
+          <Property Name="SpouseIncomePerMonth" Type="money" />
+          <Property Name="SpouseNameOfEmployer" Type="nchar" MaxLength="500" />
+          <Property Name="PlotTypeID" Type="bigint" Nullable="false" />
+          <Property Name="ErfSizeID" Type="bigint" Nullable="false" />
+          <Property Name="ApplicationDate" Type="datetime" Nullable="false" />
+          <Property Name="SignedByApplicant" Type="bit" />
+          <Property Name="SignedBySpouse" Type="bit" />
+          <Property Name="CreatedBy" Type="nchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="UpdatedBy" Type="nchar" MaxLength="50" />
+          <Property Name="UpdatedDate" Type="datetime" />
+          <Property Name="PHOTO" Type="image" />
+          <Property Name="StageApplication" Type="bit" />
+          <Property Name="StageAllocation" Type="bit" />
+          <Property Name="StageSale" Type="bit" />
+          <Property Name="StageRegistration" Type="bit" />
+          <Property Name="StageValuation" Type="bit" />
+        </EntityType>
+        <EntityType Name="App_ApplicantStatus">
+          <Key>
+            <PropertyRef Name="ApplicantStatusID" />
+          </Key>
+          <Property Name="ApplicantStatusID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ApplicantID" Type="bigint" Nullable="false" />
+          <Property Name="ApplicationStatusID" Type="bigint" Nullable="false" />
+          <Property Name="CreatedBy" Type="nchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="UpdatedBy" Type="nchar" MaxLength="50" />
+          <Property Name="UpdatedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="App_AttachmentDocument">
+          <Key>
+            <PropertyRef Name="AttachmentDocumentID" />
+          </Key>
+          <Property Name="AttachmentDocumentID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ApplicantID" Type="bigint" Nullable="false" />
+          <Property Name="AttachmentDocumentTypeID" Type="bigint" Nullable="false" />
+          <Property Name="AttachmentDocument" Type="image" Nullable="false" />
+          <Property Name="AttachmentDocumentFileName" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="CreatedBy" Type="nchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="UpdatedBy" Type="nchar" MaxLength="50" />
+          <Property Name="UpdatedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="App_Erf">
+          <Key>
+            <PropertyRef Name="ErfNumberID" />
+          </Key>
+          <Property Name="ErfNumberID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ErfNumber" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="ErfSize" Type="bigint" Nullable="false" />
+          <Property Name="ErfAreaID" Type="bigint" Nullable="false" />
+          <Property Name="PlotTypeID" Type="bigint" Nullable="false" />
+          <Property Name="ErfTownshipID" Type="bigint" Nullable="false" />
+          <Property Name="ErfComment" Type="nvarchar(max)" />
+          <Property Name="CreatedBy" Type="nchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="UpdatedBy" Type="nchar" MaxLength="50" />
+          <Property Name="UpdatedDate" Type="datetime" />
+          <Property Name="ErfPurchasePrice" Type="numeric" Precision="19" Scale="2" />
+          <Property Name="ErfAdminFees" Type="numeric" Precision="19" Scale="2" />
+          <Property Name="ErfVat" Type="numeric" Precision="19" Scale="2" />
+          <Property Name="StageAllocation" Type="bit" />
+          <Property Name="StageSale" Type="bit" />
+          <Property Name="StageRegistration" Type="bit" />
+          <Property Name="StageValuation" Type="bit" />
+          <Property Name="ErfTotalPurchasePrice" Type="numeric" Precision="19" Scale="2" />
+        </EntityType>
+        <EntityType Name="App_ExistingOwnership">
+          <Key>
+            <PropertyRef Name="ExistingOwnershipID" />
+          </Key>
+          <Property Name="ExistingOwnershipID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ApplicantID" Type="bigint" Nullable="false" />
+          <Property Name="ErfNumberID" Type="bigint" Nullable="false" />
+          <Property Name="ErfSize" Type="nchar" MaxLength="10" />
+          <Property Name="ReferenceNumber" Type="nchar" MaxLength="50" />
+          <Property Name="Improvement" Type="nchar" MaxLength="50" />
+          <Property Name="LeaseAggreement" Type="nchar" MaxLength="50" />
+          <Property Name="OutstandingAmount" Type="money" />
+          <Property Name="DateOfFirstOccupation" Type="datetime" />
+          <Property Name="WhoIsOccupyingTheErf" Type="nchar" MaxLength="50" />
+          <Property Name="WhoIsResponsibleForPayment" Type="nchar" MaxLength="50" />
+          <Property Name="CreatedBy" Type="nchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="UpdatedBy" Type="nchar" MaxLength="50" />
+          <Property Name="UpdatedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="App_Financial">
+          <Key>
+            <PropertyRef Name="FinancialID" />
+          </Key>
+          <Property Name="FinancialID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ApplicantID" Type="bigint" Nullable="false" />
+          <Property Name="PaymentMethodID" Type="bigint" Nullable="false" />
+          <Property Name="EstimatedCostOfConstruction" Type="money" />
+          <Property Name="QualifiedLoanAmount" Type="money" />
+          <Property Name="IntendedCommencementDate" Type="datetime" />
+          <Property Name="CreatedBy" Type="nchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="UpdatedBy" Type="nchar" MaxLength="50" />
+          <Property Name="UpdatedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="App_WaitingList">
+          <Key>
+            <PropertyRef Name="WaitingListID" />
+          </Key>
+          <Property Name="WaitingListID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="WaitingListNumber" Type="bigint" />
+          <Property Name="ApplicantID" Type="bigint" />
+          <Property Name="UserDefined1" Type="bigint" />
+          <Property Name="UserDefined2" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Employees">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar(max)" />
+          <Property Name="LastName" Type="nvarchar(max)" />
+          <Property Name="salary" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="BirthDate" Type="datetime" Nullable="false" />
+          <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ConfirmPassword" Type="nvarchar(max)" />
+          <Property Name="UserRoles" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="SMSContent">
+          <Key>
+            <PropertyRef Name="SmsID" />
+          </Key>
+          <Property Name="SmsID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SmsMessage" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ActiveSMS" Type="bit" />
+          <Property Name="DATETIMESTAMP" Type="datetime" />
+          <Property Name="SmsTypeID" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SmsData">
+          <Key>
+            <PropertyRef Name="SmsDataID" />
+          </Key>
+          <Property Name="SmsDataID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SMSInstanceID" Type="bigint" Nullable="false" />
+          <Property Name="CellNumber" Type="char" MaxLength="15" Nullable="false" />
+          <Property Name="SmsMessage" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SmsInstance">
+          <Key>
+            <PropertyRef Name="SMSInstanceID" />
+          </Key>
+          <Property Name="SMSInstanceID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProcessedDate" Type="datetime" Nullable="false" />
+          <Property Name="SmsTypeID" Type="bigint" Nullable="false" />
+          <Property Name="MonthID" Type="bigint" />
+          <Property Name="Year" Type="bigint" />
+        </EntityType>
+        <EntityType Name="SmsType">
+          <Key>
+            <PropertyRef Name="SmsTypeID" />
+          </Key>
+          <Property Name="SmsTypeID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SmsType" Type="nchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sys_ApplicationStatus">
+          <Key>
+            <PropertyRef Name="ApplicationStatusID" />
+          </Key>
+          <Property Name="ApplicationStatusID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ApplictionStatus" Type="nchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sys_AttachmentDocumentType">
+          <Key>
+            <PropertyRef Name="AttachmentDocumentTypeID" />
+          </Key>
+          <Property Name="AttachmentDocumentTypeID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AttachmentDocumentType" Type="nvarchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sys_ErfArea">
+          <Key>
+            <PropertyRef Name="ErfAreaID" />
+          </Key>
+          <Property Name="ErfAreaID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ErfArea" Type="nchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sys_ErfCost">
+          <Key>
+            <PropertyRef Name="ErfCostID" />
+          </Key>
+          <Property Name="ErfCostID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PlotTypeID" Type="bigint" Nullable="false" />
+          <Property Name="CostPerSqm" Type="numeric" Precision="19" Scale="2" Nullable="false" />
+          <Property Name="AdminFees" Type="numeric" Precision="19" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sys_ErfSize">
+          <Key>
+            <PropertyRef Name="ErfSizeID" />
+          </Key>
+          <Property Name="ErfSizeID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ErfSize" Type="nchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Sys_ErfTownship">
+          <Key>
+            <PropertyRef Name="ErfTownshipID" />
+          </Key>
+          <Property Name="ErfTownshipID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ErfTownship" Type="nchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sys_ErfZoning">
+          <Key>
+            <PropertyRef Name="ErfZoningID" />
+          </Key>
+          <Property Name="ErfZoningID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ErfZoning" Type="nchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sys_Month">
+          <Key>
+            <PropertyRef Name="MonthID" />
+          </Key>
+          <Property Name="MonthID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MonthName" Type="nchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sys_PaymentMethod">
+          <Key>
+            <PropertyRef Name="PaymentMethodID" />
+          </Key>
+          <Property Name="PaymentMethodID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PaymentMethod" Type="nchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'PMIS.dbo.Sys_Photo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Sys_Photo">
+          <Key>
+            <PropertyRef Name="PHOTO" />
+          </Key>
+          <Property Name="PHOTO" Type="image" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sys_PlotType">
+          <Key>
+            <PropertyRef Name="PlotTypeID" />
+          </Key>
+          <Property Name="PlotTypeID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PlotType" Type="nchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sys_Roles">
+          <Key>
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Name="RoleID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Role" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="RoleDescription" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="Sys_User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SystemUserName" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PhoneNumber" Type="nchar" MaxLength="50" />
+          <Property Name="RoleID" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'PMIS.dbo.App_ApplicantList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="App_ApplicantList">
+          <Key>
+            <PropertyRef Name="ApplicantID" />
+            <PropertyRef Name="Surname" />
+            <PropertyRef Name="Firstname" />
+            <PropertyRef Name="IDNumber" />
+            <PropertyRef Name="ResidentialAddress" />
+            <PropertyRef Name="PostalAddress" />
+            <PropertyRef Name="TelephoneNumber" />
+            <PropertyRef Name="FaxNumber" />
+            <PropertyRef Name="EmailAddress" />
+            <PropertyRef Name="Occupation" />
+            <PropertyRef Name="IncomePerMonth" />
+            <PropertyRef Name="NameOfEmployer" />
+            <PropertyRef Name="PlotTypeID" />
+            <PropertyRef Name="ErfSizeID" />
+            <PropertyRef Name="ApplicationDate" />
+            <PropertyRef Name="PlotType" />
+          </Key>
+          <Property Name="ApplicantID" Type="bigint" Nullable="false" />
+          <Property Name="Surname" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="Firstname" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="IDNumber" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="ResidentialAddress" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="PostalAddress" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="TelephoneNumber" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="FaxNumber" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="EmailAddress" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="Occupation" Type="nchar" MaxLength="200" Nullable="false" />
+          <Property Name="IncomePerMonth" Type="money" Nullable="false" />
+          <Property Name="NameOfEmployer" Type="nchar" MaxLength="500" Nullable="false" />
+          <Property Name="SpouseSurname" Type="nchar" MaxLength="100" />
+          <Property Name="SpouseFirstname" Type="nchar" MaxLength="100" />
+          <Property Name="SpouseIDNumber" Type="nchar" MaxLength="50" />
+          <Property Name="SpouseResidentialAddress" Type="nvarchar" MaxLength="500" />
+          <Property Name="SpousePostalAddress" Type="nvarchar" MaxLength="500" />
+          <Property Name="SpouseTelephoneNumber" Type="nchar" MaxLength="50" />
+          <Property Name="SpouseFaxNumber" Type="nchar" MaxLength="50" />
+          <Property Name="SpouseEmailAddress" Type="nchar" MaxLength="100" />
+          <Property Name="SpouseOccupation" Type="nchar" MaxLength="200" />
+          <Property Name="SpouseIncomePerMonth" Type="money" />
+          <Property Name="SpouseNameOfEmployer" Type="nchar" MaxLength="500" />
+          <Property Name="PlotTypeID" Type="bigint" Nullable="false" />
+          <Property Name="ErfSizeID" Type="bigint" Nullable="false" />
+          <Property Name="ApplicationDate" Type="datetime" Nullable="false" />
+          <Property Name="SignedByApplicant" Type="bit" />
+          <Property Name="SignedBySpouse" Type="bit" />
+          <Property Name="CreatedBy" Type="nchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="UpdatedBy" Type="nchar" MaxLength="50" />
+          <Property Name="UpdatedDate" Type="datetime" />
+          <Property Name="PHOTO" Type="image" />
+          <Property Name="StageApplication" Type="bit" />
+          <Property Name="StageAllocation" Type="bit" />
+          <Property Name="StageSale" Type="bit" />
+          <Property Name="StageRegistration" Type="bit" />
+          <Property Name="StageValuation" Type="bit" />
+          <Property Name="WaitingListNumber" Type="bigint" />
+          <Property Name="PlotType" Type="nchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_App_AcknowledgementData_App_Acknowledgment">
+          <End Role="App_Acknowledgment" Type="Self.App_Acknowledgment" Multiplicity="1" />
+          <End Role="App_AcknowledgementData" Type="Self.App_AcknowledgementData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="App_Acknowledgment">
+              <PropertyRef Name="AcknowledgmentID" />
+            </Principal>
+            <Dependent Role="App_AcknowledgementData">
+              <PropertyRef Name="AcknowledgmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_App_AcknowledgementData_App_Applicant">
+          <End Role="App_Applicant" Type="Self.App_Applicant" Multiplicity="1" />
+          <End Role="App_AcknowledgementData" Type="Self.App_AcknowledgementData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="App_Applicant">
+              <PropertyRef Name="ApplicantID" />
+            </Principal>
+            <Dependent Role="App_AcknowledgementData">
+              <PropertyRef Name="ApplicantID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_App_Acknowledgment_Sys_Month">
+          <End Role="Sys_Month" Type="Self.Sys_Month" Multiplicity="1" />
+          <End Role="App_Acknowledgment" Type="Self.App_Acknowledgment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_Month">
+              <PropertyRef Name="MonthID" />
+            </Principal>
+            <Dependent Role="App_Acknowledgment">
+              <PropertyRef Name="MonthID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_App_Allocation_Sys_Month">
+          <End Role="Sys_Month" Type="Self.Sys_Month" Multiplicity="1" />
+          <End Role="App_Allocation" Type="Self.App_Allocation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_Month">
+              <PropertyRef Name="MonthID" />
+            </Principal>
+            <Dependent Role="App_Allocation">
+              <PropertyRef Name="MonthID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_App_Allocation_Sys_PlotType">
+          <End Role="Sys_PlotType" Type="Self.Sys_PlotType" Multiplicity="1" />
+          <End Role="App_Allocation" Type="Self.App_Allocation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_PlotType">
+              <PropertyRef Name="PlotTypeID" />
+            </Principal>
+            <Dependent Role="App_Allocation">
+              <PropertyRef Name="PlotTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_App_AllocationData_App_Allocation">
+          <End Role="App_Allocation" Type="Self.App_Allocation" Multiplicity="1" />
+          <End Role="App_AllocationData" Type="Self.App_AllocationData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="App_Allocation">
+              <PropertyRef Name="AllocationID" />
+            </Principal>
+            <Dependent Role="App_AllocationData">
+              <PropertyRef Name="AllocationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_App_AllocationData_App_Applicant">
+          <End Role="App_Applicant" Type="Self.App_Applicant" Multiplicity="1" />
+          <End Role="App_AllocationData" Type="Self.App_AllocationData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="App_Applicant">
+              <PropertyRef Name="ApplicantID" />
+            </Principal>
+            <Dependent Role="App_AllocationData">
+              <PropertyRef Name="ApplicantID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_App_AllocationData_App_Erf">
+          <End Role="App_Erf" Type="Self.App_Erf" Multiplicity="1" />
+          <End Role="App_AllocationData" Type="Self.App_AllocationData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="App_Erf">
+              <PropertyRef Name="ErfNumberID" />
+            </Principal>
+            <Dependent Role="App_AllocationData">
+              <PropertyRef Name="ErfNumberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_App_Applicant_Sys_ErfSize">
+          <End Role="Sys_ErfSize" Type="Self.Sys_ErfSize" Multiplicity="1" />
+          <End Role="App_Applicant" Type="Self.App_Applicant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_ErfSize">
+              <PropertyRef Name="ErfSizeID" />
+            </Principal>
+            <Dependent Role="App_Applicant">
+              <PropertyRef Name="ErfSizeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_App_Applicant_Sys_PlotType">
+          <End Role="Sys_PlotType" Type="Self.Sys_PlotType" Multiplicity="1" />
+          <End Role="App_Applicant" Type="Self.App_Applicant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_PlotType">
+              <PropertyRef Name="PlotTypeID" />
+            </Principal>
+            <Dependent Role="App_Applicant">
+              <PropertyRef Name="PlotTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_App_ApplicantStatus_App_Applicant">
+          <End Role="App_Applicant" Type="Self.App_Applicant" Multiplicity="1" />
+          <End Role="App_ApplicantStatus" Type="Self.App_ApplicantStatus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="App_Applicant">
+              <PropertyRef Name="ApplicantID" />
+            </Principal>
+            <Dependent Role="App_ApplicantStatus">
+              <PropertyRef Name="ApplicantID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_App_ApplicantStatus_Sys_ApplicationStatus">
+          <End Role="Sys_ApplicationStatus" Type="Self.Sys_ApplicationStatus" Multiplicity="1" />
+          <End Role="App_ApplicantStatus" Type="Self.App_ApplicantStatus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_ApplicationStatus">
+              <PropertyRef Name="ApplicationStatusID" />
+            </Principal>
+            <Dependent Role="App_ApplicantStatus">
+              <PropertyRef Name="ApplicationStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_App_AttachmentDocument_App_Applicant">
+          <End Role="App_Applicant" Type="Self.App_Applicant" Multiplicity="1" />
+          <End Role="App_AttachmentDocument" Type="Self.App_AttachmentDocument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="App_Applicant">
+              <PropertyRef Name="ApplicantID" />
+            </Principal>
+            <Dependent Role="App_AttachmentDocument">
+              <PropertyRef Name="ApplicantID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_App_AttachmentDocument_Sys_AttachmentDocumentType">
+          <End Role="Sys_AttachmentDocumentType" Type="Self.Sys_AttachmentDocumentType" Multiplicity="1" />
+          <End Role="App_AttachmentDocument" Type="Self.App_AttachmentDocument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_AttachmentDocumentType">
+              <PropertyRef Name="AttachmentDocumentTypeID" />
+            </Principal>
+            <Dependent Role="App_AttachmentDocument">
+              <PropertyRef Name="AttachmentDocumentTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_App_Erf_Sys_ErfArea">
+          <End Role="Sys_ErfArea" Type="Self.Sys_ErfArea" Multiplicity="1" />
+          <End Role="App_Erf" Type="Self.App_Erf" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_ErfArea">
+              <PropertyRef Name="ErfAreaID" />
+            </Principal>
+            <Dependent Role="App_Erf">
+              <PropertyRef Name="ErfAreaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_App_Erf_Sys_ErfTownship">
+          <End Role="Sys_ErfTownship" Type="Self.Sys_ErfTownship" Multiplicity="1" />
+          <End Role="App_Erf" Type="Self.App_Erf" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_ErfTownship">
+              <PropertyRef Name="ErfTownshipID" />
+            </Principal>
+            <Dependent Role="App_Erf">
+              <PropertyRef Name="ErfTownshipID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_App_Erf_Sys_PlotType">
+          <End Role="Sys_PlotType" Type="Self.Sys_PlotType" Multiplicity="1" />
+          <End Role="App_Erf" Type="Self.App_Erf" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_PlotType">
+              <PropertyRef Name="PlotTypeID" />
+            </Principal>
+            <Dependent Role="App_Erf">
+              <PropertyRef Name="PlotTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_App_ExistingOwnership_App_Applicant">
+          <End Role="App_Applicant" Type="Self.App_Applicant" Multiplicity="1" />
+          <End Role="App_ExistingOwnership" Type="Self.App_ExistingOwnership" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="App_Applicant">
+              <PropertyRef Name="ApplicantID" />
+            </Principal>
+            <Dependent Role="App_ExistingOwnership">
+              <PropertyRef Name="ApplicantID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_App_ExistingOwnership_App_Erven">
+          <End Role="App_Erf" Type="Self.App_Erf" Multiplicity="1" />
+          <End Role="App_ExistingOwnership" Type="Self.App_ExistingOwnership" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="App_Erf">
+              <PropertyRef Name="ErfNumberID" />
+            </Principal>
+            <Dependent Role="App_ExistingOwnership">
+              <PropertyRef Name="ErfNumberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_App_Financial_App_Applicant">
+          <End Role="App_Applicant" Type="Self.App_Applicant" Multiplicity="1" />
+          <End Role="App_Financial" Type="Self.App_Financial" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="App_Applicant">
+              <PropertyRef Name="ApplicantID" />
+            </Principal>
+            <Dependent Role="App_Financial">
+              <PropertyRef Name="ApplicantID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_App_Financial_Sys_PaymentMethod">
+          <End Role="Sys_PaymentMethod" Type="Self.Sys_PaymentMethod" Multiplicity="1" />
+          <End Role="App_Financial" Type="Self.App_Financial" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_PaymentMethod">
+              <PropertyRef Name="PaymentMethodID" />
+            </Principal>
+            <Dependent Role="App_Financial">
+              <PropertyRef Name="PaymentMethodID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_App_WaitingList_App_Applicant">
+          <End Role="App_Applicant" Type="Self.App_Applicant" Multiplicity="0..1" />
+          <End Role="App_WaitingList" Type="Self.App_WaitingList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="App_Applicant">
+              <PropertyRef Name="ApplicantID" />
+            </Principal>
+            <Dependent Role="App_WaitingList">
+              <PropertyRef Name="ApplicantID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SMSContent_SmsType">
+          <End Role="SmsType" Type="Self.SmsType" Multiplicity="1" />
+          <End Role="SMSContent" Type="Self.SMSContent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SmsType">
+              <PropertyRef Name="SmsTypeID" />
+            </Principal>
+            <Dependent Role="SMSContent">
+              <PropertyRef Name="SmsTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SmsData_SmsInstance">
+          <End Role="SmsInstance" Type="Self.SmsInstance" Multiplicity="1" />
+          <End Role="SmsData" Type="Self.SmsData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SmsInstance">
+              <PropertyRef Name="SMSInstanceID" />
+            </Principal>
+            <Dependent Role="SmsData">
+              <PropertyRef Name="SMSInstanceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SmsInstance_Month">
+          <End Role="Sys_Month" Type="Self.Sys_Month" Multiplicity="0..1" />
+          <End Role="SmsInstance" Type="Self.SmsInstance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_Month">
+              <PropertyRef Name="MonthID" />
+            </Principal>
+            <Dependent Role="SmsInstance">
+              <PropertyRef Name="MonthID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SmsInstance_SmsType">
+          <End Role="SmsType" Type="Self.SmsType" Multiplicity="1" />
+          <End Role="SmsInstance" Type="Self.SmsInstance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SmsType">
+              <PropertyRef Name="SmsTypeID" />
+            </Principal>
+            <Dependent Role="SmsInstance">
+              <PropertyRef Name="SmsTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sys_ErfCost_Sys_PlotType">
+          <End Role="Sys_PlotType" Type="Self.Sys_PlotType" Multiplicity="1" />
+          <End Role="Sys_ErfCost" Type="Self.Sys_ErfCost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_PlotType">
+              <PropertyRef Name="PlotTypeID" />
+            </Principal>
+            <Dependent Role="Sys_ErfCost">
+              <PropertyRef Name="PlotTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SystemUser_SystemRoles">
+          <End Role="Sys_Roles" Type="Self.Sys_Roles" Multiplicity="1" />
+          <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_Roles">
+              <PropertyRef Name="RoleID" />
+            </Principal>
+            <Dependent Role="Sys_User">
+              <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="aa_Report_AcknowledgementLetterAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="AcknowledgmentID" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="aa_Report_AcknowledgementLetterApplicant" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="AcknowledgmentDataID" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="PMISModelStoreContainer">
+          <EntitySet Name="App_AcknowledgementData" EntityType="Self.App_AcknowledgementData" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="App_Acknowledgment" EntityType="Self.App_Acknowledgment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="App_Allocation" EntityType="Self.App_Allocation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="App_AllocationData" EntityType="Self.App_AllocationData" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="App_Applicant" EntityType="Self.App_Applicant" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="App_ApplicantStatus" EntityType="Self.App_ApplicantStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="App_AttachmentDocument" EntityType="Self.App_AttachmentDocument" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="App_Erf" EntityType="Self.App_Erf" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="App_ExistingOwnership" EntityType="Self.App_ExistingOwnership" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="App_Financial" EntityType="Self.App_Financial" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="App_WaitingList" EntityType="Self.App_WaitingList" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SMSContent" EntityType="Self.SMSContent" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SmsData" EntityType="Self.SmsData" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SmsInstance" EntityType="Self.SmsInstance" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SmsType" EntityType="Self.SmsType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sys_ApplicationStatus" EntityType="Self.Sys_ApplicationStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sys_AttachmentDocumentType" EntityType="Self.Sys_AttachmentDocumentType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sys_ErfArea" EntityType="Self.Sys_ErfArea" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sys_ErfCost" EntityType="Self.Sys_ErfCost" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sys_ErfSize" EntityType="Self.Sys_ErfSize" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sys_ErfTownship" EntityType="Self.Sys_ErfTownship" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sys_ErfZoning" EntityType="Self.Sys_ErfZoning" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sys_Month" EntityType="Self.Sys_Month" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sys_PaymentMethod" EntityType="Self.Sys_PaymentMethod" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sys_PlotType" EntityType="Self.Sys_PlotType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sys_Roles" EntityType="Self.Sys_Roles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sys_User" EntityType="Self.Sys_User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sys_Photo" EntityType="Self.Sys_Photo" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Sys_Photo].[PHOTO] AS [PHOTO]
+    FROM [dbo].[Sys_Photo] AS [Sys_Photo]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="App_ApplicantList" EntityType="Self.App_ApplicantList" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [App_ApplicantList].[ApplicantID] AS [ApplicantID], 
+    [App_ApplicantList].[Surname] AS [Surname], 
+    [App_ApplicantList].[Firstname] AS [Firstname], 
+    [App_ApplicantList].[IDNumber] AS [IDNumber], 
+    [App_ApplicantList].[ResidentialAddress] AS [ResidentialAddress], 
+    [App_ApplicantList].[PostalAddress] AS [PostalAddress], 
+    [App_ApplicantList].[TelephoneNumber] AS [TelephoneNumber], 
+    [App_ApplicantList].[FaxNumber] AS [FaxNumber], 
+    [App_ApplicantList].[EmailAddress] AS [EmailAddress], 
+    [App_ApplicantList].[Occupation] AS [Occupation], 
+    [App_ApplicantList].[IncomePerMonth] AS [IncomePerMonth], 
+    [App_ApplicantList].[NameOfEmployer] AS [NameOfEmployer], 
+    [App_ApplicantList].[SpouseSurname] AS [SpouseSurname], 
+    [App_ApplicantList].[SpouseFirstname] AS [SpouseFirstname], 
+    [App_ApplicantList].[SpouseIDNumber] AS [SpouseIDNumber], 
+    [App_ApplicantList].[SpouseResidentialAddress] AS [SpouseResidentialAddress], 
+    [App_ApplicantList].[SpousePostalAddress] AS [SpousePostalAddress], 
+    [App_ApplicantList].[SpouseTelephoneNumber] AS [SpouseTelephoneNumber], 
+    [App_ApplicantList].[SpouseFaxNumber] AS [SpouseFaxNumber], 
+    [App_ApplicantList].[SpouseEmailAddress] AS [SpouseEmailAddress], 
+    [App_ApplicantList].[SpouseOccupation] AS [SpouseOccupation], 
+    [App_ApplicantList].[SpouseIncomePerMonth] AS [SpouseIncomePerMonth], 
+    [App_ApplicantList].[SpouseNameOfEmployer] AS [SpouseNameOfEmployer], 
+    [App_ApplicantList].[PlotTypeID] AS [PlotTypeID], 
+    [App_ApplicantList].[ErfSizeID] AS [ErfSizeID], 
+    [App_ApplicantList].[ApplicationDate] AS [ApplicationDate], 
+    [App_ApplicantList].[SignedByApplicant] AS [SignedByApplicant], 
+    [App_ApplicantList].[SignedBySpouse] AS [SignedBySpouse], 
+    [App_ApplicantList].[CreatedBy] AS [CreatedBy], 
+    [App_ApplicantList].[CreatedDate] AS [CreatedDate], 
+    [App_ApplicantList].[UpdatedBy] AS [UpdatedBy], 
+    [App_ApplicantList].[UpdatedDate] AS [UpdatedDate], 
+    [App_ApplicantList].[PHOTO] AS [PHOTO], 
+    [App_ApplicantList].[StageApplication] AS [StageApplication], 
+    [App_ApplicantList].[StageAllocation] AS [StageAllocation], 
+    [App_ApplicantList].[StageSale] AS [StageSale], 
+    [App_ApplicantList].[StageRegistration] AS [StageRegistration], 
+    [App_ApplicantList].[StageValuation] AS [StageValuation], 
+    [App_ApplicantList].[WaitingListNumber] AS [WaitingListNumber], 
+    [App_ApplicantList].[PlotType] AS [PlotType]
+    FROM [dbo].[App_ApplicantList] AS [App_ApplicantList]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_App_AcknowledgementData_App_Acknowledgment" Association="Self.FK_App_AcknowledgementData_App_Acknowledgment">
+            <End Role="App_Acknowledgment" EntitySet="App_Acknowledgment" />
+            <End Role="App_AcknowledgementData" EntitySet="App_AcknowledgementData" />
+          </AssociationSet>
+          <AssociationSet Name="FK_App_AcknowledgementData_App_Applicant" Association="Self.FK_App_AcknowledgementData_App_Applicant">
+            <End Role="App_Applicant" EntitySet="App_Applicant" />
+            <End Role="App_AcknowledgementData" EntitySet="App_AcknowledgementData" />
+          </AssociationSet>
+          <AssociationSet Name="FK_App_Acknowledgment_Sys_Month" Association="Self.FK_App_Acknowledgment_Sys_Month">
+            <End Role="Sys_Month" EntitySet="Sys_Month" />
+            <End Role="App_Acknowledgment" EntitySet="App_Acknowledgment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_App_Allocation_Sys_Month" Association="Self.FK_App_Allocation_Sys_Month">
+            <End Role="Sys_Month" EntitySet="Sys_Month" />
+            <End Role="App_Allocation" EntitySet="App_Allocation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_App_Allocation_Sys_PlotType" Association="Self.FK_App_Allocation_Sys_PlotType">
+            <End Role="Sys_PlotType" EntitySet="Sys_PlotType" />
+            <End Role="App_Allocation" EntitySet="App_Allocation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_App_AllocationData_App_Allocation" Association="Self.FK_App_AllocationData_App_Allocation">
+            <End Role="App_Allocation" EntitySet="App_Allocation" />
+            <End Role="App_AllocationData" EntitySet="App_AllocationData" />
+          </AssociationSet>
+          <AssociationSet Name="FK_App_AllocationData_App_Applicant" Association="Self.FK_App_AllocationData_App_Applicant">
+            <End Role="App_Applicant" EntitySet="App_Applicant" />
+            <End Role="App_AllocationData" EntitySet="App_AllocationData" />
+          </AssociationSet>
+          <AssociationSet Name="FK_App_AllocationData_App_Erf" Association="Self.FK_App_AllocationData_App_Erf">
+            <End Role="App_Erf" EntitySet="App_Erf" />
+            <End Role="App_AllocationData" EntitySet="App_AllocationData" />
+          </AssociationSet>
+          <AssociationSet Name="FK_App_Applicant_Sys_ErfSize" Association="Self.FK_App_Applicant_Sys_ErfSize">
+            <End Role="Sys_ErfSize" EntitySet="Sys_ErfSize" />
+            <End Role="App_Applicant" EntitySet="App_Applicant" />
+          </AssociationSet>
+          <AssociationSet Name="FK_App_Applicant_Sys_PlotType" Association="Self.FK_App_Applicant_Sys_PlotType">
+            <End Role="Sys_PlotType" EntitySet="Sys_PlotType" />
+            <End Role="App_Applicant" EntitySet="App_Applicant" />
+          </AssociationSet>
+          <AssociationSet Name="FK_App_ApplicantStatus_App_Applicant" Association="Self.FK_App_ApplicantStatus_App_Applicant">
+            <End Role="App_Applicant" EntitySet="App_Applicant" />
+            <End Role="App_ApplicantStatus" EntitySet="App_ApplicantStatus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_App_ApplicantStatus_Sys_ApplicationStatus" Association="Self.FK_App_ApplicantStatus_Sys_ApplicationStatus">
+            <End Role="Sys_ApplicationStatus" EntitySet="Sys_ApplicationStatus" />
+            <End Role="App_ApplicantStatus" EntitySet="App_ApplicantStatus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_App_AttachmentDocument_App_Applicant" Association="Self.FK_App_AttachmentDocument_App_Applicant">
+            <End Role="App_Applicant" EntitySet="App_Applicant" />
+            <End Role="App_AttachmentDocument" EntitySet="App_AttachmentDocument" />
+          </AssociationSet>
+          <AssociationSet Name="FK_App_AttachmentDocument_Sys_AttachmentDocumentType" Association="Self.FK_App_AttachmentDocument_Sys_AttachmentDocumentType">
+            <End Role="Sys_AttachmentDocumentType" EntitySet="Sys_AttachmentDocumentType" />
+            <End Role="App_AttachmentDocument" EntitySet="App_AttachmentDocument" />
+          </AssociationSet>
+          <AssociationSet Name="FK_App_Erf_Sys_ErfArea" Association="Self.FK_App_Erf_Sys_ErfArea">
+            <End Role="Sys_ErfArea" EntitySet="Sys_ErfArea" />
+            <End Role="App_Erf" EntitySet="App_Erf" />
+          </AssociationSet>
+          <AssociationSet Name="FK_App_Erf_Sys_ErfTownship" Association="Self.FK_App_Erf_Sys_ErfTownship">
+            <End Role="Sys_ErfTownship" EntitySet="Sys_ErfTownship" />
+            <End Role="App_Erf" EntitySet="App_Erf" />
+          </AssociationSet>
+          <AssociationSet Name="FK_App_Erf_Sys_PlotType" Association="Self.FK_App_Erf_Sys_PlotType">
+            <End Role="Sys_PlotType" EntitySet="Sys_PlotType" />
+            <End Role="App_Erf" EntitySet="App_Erf" />
+          </AssociationSet>
+          <AssociationSet Name="FK_App_ExistingOwnership_App_Applicant" Association="Self.FK_App_ExistingOwnership_App_Applicant">
+            <End Role="App_Applicant" EntitySet="App_Applicant" />
+            <End Role="App_ExistingOwnership" EntitySet="App_ExistingOwnership" />
+          </AssociationSet>
+          <AssociationSet Name="FK_App_ExistingOwnership_App_Erven" Association="Self.FK_App_ExistingOwnership_App_Erven">
+            <End Role="App_Erf" EntitySet="App_Erf" />
+            <End Role="App_ExistingOwnership" EntitySet="App_ExistingOwnership" />
+          </AssociationSet>
+          <AssociationSet Name="FK_App_Financial_App_Applicant" Association="Self.FK_App_Financial_App_Applicant">
+            <End Role="App_Applicant" EntitySet="App_Applicant" />
+            <End Role="App_Financial" EntitySet="App_Financial" />
+          </AssociationSet>
+          <AssociationSet Name="FK_App_Financial_Sys_PaymentMethod" Association="Self.FK_App_Financial_Sys_PaymentMethod">
+            <End Role="Sys_PaymentMethod" EntitySet="Sys_PaymentMethod" />
+            <End Role="App_Financial" EntitySet="App_Financial" />
+          </AssociationSet>
+          <AssociationSet Name="FK_App_WaitingList_App_Applicant" Association="Self.FK_App_WaitingList_App_Applicant">
+            <End Role="App_Applicant" EntitySet="App_Applicant" />
+            <End Role="App_WaitingList" EntitySet="App_WaitingList" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SMSContent_SmsType" Association="Self.FK_SMSContent_SmsType">
+            <End Role="SmsType" EntitySet="SmsType" />
+            <End Role="SMSContent" EntitySet="SMSContent" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SmsData_SmsInstance" Association="Self.FK_SmsData_SmsInstance">
+            <End Role="SmsInstance" EntitySet="SmsInstance" />
+            <End Role="SmsData" EntitySet="SmsData" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SmsInstance_Month" Association="Self.FK_SmsInstance_Month">
+            <End Role="Sys_Month" EntitySet="Sys_Month" />
+            <End Role="SmsInstance" EntitySet="SmsInstance" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SmsInstance_SmsType" Association="Self.FK_SmsInstance_SmsType">
+            <End Role="SmsType" EntitySet="SmsType" />
+            <End Role="SmsInstance" EntitySet="SmsInstance" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sys_ErfCost_Sys_PlotType" Association="Self.FK_Sys_ErfCost_Sys_PlotType">
+            <End Role="Sys_PlotType" EntitySet="Sys_PlotType" />
+            <End Role="Sys_ErfCost" EntitySet="Sys_ErfCost" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SystemUser_SystemRoles" Association="Self.FK_SystemUser_SystemRoles">
+            <End Role="Sys_Roles" EntitySet="Sys_Roles" />
+            <End Role="Sys_User" EntitySet="Sys_User" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PMISModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="App_AcknowledgementData">
+          <Key>
+            <PropertyRef Name="AcknowledgmentDataID" />
+          </Key>
+          <Property Name="AcknowledgmentDataID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AcknowledgmentID" Type="Int64" Nullable="false" />
+          <Property Name="ApplicantID" Type="Int64" Nullable="false" />
+          <Property Name="AcknowledgmentLetter" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="AcknowledgmentLetterFileName" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="App_Acknowledgment" Relationship="Self.FK_App_AcknowledgementData_App_Acknowledgment" FromRole="App_AcknowledgementData" ToRole="App_Acknowledgment" />
+          <NavigationProperty Name="App_Applicant" Relationship="Self.FK_App_AcknowledgementData_App_Applicant" FromRole="App_AcknowledgementData" ToRole="App_Applicant" />
+        </EntityType>
+        <EntityType Name="App_Acknowledgment">
+          <Key>
+            <PropertyRef Name="AcknowledgmentID" />
+          </Key>
+          <Property Name="AcknowledgmentID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MonthID" Type="Int64" Nullable="false" />
+          <Property Name="AcknowledmentYear" Type="Int64" Nullable="false" />
+          <Property Name="AcknowledmentDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="AcknowledgmentLetter" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="AcknowledgmentLetterFileName" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="App_AcknowledgementData" Relationship="Self.FK_App_AcknowledgementData_App_Acknowledgment" FromRole="App_Acknowledgment" ToRole="App_AcknowledgementData" />
+          <NavigationProperty Name="Sys_Month" Relationship="Self.FK_App_Acknowledgment_Sys_Month" FromRole="App_Acknowledgment" ToRole="Sys_Month" />
+        </EntityType>
+        <EntityType Name="App_Allocation">
+          <Key>
+            <PropertyRef Name="AllocationID" />
+          </Key>
+          <Property Name="AllocationID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PlotTypeID" Type="Int64" Nullable="false" />
+          <Property Name="MonthID" Type="Int64" Nullable="false" />
+          <Property Name="AllocationYear" Type="Int64" Nullable="false" />
+          <Property Name="AllocationDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="AllocationLetter" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="AllocationLetterFileName" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Sys_Month" Relationship="Self.FK_App_Allocation_Sys_Month" FromRole="App_Allocation" ToRole="Sys_Month" />
+          <NavigationProperty Name="Sys_PlotType" Relationship="Self.FK_App_Allocation_Sys_PlotType" FromRole="App_Allocation" ToRole="Sys_PlotType" />
+          <NavigationProperty Name="App_AllocationData" Relationship="Self.FK_App_AllocationData_App_Allocation" FromRole="App_Allocation" ToRole="App_AllocationData" />
+        </EntityType>
+        <EntityType Name="App_AllocationData">
+          <Key>
+            <PropertyRef Name="AllocationDataID" />
+          </Key>
+          <Property Name="AllocationDataID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AllocationID" Type="Int64" Nullable="false" />
+          <Property Name="ApplicantID" Type="Int64" Nullable="false" />
+          <Property Name="ErfNumberID" Type="Int64" Nullable="false" />
+          <Property Name="AllocationReason" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AllocationLetter" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="AllocationLetterFileName" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="App_Allocation" Relationship="Self.FK_App_AllocationData_App_Allocation" FromRole="App_AllocationData" ToRole="App_Allocation" />
+          <NavigationProperty Name="App_Applicant" Relationship="Self.FK_App_AllocationData_App_Applicant" FromRole="App_AllocationData" ToRole="App_Applicant" />
+          <NavigationProperty Name="App_Erf" Relationship="Self.FK_App_AllocationData_App_Erf" FromRole="App_AllocationData" ToRole="App_Erf" />
+        </EntityType>
+        <EntityType Name="App_Applicant">
+          <Key>
+            <PropertyRef Name="ApplicantID" />
+          </Key>
+          <Property Name="ApplicantID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Surname" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Firstname" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="IDNumber" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="ResidentialAddress" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PostalAddress" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TelephoneNumber" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="FaxNumber" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="EmailAddress" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Occupation" Type="String" MaxLength="200" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="IncomePerMonth" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="NameOfEmployer" Type="String" MaxLength="500" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="SpouseSurname" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="SpouseFirstname" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="SpouseIDNumber" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="SpouseResidentialAddress" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SpousePostalAddress" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SpouseTelephoneNumber" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="SpouseFaxNumber" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="SpouseEmailAddress" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="SpouseOccupation" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+          <Property Name="SpouseIncomePerMonth" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="SpouseNameOfEmployer" Type="String" MaxLength="500" FixedLength="true" Unicode="true" />
+          <Property Name="PlotTypeID" Type="Int64" Nullable="false" />
+          <Property Name="ErfSizeID" Type="Int64" Nullable="false" />
+          <Property Name="ApplicationDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="SignedByApplicant" Type="Boolean" />
+          <Property Name="SignedBySpouse" Type="Boolean" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="PHOTO" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="StageApplication" Type="Boolean" />
+          <Property Name="StageAllocation" Type="Boolean" />
+          <Property Name="StageSale" Type="Boolean" />
+          <Property Name="StageRegistration" Type="Boolean" />
+          <Property Name="StageValuation" Type="Boolean" />
+          <NavigationProperty Name="App_AcknowledgementData" Relationship="Self.FK_App_AcknowledgementData_App_Applicant" FromRole="App_Applicant" ToRole="App_AcknowledgementData" />
+          <NavigationProperty Name="App_AllocationData" Relationship="Self.FK_App_AllocationData_App_Applicant" FromRole="App_Applicant" ToRole="App_AllocationData" />
+          <NavigationProperty Name="Sys_ErfSize" Relationship="Self.FK_App_Applicant_Sys_ErfSize" FromRole="App_Applicant" ToRole="Sys_ErfSize" />
+          <NavigationProperty Name="Sys_PlotType" Relationship="Self.FK_App_Applicant_Sys_PlotType" FromRole="App_Applicant" ToRole="Sys_PlotType" />
+          <NavigationProperty Name="App_ApplicantStatus" Relationship="Self.FK_App_ApplicantStatus_App_Applicant" FromRole="App_Applicant" ToRole="App_ApplicantStatus" />
+          <NavigationProperty Name="App_AttachmentDocument" Relationship="Self.FK_App_AttachmentDocument_App_Applicant" FromRole="App_Applicant" ToRole="App_AttachmentDocument" />
+          <NavigationProperty Name="App_ExistingOwnership" Relationship="Self.FK_App_ExistingOwnership_App_Applicant" FromRole="App_Applicant" ToRole="App_ExistingOwnership" />
+          <NavigationProperty Name="App_Financial" Relationship="Self.FK_App_Financial_App_Applicant" FromRole="App_Applicant" ToRole="App_Financial" />
+          <NavigationProperty Name="App_WaitingList" Relationship="Self.FK_App_WaitingList_App_Applicant" FromRole="App_Applicant" ToRole="App_WaitingList" />
+        </EntityType>
+        <EntityType Name="App_ApplicantStatus">
+          <Key>
+            <PropertyRef Name="ApplicantStatusID" />
+          </Key>
+          <Property Name="ApplicantStatusID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ApplicantID" Type="Int64" Nullable="false" />
+          <Property Name="ApplicationStatusID" Type="Int64" Nullable="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="App_Applicant" Relationship="Self.FK_App_ApplicantStatus_App_Applicant" FromRole="App_ApplicantStatus" ToRole="App_Applicant" />
+          <NavigationProperty Name="Sys_ApplicationStatus" Relationship="Self.FK_App_ApplicantStatus_Sys_ApplicationStatus" FromRole="App_ApplicantStatus" ToRole="Sys_ApplicationStatus" />
+        </EntityType>
+        <EntityType Name="App_AttachmentDocument">
+          <Key>
+            <PropertyRef Name="AttachmentDocumentID" />
+          </Key>
+          <Property Name="AttachmentDocumentID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ApplicantID" Type="Int64" Nullable="false" />
+          <Property Name="AttachmentDocumentTypeID" Type="Int64" Nullable="false" />
+          <Property Name="AttachmentDocument" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="AttachmentDocumentFileName" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="App_Applicant" Relationship="Self.FK_App_AttachmentDocument_App_Applicant" FromRole="App_AttachmentDocument" ToRole="App_Applicant" />
+          <NavigationProperty Name="Sys_AttachmentDocumentType" Relationship="Self.FK_App_AttachmentDocument_Sys_AttachmentDocumentType" FromRole="App_AttachmentDocument" ToRole="Sys_AttachmentDocumentType" />
+        </EntityType>
+        <EntityType Name="App_Erf">
+          <Key>
+            <PropertyRef Name="ErfNumberID" />
+          </Key>
+          <Property Name="ErfNumberID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ErfNumber" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="ErfSize" Type="Int64" Nullable="false" />
+          <Property Name="ErfAreaID" Type="Int64" Nullable="false" />
+          <Property Name="PlotTypeID" Type="Int64" Nullable="false" />
+          <Property Name="ErfTownshipID" Type="Int64" Nullable="false" />
+          <Property Name="ErfComment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="ErfPurchasePrice" Type="Decimal" Precision="19" Scale="2" />
+          <Property Name="ErfAdminFees" Type="Decimal" Precision="19" Scale="2" />
+          <Property Name="ErfVat" Type="Decimal" Precision="19" Scale="2" />
+          <Property Name="StageAllocation" Type="Boolean" />
+          <Property Name="StageSale" Type="Boolean" />
+          <Property Name="StageRegistration" Type="Boolean" />
+          <Property Name="StageValuation" Type="Boolean" />
+          <Property Name="ErfTotalPurchasePrice" Type="Decimal" Precision="19" Scale="2" />
+          <NavigationProperty Name="App_AllocationData" Relationship="Self.FK_App_AllocationData_App_Erf" FromRole="App_Erf" ToRole="App_AllocationData" />
+          <NavigationProperty Name="Sys_ErfArea" Relationship="Self.FK_App_Erf_Sys_ErfArea" FromRole="App_Erf" ToRole="Sys_ErfArea" />
+          <NavigationProperty Name="Sys_ErfTownship" Relationship="Self.FK_App_Erf_Sys_ErfTownship" FromRole="App_Erf" ToRole="Sys_ErfTownship" />
+          <NavigationProperty Name="Sys_PlotType" Relationship="Self.FK_App_Erf_Sys_PlotType" FromRole="App_Erf" ToRole="Sys_PlotType" />
+          <NavigationProperty Name="App_ExistingOwnership" Relationship="Self.FK_App_ExistingOwnership_App_Erven" FromRole="App_Erf" ToRole="App_ExistingOwnership" />
+        </EntityType>
+        <EntityType Name="App_ExistingOwnership">
+          <Key>
+            <PropertyRef Name="ExistingOwnershipID" />
+          </Key>
+          <Property Name="ExistingOwnershipID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ApplicantID" Type="Int64" Nullable="false" />
+          <Property Name="ErfNumberID" Type="Int64" Nullable="false" />
+          <Property Name="ErfSize" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="ReferenceNumber" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Improvement" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="LeaseAggreement" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="OutstandingAmount" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="DateOfFirstOccupation" Type="DateTime" Precision="3" />
+          <Property Name="WhoIsOccupyingTheErf" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="WhoIsResponsibleForPayment" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="App_Applicant" Relationship="Self.FK_App_ExistingOwnership_App_Applicant" FromRole="App_ExistingOwnership" ToRole="App_Applicant" />
+          <NavigationProperty Name="App_Erf" Relationship="Self.FK_App_ExistingOwnership_App_Erven" FromRole="App_ExistingOwnership" ToRole="App_Erf" />
+        </EntityType>
+        <EntityType Name="App_Financial">
+          <Key>
+            <PropertyRef Name="FinancialID" />
+          </Key>
+          <Property Name="FinancialID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ApplicantID" Type="Int64" Nullable="false" />
+          <Property Name="PaymentMethodID" Type="Int64" Nullable="false" />
+          <Property Name="EstimatedCostOfConstruction" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="QualifiedLoanAmount" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="IntendedCommencementDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="App_Applicant" Relationship="Self.FK_App_Financial_App_Applicant" FromRole="App_Financial" ToRole="App_Applicant" />
+          <NavigationProperty Name="Sys_PaymentMethod" Relationship="Self.FK_App_Financial_Sys_PaymentMethod" FromRole="App_Financial" ToRole="Sys_PaymentMethod" />
+        </EntityType>
+        <EntityType Name="App_WaitingList">
+          <Key>
+            <PropertyRef Name="WaitingListID" />
+          </Key>
+          <Property Name="WaitingListID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="WaitingListNumber" Type="Int64" />
+          <Property Name="ApplicantID" Type="Int64" />
+          <Property Name="UserDefined1" Type="Int64" />
+          <Property Name="UserDefined2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="App_Applicant" Relationship="Self.FK_App_WaitingList_App_Applicant" FromRole="App_WaitingList" ToRole="App_Applicant" />
+        </EntityType>
+        <EntityType Name="SMSContent">
+          <Key>
+            <PropertyRef Name="SmsID" />
+          </Key>
+          <Property Name="SmsID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SmsMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ActiveSMS" Type="Boolean" />
+          <Property Name="DATETIMESTAMP" Type="DateTime" Precision="3" />
+          <Property Name="SmsTypeID" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="SmsType" Relationship="Self.FK_SMSContent_SmsType" FromRole="SMSContent" ToRole="SmsType" />
+        </EntityType>
+        <EntityType Name="SmsData">
+          <Key>
+            <PropertyRef Name="SmsDataID" />
+          </Key>
+          <Property Name="SmsDataID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SMSInstanceID" Type="Int64" Nullable="false" />
+          <Property Name="CellNumber" Type="String" MaxLength="15" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="SmsMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="SmsInstance" Relationship="Self.FK_SmsData_SmsInstance" FromRole="SmsData" ToRole="SmsInstance" />
+        </EntityType>
+        <EntityType Name="SmsInstance">
+          <Key>
+            <PropertyRef Name="SMSInstanceID" />
+          </Key>
+          <Property Name="SMSInstanceID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProcessedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="SmsTypeID" Type="Int64" Nullable="false" />
+          <Property Name="MonthID" Type="Int64" />
+          <Property Name="Year" Type="Int64" />
+          <NavigationProperty Name="SmsDatas" Relationship="Self.FK_SmsData_SmsInstance" FromRole="SmsInstance" ToRole="SmsData" />
+          <NavigationProperty Name="Sys_Month" Relationship="Self.FK_SmsInstance_Month" FromRole="SmsInstance" ToRole="Sys_Month" />
+          <NavigationProperty Name="SmsType" Relationship="Self.FK_SmsInstance_SmsType" FromRole="SmsInstance" ToRole="SmsType" />
+        </EntityType>
+        <EntityType Name="SmsType">
+          <Key>
+            <PropertyRef Name="SmsTypeID" />
+          </Key>
+          <Property Name="SmsTypeID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SmsType1" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="SMSContents" Relationship="Self.FK_SMSContent_SmsType" FromRole="SmsType" ToRole="SMSContent" />
+          <NavigationProperty Name="SmsInstances" Relationship="Self.FK_SmsInstance_SmsType" FromRole="SmsType" ToRole="SmsInstance" />
+        </EntityType>
+        <EntityType Name="Sys_ApplicationStatus">
+          <Key>
+            <PropertyRef Name="ApplicationStatusID" />
+          </Key>
+          <Property Name="ApplicationStatusID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ApplictionStatus" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="App_ApplicantStatus" Relationship="Self.FK_App_ApplicantStatus_Sys_ApplicationStatus" FromRole="Sys_ApplicationStatus" ToRole="App_ApplicantStatus" />
+        </EntityType>
+        <EntityType Name="Sys_AttachmentDocumentType">
+          <Key>
+            <PropertyRef Name="AttachmentDocumentTypeID" />
+          </Key>
+          <Property Name="AttachmentDocumentTypeID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AttachmentDocumentType" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="App_AttachmentDocument" Relationship="Self.FK_App_AttachmentDocument_Sys_AttachmentDocumentType" FromRole="Sys_AttachmentDocumentType" ToRole="App_AttachmentDocument" />
+        </EntityType>
+        <EntityType Name="Sys_ErfArea">
+          <Key>
+            <PropertyRef Name="ErfAreaID" />
+          </Key>
+          <Property Name="ErfAreaID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ErfArea" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="App_Erf" Relationship="Self.FK_App_Erf_Sys_ErfArea" FromRole="Sys_ErfArea" ToRole="App_Erf" />
+        </EntityType>
+        <EntityType Name="Sys_ErfCost">
+          <Key>
+            <PropertyRef Name="ErfCostID" />
+          </Key>
+          <Property Name="ErfCostID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PlotTypeID" Type="Int64" Nullable="false" />
+          <Property Name="CostPerSqm" Type="Decimal" Precision="19" Scale="2" Nullable="false" />
+          <Property Name="AdminFees" Type="Decimal" Precision="19" Scale="2" Nullable="false" />
+          <NavigationProperty Name="Sys_PlotType" Relationship="Self.FK_Sys_ErfCost_Sys_PlotType" FromRole="Sys_ErfCost" ToRole="Sys_PlotType" />
+        </EntityType>
+        <EntityType Name="Sys_ErfSize">
+          <Key>
+            <PropertyRef Name="ErfSizeID" />
+          </Key>
+          <Property Name="ErfSizeID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ErfSize" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="App_Applicant" Relationship="Self.FK_App_Applicant_Sys_ErfSize" FromRole="Sys_ErfSize" ToRole="App_Applicant" />
+        </EntityType>
+        <EntityType Name="Sys_ErfTownship">
+          <Key>
+            <PropertyRef Name="ErfTownshipID" />
+          </Key>
+          <Property Name="ErfTownshipID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ErfTownship" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="App_Erf" Relationship="Self.FK_App_Erf_Sys_ErfTownship" FromRole="Sys_ErfTownship" ToRole="App_Erf" />
+        </EntityType>
+        <EntityType Name="Sys_ErfZoning">
+          <Key>
+            <PropertyRef Name="ErfZoningID" />
+          </Key>
+          <Property Name="ErfZoningID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ErfZoning" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sys_Month">
+          <Key>
+            <PropertyRef Name="MonthID" />
+          </Key>
+          <Property Name="MonthID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MonthName" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="App_Acknowledgment" Relationship="Self.FK_App_Acknowledgment_Sys_Month" FromRole="Sys_Month" ToRole="App_Acknowledgment" />
+          <NavigationProperty Name="App_Allocation" Relationship="Self.FK_App_Allocation_Sys_Month" FromRole="Sys_Month" ToRole="App_Allocation" />
+          <NavigationProperty Name="SmsInstances" Relationship="Self.FK_SmsInstance_Month" FromRole="Sys_Month" ToRole="SmsInstance" />
+        </EntityType>
+        <EntityType Name="Sys_PaymentMethod">
+          <Key>
+            <PropertyRef Name="PaymentMethodID" />
+          </Key>
+          <Property Name="PaymentMethodID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PaymentMethod" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="App_Financial" Relationship="Self.FK_App_Financial_Sys_PaymentMethod" FromRole="Sys_PaymentMethod" ToRole="App_Financial" />
+        </EntityType>
+        <EntityType Name="Sys_PlotType">
+          <Key>
+            <PropertyRef Name="PlotTypeID" />
+          </Key>
+          <Property Name="PlotTypeID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PlotType" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="App_Allocation" Relationship="Self.FK_App_Allocation_Sys_PlotType" FromRole="Sys_PlotType" ToRole="App_Allocation" />
+          <NavigationProperty Name="App_Applicant" Relationship="Self.FK_App_Applicant_Sys_PlotType" FromRole="Sys_PlotType" ToRole="App_Applicant" />
+          <NavigationProperty Name="App_Erf" Relationship="Self.FK_App_Erf_Sys_PlotType" FromRole="Sys_PlotType" ToRole="App_Erf" />
+          <NavigationProperty Name="Sys_ErfCost" Relationship="Self.FK_Sys_ErfCost_Sys_PlotType" FromRole="Sys_PlotType" ToRole="Sys_ErfCost" />
+        </EntityType>
+        <EntityType Name="Sys_Roles">
+          <Key>
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Name="RoleID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RoleDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Sys_User" Relationship="Self.FK_SystemUser_SystemRoles" FromRole="Sys_Roles" ToRole="Sys_User" />
+        </EntityType>
+        <EntityType Name="Sys_User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SystemUserName" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="RoleID" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Sys_Roles" Relationship="Self.FK_SystemUser_SystemRoles" FromRole="Sys_User" ToRole="Sys_Roles" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Sys_Photo">
+          <Key>
+            <PropertyRef Name="PHOTO" />
+          </Key>
+          <Property Name="PHOTO" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_App_AcknowledgementData_App_Acknowledgment">
+          <End Role="App_Acknowledgment" Type="Self.App_Acknowledgment" Multiplicity="1" />
+          <End Role="App_AcknowledgementData" Type="Self.App_AcknowledgementData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="App_Acknowledgment">
+              <PropertyRef Name="AcknowledgmentID" />
+            </Principal>
+            <Dependent Role="App_AcknowledgementData">
+              <PropertyRef Name="AcknowledgmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_App_AcknowledgementData_App_Applicant">
+          <End Role="App_Applicant" Type="Self.App_Applicant" Multiplicity="1" />
+          <End Role="App_AcknowledgementData" Type="Self.App_AcknowledgementData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="App_Applicant">
+              <PropertyRef Name="ApplicantID" />
+            </Principal>
+            <Dependent Role="App_AcknowledgementData">
+              <PropertyRef Name="ApplicantID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_App_Acknowledgment_Sys_Month">
+          <End Role="Sys_Month" Type="Self.Sys_Month" Multiplicity="1" />
+          <End Role="App_Acknowledgment" Type="Self.App_Acknowledgment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_Month">
+              <PropertyRef Name="MonthID" />
+            </Principal>
+            <Dependent Role="App_Acknowledgment">
+              <PropertyRef Name="MonthID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_App_Allocation_Sys_Month">
+          <End Role="Sys_Month" Type="Self.Sys_Month" Multiplicity="1" />
+          <End Role="App_Allocation" Type="Self.App_Allocation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_Month">
+              <PropertyRef Name="MonthID" />
+            </Principal>
+            <Dependent Role="App_Allocation">
+              <PropertyRef Name="MonthID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_App_Allocation_Sys_PlotType">
+          <End Role="Sys_PlotType" Type="Self.Sys_PlotType" Multiplicity="1" />
+          <End Role="App_Allocation" Type="Self.App_Allocation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_PlotType">
+              <PropertyRef Name="PlotTypeID" />
+            </Principal>
+            <Dependent Role="App_Allocation">
+              <PropertyRef Name="PlotTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_App_AllocationData_App_Allocation">
+          <End Role="App_Allocation" Type="Self.App_Allocation" Multiplicity="1" />
+          <End Role="App_AllocationData" Type="Self.App_AllocationData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="App_Allocation">
+              <PropertyRef Name="AllocationID" />
+            </Principal>
+            <Dependent Role="App_AllocationData">
+              <PropertyRef Name="AllocationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_App_AllocationData_App_Applicant">
+          <End Role="App_Applicant" Type="Self.App_Applicant" Multiplicity="1" />
+          <End Role="App_AllocationData" Type="Self.App_AllocationData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="App_Applicant">
+              <PropertyRef Name="ApplicantID" />
+            </Principal>
+            <Dependent Role="App_AllocationData">
+              <PropertyRef Name="ApplicantID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_App_AllocationData_App_Erf">
+          <End Role="App_Erf" Type="Self.App_Erf" Multiplicity="1" />
+          <End Role="App_AllocationData" Type="Self.App_AllocationData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="App_Erf">
+              <PropertyRef Name="ErfNumberID" />
+            </Principal>
+            <Dependent Role="App_AllocationData">
+              <PropertyRef Name="ErfNumberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_App_Applicant_Sys_ErfSize">
+          <End Role="Sys_ErfSize" Type="Self.Sys_ErfSize" Multiplicity="1" />
+          <End Role="App_Applicant" Type="Self.App_Applicant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_ErfSize">
+              <PropertyRef Name="ErfSizeID" />
+            </Principal>
+            <Dependent Role="App_Applicant">
+              <PropertyRef Name="ErfSizeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_App_Applicant_Sys_PlotType">
+          <End Role="Sys_PlotType" Type="Self.Sys_PlotType" Multiplicity="1" />
+          <End Role="App_Applicant" Type="Self.App_Applicant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_PlotType">
+              <PropertyRef Name="PlotTypeID" />
+            </Principal>
+            <Dependent Role="App_Applicant">
+              <PropertyRef Name="PlotTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_App_ApplicantStatus_App_Applicant">
+          <End Role="App_Applicant" Type="Self.App_Applicant" Multiplicity="1" />
+          <End Role="App_ApplicantStatus" Type="Self.App_ApplicantStatus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="App_Applicant">
+              <PropertyRef Name="ApplicantID" />
+            </Principal>
+            <Dependent Role="App_ApplicantStatus">
+              <PropertyRef Name="ApplicantID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_App_AttachmentDocument_App_Applicant">
+          <End Role="App_Applicant" Type="Self.App_Applicant" Multiplicity="1" />
+          <End Role="App_AttachmentDocument" Type="Self.App_AttachmentDocument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="App_Applicant">
+              <PropertyRef Name="ApplicantID" />
+            </Principal>
+            <Dependent Role="App_AttachmentDocument">
+              <PropertyRef Name="ApplicantID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_App_ExistingOwnership_App_Applicant">
+          <End Role="App_Applicant" Type="Self.App_Applicant" Multiplicity="1" />
+          <End Role="App_ExistingOwnership" Type="Self.App_ExistingOwnership" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="App_Applicant">
+              <PropertyRef Name="ApplicantID" />
+            </Principal>
+            <Dependent Role="App_ExistingOwnership">
+              <PropertyRef Name="ApplicantID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_App_Financial_App_Applicant">
+          <End Role="App_Applicant" Type="Self.App_Applicant" Multiplicity="1" />
+          <End Role="App_Financial" Type="Self.App_Financial" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="App_Applicant">
+              <PropertyRef Name="ApplicantID" />
+            </Principal>
+            <Dependent Role="App_Financial">
+              <PropertyRef Name="ApplicantID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_App_WaitingList_App_Applicant">
+          <End Role="App_Applicant" Type="Self.App_Applicant" Multiplicity="0..1" />
+          <End Role="App_WaitingList" Type="Self.App_WaitingList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="App_Applicant">
+              <PropertyRef Name="ApplicantID" />
+            </Principal>
+            <Dependent Role="App_WaitingList">
+              <PropertyRef Name="ApplicantID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_App_ApplicantStatus_Sys_ApplicationStatus">
+          <End Role="Sys_ApplicationStatus" Type="Self.Sys_ApplicationStatus" Multiplicity="1" />
+          <End Role="App_ApplicantStatus" Type="Self.App_ApplicantStatus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_ApplicationStatus">
+              <PropertyRef Name="ApplicationStatusID" />
+            </Principal>
+            <Dependent Role="App_ApplicantStatus">
+              <PropertyRef Name="ApplicationStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_App_AttachmentDocument_Sys_AttachmentDocumentType">
+          <End Role="Sys_AttachmentDocumentType" Type="Self.Sys_AttachmentDocumentType" Multiplicity="1" />
+          <End Role="App_AttachmentDocument" Type="Self.App_AttachmentDocument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_AttachmentDocumentType">
+              <PropertyRef Name="AttachmentDocumentTypeID" />
+            </Principal>
+            <Dependent Role="App_AttachmentDocument">
+              <PropertyRef Name="AttachmentDocumentTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_App_Erf_Sys_ErfArea">
+          <End Role="Sys_ErfArea" Type="Self.Sys_ErfArea" Multiplicity="1" />
+          <End Role="App_Erf" Type="Self.App_Erf" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_ErfArea">
+              <PropertyRef Name="ErfAreaID" />
+            </Principal>
+            <Dependent Role="App_Erf">
+              <PropertyRef Name="ErfAreaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_App_Erf_Sys_ErfTownship">
+          <End Role="Sys_ErfTownship" Type="Self.Sys_ErfTownship" Multiplicity="1" />
+          <End Role="App_Erf" Type="Self.App_Erf" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_ErfTownship">
+              <PropertyRef Name="ErfTownshipID" />
+            </Principal>
+            <Dependent Role="App_Erf">
+              <PropertyRef Name="ErfTownshipID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_App_Erf_Sys_PlotType">
+          <End Role="Sys_PlotType" Type="Self.Sys_PlotType" Multiplicity="1" />
+          <End Role="App_Erf" Type="Self.App_Erf" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_PlotType">
+              <PropertyRef Name="PlotTypeID" />
+            </Principal>
+            <Dependent Role="App_Erf">
+              <PropertyRef Name="PlotTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_App_ExistingOwnership_App_Erven">
+          <End Role="App_Erf" Type="Self.App_Erf" Multiplicity="1" />
+          <End Role="App_ExistingOwnership" Type="Self.App_ExistingOwnership" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="App_Erf">
+              <PropertyRef Name="ErfNumberID" />
+            </Principal>
+            <Dependent Role="App_ExistingOwnership">
+              <PropertyRef Name="ErfNumberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_App_Financial_Sys_PaymentMethod">
+          <End Role="Sys_PaymentMethod" Type="Self.Sys_PaymentMethod" Multiplicity="1" />
+          <End Role="App_Financial" Type="Self.App_Financial" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_PaymentMethod">
+              <PropertyRef Name="PaymentMethodID" />
+            </Principal>
+            <Dependent Role="App_Financial">
+              <PropertyRef Name="PaymentMethodID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SMSContent_SmsType">
+          <End Role="SmsType" Type="Self.SmsType" Multiplicity="1" />
+          <End Role="SMSContent" Type="Self.SMSContent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SmsType">
+              <PropertyRef Name="SmsTypeID" />
+            </Principal>
+            <Dependent Role="SMSContent">
+              <PropertyRef Name="SmsTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SmsData_SmsInstance">
+          <End Role="SmsInstance" Type="Self.SmsInstance" Multiplicity="1" />
+          <End Role="SmsData" Type="Self.SmsData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SmsInstance">
+              <PropertyRef Name="SMSInstanceID" />
+            </Principal>
+            <Dependent Role="SmsData">
+              <PropertyRef Name="SMSInstanceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SmsInstance_Month">
+          <End Role="Sys_Month" Type="Self.Sys_Month" Multiplicity="0..1" />
+          <End Role="SmsInstance" Type="Self.SmsInstance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_Month">
+              <PropertyRef Name="MonthID" />
+            </Principal>
+            <Dependent Role="SmsInstance">
+              <PropertyRef Name="MonthID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SmsInstance_SmsType">
+          <End Role="SmsType" Type="Self.SmsType" Multiplicity="1" />
+          <End Role="SmsInstance" Type="Self.SmsInstance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SmsType">
+              <PropertyRef Name="SmsTypeID" />
+            </Principal>
+            <Dependent Role="SmsInstance">
+              <PropertyRef Name="SmsTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sys_ErfCost_Sys_PlotType">
+          <End Role="Sys_PlotType" Type="Self.Sys_PlotType" Multiplicity="1" />
+          <End Role="Sys_ErfCost" Type="Self.Sys_ErfCost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_PlotType">
+              <PropertyRef Name="PlotTypeID" />
+            </Principal>
+            <Dependent Role="Sys_ErfCost">
+              <PropertyRef Name="PlotTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SystemUser_SystemRoles">
+          <End Role="Sys_Roles" Type="Self.Sys_Roles" Multiplicity="1" />
+          <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_Roles">
+              <PropertyRef Name="RoleID" />
+            </Principal>
+            <Dependent Role="Sys_User">
+              <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PMISEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="App_AcknowledgementData" EntityType="Self.App_AcknowledgementData" />
+          <EntitySet Name="App_Acknowledgment" EntityType="Self.App_Acknowledgment" />
+          <EntitySet Name="App_Allocation" EntityType="Self.App_Allocation" />
+          <EntitySet Name="App_AllocationData" EntityType="Self.App_AllocationData" />
+          <EntitySet Name="App_Applicant" EntityType="Self.App_Applicant" />
+          <EntitySet Name="App_ApplicantStatus" EntityType="Self.App_ApplicantStatus" />
+          <EntitySet Name="App_AttachmentDocument" EntityType="Self.App_AttachmentDocument" />
+          <EntitySet Name="App_Erf" EntityType="Self.App_Erf" />
+          <EntitySet Name="App_ExistingOwnership" EntityType="Self.App_ExistingOwnership" />
+          <EntitySet Name="App_Financial" EntityType="Self.App_Financial" />
+          <EntitySet Name="App_WaitingList" EntityType="Self.App_WaitingList" />
+          <EntitySet Name="SMSContents" EntityType="Self.SMSContent" />
+          <EntitySet Name="SmsDatas" EntityType="Self.SmsData" />
+          <EntitySet Name="SmsInstances" EntityType="Self.SmsInstance" />
+          <EntitySet Name="SmsTypes" EntityType="Self.SmsType" />
+          <EntitySet Name="Sys_ApplicationStatus" EntityType="Self.Sys_ApplicationStatus" />
+          <EntitySet Name="Sys_AttachmentDocumentType" EntityType="Self.Sys_AttachmentDocumentType" />
+          <EntitySet Name="Sys_ErfArea" EntityType="Self.Sys_ErfArea" />
+          <EntitySet Name="Sys_ErfCost" EntityType="Self.Sys_ErfCost" />
+          <EntitySet Name="Sys_ErfSize" EntityType="Self.Sys_ErfSize" />
+          <EntitySet Name="Sys_ErfTownship" EntityType="Self.Sys_ErfTownship" />
+          <EntitySet Name="Sys_ErfZoning" EntityType="Self.Sys_ErfZoning" />
+          <EntitySet Name="Sys_Month" EntityType="Self.Sys_Month" />
+          <EntitySet Name="Sys_PaymentMethod" EntityType="Self.Sys_PaymentMethod" />
+          <EntitySet Name="Sys_PlotType" EntityType="Self.Sys_PlotType" />
+          <EntitySet Name="Sys_Roles" EntityType="Self.Sys_Roles" />
+          <EntitySet Name="Sys_User" EntityType="Self.Sys_User" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="Sys_Photo" EntityType="Self.Sys_Photo" />
+          <AssociationSet Name="FK_App_AcknowledgementData_App_Acknowledgment" Association="Self.FK_App_AcknowledgementData_App_Acknowledgment">
+            <End Role="App_Acknowledgment" EntitySet="App_Acknowledgment" />
+            <End Role="App_AcknowledgementData" EntitySet="App_AcknowledgementData" />
+          </AssociationSet>
+          <AssociationSet Name="FK_App_AcknowledgementData_App_Applicant" Association="Self.FK_App_AcknowledgementData_App_Applicant">
+            <End Role="App_Applicant" EntitySet="App_Applicant" />
+            <End Role="App_AcknowledgementData" EntitySet="App_AcknowledgementData" />
+          </AssociationSet>
+          <AssociationSet Name="FK_App_Acknowledgment_Sys_Month" Association="Self.FK_App_Acknowledgment_Sys_Month">
+            <End Role="Sys_Month" EntitySet="Sys_Month" />
+            <End Role="App_Acknowledgment" EntitySet="App_Acknowledgment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_App_Allocation_Sys_Month" Association="Self.FK_App_Allocation_Sys_Month">
+            <End Role="Sys_Month" EntitySet="Sys_Month" />
+            <End Role="App_Allocation" EntitySet="App_Allocation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_App_Allocation_Sys_PlotType" Association="Self.FK_App_Allocation_Sys_PlotType">
+            <End Role="Sys_PlotType" EntitySet="Sys_PlotType" />
+            <End Role="App_Allocation" EntitySet="App_Allocation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_App_AllocationData_App_Allocation" Association="Self.FK_App_AllocationData_App_Allocation">
+            <End Role="App_Allocation" EntitySet="App_Allocation" />
+            <End Role="App_AllocationData" EntitySet="App_AllocationData" />
+          </AssociationSet>
+          <AssociationSet Name="FK_App_AllocationData_App_Applicant" Association="Self.FK_App_AllocationData_App_Applicant">
+            <End Role="App_Applicant" EntitySet="App_Applicant" />
+            <End Role="App_AllocationData" EntitySet="App_AllocationData" />
+          </AssociationSet>
+          <AssociationSet Name="FK_App_AllocationData_App_Erf" Association="Self.FK_App_AllocationData_App_Erf">
+            <End Role="App_Erf" EntitySet="App_Erf" />
+            <End Role="App_AllocationData" EntitySet="App_AllocationData" />
+          </AssociationSet>
+          <AssociationSet Name="FK_App_Applicant_Sys_ErfSize" Association="Self.FK_App_Applicant_Sys_ErfSize">
+            <End Role="Sys_ErfSize" EntitySet="Sys_ErfSize" />
+            <End Role="App_Applicant" EntitySet="App_Applicant" />
+          </AssociationSet>
+          <AssociationSet Name="FK_App_Applicant_Sys_PlotType" Association="Self.FK_App_Applicant_Sys_PlotType">
+            <End Role="Sys_PlotType" EntitySet="Sys_PlotType" />
+            <End Role="App_Applicant" EntitySet="App_Applicant" />
+          </AssociationSet>
+          <AssociationSet Name="FK_App_ApplicantStatus_App_Applicant" Association="Self.FK_App_ApplicantStatus_App_Applicant">
+            <End Role="App_Applicant" EntitySet="App_Applicant" />
+            <End Role="App_ApplicantStatus" EntitySet="App_ApplicantStatus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_App_AttachmentDocument_App_Applicant" Association="Self.FK_App_AttachmentDocument_App_Applicant">
+            <End Role="App_Applicant" EntitySet="App_Applicant" />
+            <End Role="App_AttachmentDocument" EntitySet="App_AttachmentDocument" />
+          </AssociationSet>
+          <AssociationSet Name="FK_App_ExistingOwnership_App_Applicant" Association="Self.FK_App_ExistingOwnership_App_Applicant">
+            <End Role="App_Applicant" EntitySet="App_Applicant" />
+            <End Role="App_ExistingOwnership" EntitySet="App_ExistingOwnership" />
+          </AssociationSet>
+          <AssociationSet Name="FK_App_Financial_App_Applicant" Association="Self.FK_App_Financial_App_Applicant">
+            <End Role="App_Applicant" EntitySet="App_Applicant" />
+            <End Role="App_Financial" EntitySet="App_Financial" />
+          </AssociationSet>
+          <AssociationSet Name="FK_App_WaitingList_App_Applicant" Association="Self.FK_App_WaitingList_App_Applicant">
+            <End Role="App_Applicant" EntitySet="App_Applicant" />
+            <End Role="App_WaitingList" EntitySet="App_WaitingList" />
+          </AssociationSet>
+          <AssociationSet Name="FK_App_ApplicantStatus_Sys_ApplicationStatus" Association="Self.FK_App_ApplicantStatus_Sys_ApplicationStatus">
+            <End Role="Sys_ApplicationStatus" EntitySet="Sys_ApplicationStatus" />
+            <End Role="App_ApplicantStatus" EntitySet="App_ApplicantStatus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_App_AttachmentDocument_Sys_AttachmentDocumentType" Association="Self.FK_App_AttachmentDocument_Sys_AttachmentDocumentType">
+            <End Role="Sys_AttachmentDocumentType" EntitySet="Sys_AttachmentDocumentType" />
+            <End Role="App_AttachmentDocument" EntitySet="App_AttachmentDocument" />
+          </AssociationSet>
+          <AssociationSet Name="FK_App_Erf_Sys_ErfArea" Association="Self.FK_App_Erf_Sys_ErfArea">
+            <End Role="Sys_ErfArea" EntitySet="Sys_ErfArea" />
+            <End Role="App_Erf" EntitySet="App_Erf" />
+          </AssociationSet>
+          <AssociationSet Name="FK_App_Erf_Sys_ErfTownship" Association="Self.FK_App_Erf_Sys_ErfTownship">
+            <End Role="Sys_ErfTownship" EntitySet="Sys_ErfTownship" />
+            <End Role="App_Erf" EntitySet="App_Erf" />
+          </AssociationSet>
+          <AssociationSet Name="FK_App_Erf_Sys_PlotType" Association="Self.FK_App_Erf_Sys_PlotType">
+            <End Role="Sys_PlotType" EntitySet="Sys_PlotType" />
+            <End Role="App_Erf" EntitySet="App_Erf" />
+          </AssociationSet>
+          <AssociationSet Name="FK_App_ExistingOwnership_App_Erven" Association="Self.FK_App_ExistingOwnership_App_Erven">
+            <End Role="App_Erf" EntitySet="App_Erf" />
+            <End Role="App_ExistingOwnership" EntitySet="App_ExistingOwnership" />
+          </AssociationSet>
+          <AssociationSet Name="FK_App_Financial_Sys_PaymentMethod" Association="Self.FK_App_Financial_Sys_PaymentMethod">
+            <End Role="Sys_PaymentMethod" EntitySet="Sys_PaymentMethod" />
+            <End Role="App_Financial" EntitySet="App_Financial" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SMSContent_SmsType" Association="Self.FK_SMSContent_SmsType">
+            <End Role="SmsType" EntitySet="SmsTypes" />
+            <End Role="SMSContent" EntitySet="SMSContents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SmsData_SmsInstance" Association="Self.FK_SmsData_SmsInstance">
+            <End Role="SmsInstance" EntitySet="SmsInstances" />
+            <End Role="SmsData" EntitySet="SmsDatas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SmsInstance_Month" Association="Self.FK_SmsInstance_Month">
+            <End Role="Sys_Month" EntitySet="Sys_Month" />
+            <End Role="SmsInstance" EntitySet="SmsInstances" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SmsInstance_SmsType" Association="Self.FK_SmsInstance_SmsType">
+            <End Role="SmsType" EntitySet="SmsTypes" />
+            <End Role="SmsInstance" EntitySet="SmsInstances" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sys_ErfCost_Sys_PlotType" Association="Self.FK_Sys_ErfCost_Sys_PlotType">
+            <End Role="Sys_PlotType" EntitySet="Sys_PlotType" />
+            <End Role="Sys_ErfCost" EntitySet="Sys_ErfCost" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SystemUser_SystemRoles" Association="Self.FK_SystemUser_SystemRoles">
+            <End Role="Sys_Roles" EntitySet="Sys_Roles" />
+            <End Role="Sys_User" EntitySet="Sys_User" />
+          </AssociationSet>
+          <EntitySet Name="App_ApplicantList" EntityType="PMISModel.App_ApplicantList" />
+          <FunctionImport Name="aa_Report_AcknowledgementLetterAll" ReturnType="Collection(PMISModel.aa_Report_AcknowledgementLetterAll_Result)">
+          <Parameter Name="AcknowledgmentID" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="aa_Report_AcknowledgementLetterApplicant" ReturnType="Collection(PMISModel.aa_Report_AcknowledgementLetterApplicant_Result)">
+          <Parameter Name="AcknowledgmentDataID" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+          <EntitySet Name="Employees" EntityType="PMISModel.Employee" />
+        </EntityContainer>
+        <EntityType Name="App_ApplicantList">
+          <Key>
+            <PropertyRef Name="ApplicantID" />
+            <PropertyRef Name="Surname" />
+            <PropertyRef Name="Firstname" />
+            <PropertyRef Name="IDNumber" />
+            <PropertyRef Name="ResidentialAddress" />
+            <PropertyRef Name="PostalAddress" />
+            <PropertyRef Name="TelephoneNumber" />
+            <PropertyRef Name="FaxNumber" />
+            <PropertyRef Name="EmailAddress" />
+            <PropertyRef Name="Occupation" />
+            <PropertyRef Name="IncomePerMonth" />
+            <PropertyRef Name="NameOfEmployer" />
+            <PropertyRef Name="PlotTypeID" />
+            <PropertyRef Name="ErfSizeID" />
+            <PropertyRef Name="ApplicationDate" />
+            <PropertyRef Name="PlotType" />
+          </Key>
+          <Property Name="ApplicantID" Type="Int64" Nullable="false" />
+          <Property Name="Surname" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="Firstname" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="IDNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="ResidentialAddress" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PostalAddress" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TelephoneNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="FaxNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="EmailAddress" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="Occupation" Type="String" Nullable="false" MaxLength="200" FixedLength="true" Unicode="true" />
+          <Property Name="IncomePerMonth" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="NameOfEmployer" Type="String" Nullable="false" MaxLength="500" FixedLength="true" Unicode="true" />
+          <Property Name="SpouseSurname" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="SpouseFirstname" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="SpouseIDNumber" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="SpouseResidentialAddress" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SpousePostalAddress" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SpouseTelephoneNumber" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="SpouseFaxNumber" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="SpouseEmailAddress" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="SpouseOccupation" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+          <Property Name="SpouseIncomePerMonth" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="SpouseNameOfEmployer" Type="String" MaxLength="500" FixedLength="true" Unicode="true" />
+          <Property Name="PlotTypeID" Type="Int64" Nullable="false" />
+          <Property Name="ErfSizeID" Type="Int64" Nullable="false" />
+          <Property Name="ApplicationDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="SignedByApplicant" Type="Boolean" />
+          <Property Name="SignedBySpouse" Type="Boolean" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="PHOTO" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="StageApplication" Type="Boolean" />
+          <Property Name="StageAllocation" Type="Boolean" />
+          <Property Name="StageSale" Type="Boolean" />
+          <Property Name="StageRegistration" Type="Boolean" />
+          <Property Name="StageValuation" Type="Boolean" />
+          <Property Name="WaitingListNumber" Type="Int64" />
+          <Property Name="PlotType" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <ComplexType Name="aa_Report_AcknowledgementLetterAll_Result">
+          <Property Type="Int64" Name="AcknowledgmentID" Nullable="false" />
+          <Property Type="Int64" Name="MonthID" Nullable="false" />
+          <Property Type="Int64" Name="AcknowledmentYear" Nullable="false" />
+          <Property Type="DateTime" Name="AcknowledmentDate" Nullable="false" Precision="23" />
+          <Property Type="Int64" Name="ApplicantID" Nullable="false" />
+          <Property Type="String" Name="Firstname" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Surname" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="IDNumber" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="PostalAddress" Nullable="false" MaxLength="500" />
+        </ComplexType>
+        <ComplexType Name="aa_Report_AcknowledgementLetterApplicant_Result">
+          <Property Type="Int64" Name="AcknowledgmentID" Nullable="false" />
+          <Property Type="Int64" Name="MonthID" Nullable="false" />
+          <Property Type="Int64" Name="AcknowledmentYear" Nullable="false" />
+          <Property Type="DateTime" Name="AcknowledmentDate" Nullable="false" Precision="23" />
+          <Property Type="Int64" Name="ApplicantID" Nullable="false" />
+          <Property Type="String" Name="Firstname" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Surname" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="IDNumber" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="PostalAddress" Nullable="false" MaxLength="500" />
+        </ComplexType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="salary" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="BirthDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ConfirmPassword" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UserRoles" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PMISModelStoreContainer" CdmEntityContainer="PMISEntities">
+          <EntitySetMapping Name="App_AcknowledgementData">
+            <EntityTypeMapping TypeName="PMISModel.App_AcknowledgementData">
+              <MappingFragment StoreEntitySet="App_AcknowledgementData">
+                <ScalarProperty Name="AcknowledgmentDataID" ColumnName="AcknowledgmentDataID" />
+                <ScalarProperty Name="AcknowledgmentID" ColumnName="AcknowledgmentID" />
+                <ScalarProperty Name="ApplicantID" ColumnName="ApplicantID" />
+                <ScalarProperty Name="AcknowledgmentLetter" ColumnName="AcknowledgmentLetter" />
+                <ScalarProperty Name="AcknowledgmentLetterFileName" ColumnName="AcknowledgmentLetterFileName" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="App_Acknowledgment">
+            <EntityTypeMapping TypeName="PMISModel.App_Acknowledgment">
+              <MappingFragment StoreEntitySet="App_Acknowledgment">
+                <ScalarProperty Name="AcknowledgmentID" ColumnName="AcknowledgmentID" />
+                <ScalarProperty Name="MonthID" ColumnName="MonthID" />
+                <ScalarProperty Name="AcknowledmentYear" ColumnName="AcknowledmentYear" />
+                <ScalarProperty Name="AcknowledmentDate" ColumnName="AcknowledmentDate" />
+                <ScalarProperty Name="AcknowledgmentLetter" ColumnName="AcknowledgmentLetter" />
+                <ScalarProperty Name="AcknowledgmentLetterFileName" ColumnName="AcknowledgmentLetterFileName" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="App_Allocation">
+            <EntityTypeMapping TypeName="PMISModel.App_Allocation">
+              <MappingFragment StoreEntitySet="App_Allocation">
+                <ScalarProperty Name="AllocationID" ColumnName="AllocationID" />
+                <ScalarProperty Name="PlotTypeID" ColumnName="PlotTypeID" />
+                <ScalarProperty Name="MonthID" ColumnName="MonthID" />
+                <ScalarProperty Name="AllocationYear" ColumnName="AllocationYear" />
+                <ScalarProperty Name="AllocationDate" ColumnName="AllocationDate" />
+                <ScalarProperty Name="AllocationLetter" ColumnName="AllocationLetter" />
+                <ScalarProperty Name="AllocationLetterFileName" ColumnName="AllocationLetterFileName" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="App_AllocationData">
+            <EntityTypeMapping TypeName="PMISModel.App_AllocationData">
+              <MappingFragment StoreEntitySet="App_AllocationData">
+                <ScalarProperty Name="AllocationDataID" ColumnName="AllocationDataID" />
+                <ScalarProperty Name="AllocationID" ColumnName="AllocationID" />
+                <ScalarProperty Name="ApplicantID" ColumnName="ApplicantID" />
+                <ScalarProperty Name="ErfNumberID" ColumnName="ErfNumberID" />
+                <ScalarProperty Name="AllocationReason" ColumnName="AllocationReason" />
+                <ScalarProperty Name="AllocationLetter" ColumnName="AllocationLetter" />
+                <ScalarProperty Name="AllocationLetterFileName" ColumnName="AllocationLetterFileName" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="App_Applicant">
+            <EntityTypeMapping TypeName="PMISModel.App_Applicant">
+              <MappingFragment StoreEntitySet="App_Applicant">
+                <ScalarProperty Name="ApplicantID" ColumnName="ApplicantID" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+                <ScalarProperty Name="IDNumber" ColumnName="IDNumber" />
+                <ScalarProperty Name="ResidentialAddress" ColumnName="ResidentialAddress" />
+                <ScalarProperty Name="PostalAddress" ColumnName="PostalAddress" />
+                <ScalarProperty Name="TelephoneNumber" ColumnName="TelephoneNumber" />
+                <ScalarProperty Name="FaxNumber" ColumnName="FaxNumber" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="Occupation" ColumnName="Occupation" />
+                <ScalarProperty Name="IncomePerMonth" ColumnName="IncomePerMonth" />
+                <ScalarProperty Name="NameOfEmployer" ColumnName="NameOfEmployer" />
+                <ScalarProperty Name="SpouseSurname" ColumnName="SpouseSurname" />
+                <ScalarProperty Name="SpouseFirstname" ColumnName="SpouseFirstname" />
+                <ScalarProperty Name="SpouseIDNumber" ColumnName="SpouseIDNumber" />
+                <ScalarProperty Name="SpouseResidentialAddress" ColumnName="SpouseResidentialAddress" />
+                <ScalarProperty Name="SpousePostalAddress" ColumnName="SpousePostalAddress" />
+                <ScalarProperty Name="SpouseTelephoneNumber" ColumnName="SpouseTelephoneNumber" />
+                <ScalarProperty Name="SpouseFaxNumber" ColumnName="SpouseFaxNumber" />
+                <ScalarProperty Name="SpouseEmailAddress" ColumnName="SpouseEmailAddress" />
+                <ScalarProperty Name="SpouseOccupation" ColumnName="SpouseOccupation" />
+                <ScalarProperty Name="SpouseIncomePerMonth" ColumnName="SpouseIncomePerMonth" />
+                <ScalarProperty Name="SpouseNameOfEmployer" ColumnName="SpouseNameOfEmployer" />
+                <ScalarProperty Name="PlotTypeID" ColumnName="PlotTypeID" />
+                <ScalarProperty Name="ErfSizeID" ColumnName="ErfSizeID" />
+                <ScalarProperty Name="ApplicationDate" ColumnName="ApplicationDate" />
+                <ScalarProperty Name="SignedByApplicant" ColumnName="SignedByApplicant" />
+                <ScalarProperty Name="SignedBySpouse" ColumnName="SignedBySpouse" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="PHOTO" ColumnName="PHOTO" />
+                <ScalarProperty Name="StageApplication" ColumnName="StageApplication" />
+                <ScalarProperty Name="StageAllocation" ColumnName="StageAllocation" />
+                <ScalarProperty Name="StageSale" ColumnName="StageSale" />
+                <ScalarProperty Name="StageRegistration" ColumnName="StageRegistration" />
+                <ScalarProperty Name="StageValuation" ColumnName="StageValuation" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="App_ApplicantStatus">
+            <EntityTypeMapping TypeName="PMISModel.App_ApplicantStatus">
+              <MappingFragment StoreEntitySet="App_ApplicantStatus">
+                <ScalarProperty Name="ApplicantStatusID" ColumnName="ApplicantStatusID" />
+                <ScalarProperty Name="ApplicantID" ColumnName="ApplicantID" />
+                <ScalarProperty Name="ApplicationStatusID" ColumnName="ApplicationStatusID" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="App_AttachmentDocument">
+            <EntityTypeMapping TypeName="PMISModel.App_AttachmentDocument">
+              <MappingFragment StoreEntitySet="App_AttachmentDocument">
+                <ScalarProperty Name="AttachmentDocumentID" ColumnName="AttachmentDocumentID" />
+                <ScalarProperty Name="ApplicantID" ColumnName="ApplicantID" />
+                <ScalarProperty Name="AttachmentDocumentTypeID" ColumnName="AttachmentDocumentTypeID" />
+                <ScalarProperty Name="AttachmentDocument" ColumnName="AttachmentDocument" />
+                <ScalarProperty Name="AttachmentDocumentFileName" ColumnName="AttachmentDocumentFileName" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="App_Erf">
+            <EntityTypeMapping TypeName="PMISModel.App_Erf">
+              <MappingFragment StoreEntitySet="App_Erf">
+                <ScalarProperty Name="ErfNumberID" ColumnName="ErfNumberID" />
+                <ScalarProperty Name="ErfNumber" ColumnName="ErfNumber" />
+                <ScalarProperty Name="ErfSize" ColumnName="ErfSize" />
+                <ScalarProperty Name="ErfAreaID" ColumnName="ErfAreaID" />
+                <ScalarProperty Name="PlotTypeID" ColumnName="PlotTypeID" />
+                <ScalarProperty Name="ErfTownshipID" ColumnName="ErfTownshipID" />
+                <ScalarProperty Name="ErfComment" ColumnName="ErfComment" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="ErfPurchasePrice" ColumnName="ErfPurchasePrice" />
+                <ScalarProperty Name="ErfAdminFees" ColumnName="ErfAdminFees" />
+                <ScalarProperty Name="ErfVat" ColumnName="ErfVat" />
+                <ScalarProperty Name="StageAllocation" ColumnName="StageAllocation" />
+                <ScalarProperty Name="StageSale" ColumnName="StageSale" />
+                <ScalarProperty Name="StageRegistration" ColumnName="StageRegistration" />
+                <ScalarProperty Name="StageValuation" ColumnName="StageValuation" />
+                <ScalarProperty Name="ErfTotalPurchasePrice" ColumnName="ErfTotalPurchasePrice" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="App_ExistingOwnership">
+            <EntityTypeMapping TypeName="PMISModel.App_ExistingOwnership">
+              <MappingFragment StoreEntitySet="App_ExistingOwnership">
+                <ScalarProperty Name="ExistingOwnershipID" ColumnName="ExistingOwnershipID" />
+                <ScalarProperty Name="ApplicantID" ColumnName="ApplicantID" />
+                <ScalarProperty Name="ErfNumberID" ColumnName="ErfNumberID" />
+                <ScalarProperty Name="ErfSize" ColumnName="ErfSize" />
+                <ScalarProperty Name="ReferenceNumber" ColumnName="ReferenceNumber" />
+                <ScalarProperty Name="Improvement" ColumnName="Improvement" />
+                <ScalarProperty Name="LeaseAggreement" ColumnName="LeaseAggreement" />
+                <ScalarProperty Name="OutstandingAmount" ColumnName="OutstandingAmount" />
+                <ScalarProperty Name="DateOfFirstOccupation" ColumnName="DateOfFirstOccupation" />
+                <ScalarProperty Name="WhoIsOccupyingTheErf" ColumnName="WhoIsOccupyingTheErf" />
+                <ScalarProperty Name="WhoIsResponsibleForPayment" ColumnName="WhoIsResponsibleForPayment" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="App_Financial">
+            <EntityTypeMapping TypeName="PMISModel.App_Financial">
+              <MappingFragment StoreEntitySet="App_Financial">
+                <ScalarProperty Name="FinancialID" ColumnName="FinancialID" />
+                <ScalarProperty Name="ApplicantID" ColumnName="ApplicantID" />
+                <ScalarProperty Name="PaymentMethodID" ColumnName="PaymentMethodID" />
+                <ScalarProperty Name="EstimatedCostOfConstruction" ColumnName="EstimatedCostOfConstruction" />
+                <ScalarProperty Name="QualifiedLoanAmount" ColumnName="QualifiedLoanAmount" />
+                <ScalarProperty Name="IntendedCommencementDate" ColumnName="IntendedCommencementDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="App_WaitingList">
+            <EntityTypeMapping TypeName="PMISModel.App_WaitingList">
+              <MappingFragment StoreEntitySet="App_WaitingList">
+                <ScalarProperty Name="WaitingListID" ColumnName="WaitingListID" />
+                <ScalarProperty Name="WaitingListNumber" ColumnName="WaitingListNumber" />
+                <ScalarProperty Name="ApplicantID" ColumnName="ApplicantID" />
+                <ScalarProperty Name="UserDefined1" ColumnName="UserDefined1" />
+                <ScalarProperty Name="UserDefined2" ColumnName="UserDefined2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SMSContents">
+            <EntityTypeMapping TypeName="PMISModel.SMSContent">
+              <MappingFragment StoreEntitySet="SMSContent">
+                <ScalarProperty Name="SmsID" ColumnName="SmsID" />
+                <ScalarProperty Name="SmsMessage" ColumnName="SmsMessage" />
+                <ScalarProperty Name="ActiveSMS" ColumnName="ActiveSMS" />
+                <ScalarProperty Name="DATETIMESTAMP" ColumnName="DATETIMESTAMP" />
+                <ScalarProperty Name="SmsTypeID" ColumnName="SmsTypeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SmsDatas">
+            <EntityTypeMapping TypeName="PMISModel.SmsData">
+              <MappingFragment StoreEntitySet="SmsData">
+                <ScalarProperty Name="SmsDataID" ColumnName="SmsDataID" />
+                <ScalarProperty Name="SMSInstanceID" ColumnName="SMSInstanceID" />
+                <ScalarProperty Name="CellNumber" ColumnName="CellNumber" />
+                <ScalarProperty Name="SmsMessage" ColumnName="SmsMessage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SmsInstances">
+            <EntityTypeMapping TypeName="PMISModel.SmsInstance">
+              <MappingFragment StoreEntitySet="SmsInstance">
+                <ScalarProperty Name="SMSInstanceID" ColumnName="SMSInstanceID" />
+                <ScalarProperty Name="ProcessedDate" ColumnName="ProcessedDate" />
+                <ScalarProperty Name="SmsTypeID" ColumnName="SmsTypeID" />
+                <ScalarProperty Name="MonthID" ColumnName="MonthID" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SmsTypes">
+            <EntityTypeMapping TypeName="PMISModel.SmsType">
+              <MappingFragment StoreEntitySet="SmsType">
+                <ScalarProperty Name="SmsTypeID" ColumnName="SmsTypeID" />
+                <ScalarProperty Name="SmsType1" ColumnName="SmsType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sys_ApplicationStatus">
+            <EntityTypeMapping TypeName="PMISModel.Sys_ApplicationStatus">
+              <MappingFragment StoreEntitySet="Sys_ApplicationStatus">
+                <ScalarProperty Name="ApplicationStatusID" ColumnName="ApplicationStatusID" />
+                <ScalarProperty Name="ApplictionStatus" ColumnName="ApplictionStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sys_AttachmentDocumentType">
+            <EntityTypeMapping TypeName="PMISModel.Sys_AttachmentDocumentType">
+              <MappingFragment StoreEntitySet="Sys_AttachmentDocumentType">
+                <ScalarProperty Name="AttachmentDocumentTypeID" ColumnName="AttachmentDocumentTypeID" />
+                <ScalarProperty Name="AttachmentDocumentType" ColumnName="AttachmentDocumentType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sys_ErfArea">
+            <EntityTypeMapping TypeName="PMISModel.Sys_ErfArea">
+              <MappingFragment StoreEntitySet="Sys_ErfArea">
+                <ScalarProperty Name="ErfAreaID" ColumnName="ErfAreaID" />
+                <ScalarProperty Name="ErfArea" ColumnName="ErfArea" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sys_ErfCost">
+            <EntityTypeMapping TypeName="PMISModel.Sys_ErfCost">
+              <MappingFragment StoreEntitySet="Sys_ErfCost">
+                <ScalarProperty Name="ErfCostID" ColumnName="ErfCostID" />
+                <ScalarProperty Name="PlotTypeID" ColumnName="PlotTypeID" />
+                <ScalarProperty Name="CostPerSqm" ColumnName="CostPerSqm" />
+                <ScalarProperty Name="AdminFees" ColumnName="AdminFees" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sys_ErfSize">
+            <EntityTypeMapping TypeName="PMISModel.Sys_ErfSize">
+              <MappingFragment StoreEntitySet="Sys_ErfSize">
+                <ScalarProperty Name="ErfSizeID" ColumnName="ErfSizeID" />
+                <ScalarProperty Name="ErfSize" ColumnName="ErfSize" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sys_ErfTownship">
+            <EntityTypeMapping TypeName="PMISModel.Sys_ErfTownship">
+              <MappingFragment StoreEntitySet="Sys_ErfTownship">
+                <ScalarProperty Name="ErfTownshipID" ColumnName="ErfTownshipID" />
+                <ScalarProperty Name="ErfTownship" ColumnName="ErfTownship" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sys_ErfZoning">
+            <EntityTypeMapping TypeName="PMISModel.Sys_ErfZoning">
+              <MappingFragment StoreEntitySet="Sys_ErfZoning">
+                <ScalarProperty Name="ErfZoningID" ColumnName="ErfZoningID" />
+                <ScalarProperty Name="ErfZoning" ColumnName="ErfZoning" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sys_Month">
+            <EntityTypeMapping TypeName="PMISModel.Sys_Month">
+              <MappingFragment StoreEntitySet="Sys_Month">
+                <ScalarProperty Name="MonthID" ColumnName="MonthID" />
+                <ScalarProperty Name="MonthName" ColumnName="MonthName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sys_PaymentMethod">
+            <EntityTypeMapping TypeName="PMISModel.Sys_PaymentMethod">
+              <MappingFragment StoreEntitySet="Sys_PaymentMethod">
+                <ScalarProperty Name="PaymentMethodID" ColumnName="PaymentMethodID" />
+                <ScalarProperty Name="PaymentMethod" ColumnName="PaymentMethod" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sys_PlotType">
+            <EntityTypeMapping TypeName="PMISModel.Sys_PlotType">
+              <MappingFragment StoreEntitySet="Sys_PlotType">
+                <ScalarProperty Name="PlotTypeID" ColumnName="PlotTypeID" />
+                <ScalarProperty Name="PlotType" ColumnName="PlotType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sys_Roles">
+            <EntityTypeMapping TypeName="PMISModel.Sys_Roles">
+              <MappingFragment StoreEntitySet="Sys_Roles">
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="RoleDescription" ColumnName="RoleDescription" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sys_User">
+            <EntityTypeMapping TypeName="PMISModel.Sys_User">
+              <MappingFragment StoreEntitySet="Sys_User">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="SystemUserName" ColumnName="SystemUserName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="PMISModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sys_Photo">
+            <EntityTypeMapping TypeName="PMISModel.Sys_Photo">
+              <MappingFragment StoreEntitySet="Sys_Photo">
+                <ScalarProperty Name="PHOTO" ColumnName="PHOTO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="App_ApplicantList">
+            <EntityTypeMapping TypeName="PMISModel.App_ApplicantList">
+              <MappingFragment StoreEntitySet="App_ApplicantList">
+                <ScalarProperty Name="PlotType" ColumnName="PlotType" />
+                <ScalarProperty Name="WaitingListNumber" ColumnName="WaitingListNumber" />
+                <ScalarProperty Name="StageValuation" ColumnName="StageValuation" />
+                <ScalarProperty Name="StageRegistration" ColumnName="StageRegistration" />
+                <ScalarProperty Name="StageSale" ColumnName="StageSale" />
+                <ScalarProperty Name="StageAllocation" ColumnName="StageAllocation" />
+                <ScalarProperty Name="StageApplication" ColumnName="StageApplication" />
+                <ScalarProperty Name="PHOTO" ColumnName="PHOTO" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="SignedBySpouse" ColumnName="SignedBySpouse" />
+                <ScalarProperty Name="SignedByApplicant" ColumnName="SignedByApplicant" />
+                <ScalarProperty Name="ApplicationDate" ColumnName="ApplicationDate" />
+                <ScalarProperty Name="ErfSizeID" ColumnName="ErfSizeID" />
+                <ScalarProperty Name="PlotTypeID" ColumnName="PlotTypeID" />
+                <ScalarProperty Name="SpouseNameOfEmployer" ColumnName="SpouseNameOfEmployer" />
+                <ScalarProperty Name="SpouseIncomePerMonth" ColumnName="SpouseIncomePerMonth" />
+                <ScalarProperty Name="SpouseOccupation" ColumnName="SpouseOccupation" />
+                <ScalarProperty Name="SpouseEmailAddress" ColumnName="SpouseEmailAddress" />
+                <ScalarProperty Name="SpouseFaxNumber" ColumnName="SpouseFaxNumber" />
+                <ScalarProperty Name="SpouseTelephoneNumber" ColumnName="SpouseTelephoneNumber" />
+                <ScalarProperty Name="SpousePostalAddress" ColumnName="SpousePostalAddress" />
+                <ScalarProperty Name="SpouseResidentialAddress" ColumnName="SpouseResidentialAddress" />
+                <ScalarProperty Name="SpouseIDNumber" ColumnName="SpouseIDNumber" />
+                <ScalarProperty Name="SpouseFirstname" ColumnName="SpouseFirstname" />
+                <ScalarProperty Name="SpouseSurname" ColumnName="SpouseSurname" />
+                <ScalarProperty Name="NameOfEmployer" ColumnName="NameOfEmployer" />
+                <ScalarProperty Name="IncomePerMonth" ColumnName="IncomePerMonth" />
+                <ScalarProperty Name="Occupation" ColumnName="Occupation" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="FaxNumber" ColumnName="FaxNumber" />
+                <ScalarProperty Name="TelephoneNumber" ColumnName="TelephoneNumber" />
+                <ScalarProperty Name="PostalAddress" ColumnName="PostalAddress" />
+                <ScalarProperty Name="ResidentialAddress" ColumnName="ResidentialAddress" />
+                <ScalarProperty Name="IDNumber" ColumnName="IDNumber" />
+                <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="ApplicantID" ColumnName="ApplicantID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="aa_Report_AcknowledgementLetterAll" FunctionName="PMISModel.Store.aa_Report_AcknowledgementLetterAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="PMISModel.aa_Report_AcknowledgementLetterAll_Result">
+                <ScalarProperty Name="AcknowledgmentID" ColumnName="AcknowledgmentID" />
+                <ScalarProperty Name="MonthID" ColumnName="MonthID" />
+                <ScalarProperty Name="AcknowledmentYear" ColumnName="AcknowledmentYear" />
+                <ScalarProperty Name="AcknowledmentDate" ColumnName="AcknowledmentDate" />
+                <ScalarProperty Name="ApplicantID" ColumnName="ApplicantID" />
+                <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="IDNumber" ColumnName="IDNumber" />
+                <ScalarProperty Name="PostalAddress" ColumnName="PostalAddress" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="aa_Report_AcknowledgementLetterApplicant" FunctionName="PMISModel.Store.aa_Report_AcknowledgementLetterApplicant">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="PMISModel.aa_Report_AcknowledgementLetterApplicant_Result">
+                <ScalarProperty Name="AcknowledgmentID" ColumnName="AcknowledgmentID" />
+                <ScalarProperty Name="MonthID" ColumnName="MonthID" />
+                <ScalarProperty Name="AcknowledmentYear" ColumnName="AcknowledmentYear" />
+                <ScalarProperty Name="AcknowledmentDate" ColumnName="AcknowledmentDate" />
+                <ScalarProperty Name="ApplicantID" ColumnName="ApplicantID" />
+                <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="IDNumber" ColumnName="IDNumber" />
+                <ScalarProperty Name="PostalAddress" ColumnName="PostalAddress" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="PMISModel.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="PMISModel.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="PMISModel.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="PMISModel.Store.sp_helpdiagramdefinition" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="PMISModel.Store.sp_helpdiagrams" />
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="PMISModel.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="PMISModel.Store.sp_upgraddiagrams" />
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="PMISModel.Employee">
+              <MappingFragment StoreEntitySet="Employees">
+                <ScalarProperty Name="UserRoles" ColumnName="UserRoles" />
+                <ScalarProperty Name="ConfirmPassword" ColumnName="ConfirmPassword" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="salary" ColumnName="salary" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

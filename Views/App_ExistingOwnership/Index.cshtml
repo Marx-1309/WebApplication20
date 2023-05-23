@@ -1,0 +1,111 @@
+﻿@model IEnumerable<WebApplication20.Models.App_ExistingOwnership>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ErfSize)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReferenceNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Improvement)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LeaseAggreement)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OutstandingAmount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfFirstOccupation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WhoIsOccupyingTheErf)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WhoIsResponsibleForPayment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UpdatedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UpdatedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.App_Applicant.Surname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.App_Erf.ErfNumber)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ErfSize)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReferenceNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Improvement)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LeaseAggreement)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OutstandingAmount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateOfFirstOccupation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WhoIsOccupyingTheErf)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WhoIsResponsibleForPayment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UpdatedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UpdatedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.App_Applicant.Surname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.App_Erf.ErfNumber)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ExistingOwnershipID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ExistingOwnershipID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ExistingOwnershipID })
+        </td>
+    </tr>
+}
+
+</table>
