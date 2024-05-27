@@ -900,9 +900,12 @@
             </div>
             <br />
 
-            <button id="btnSave" class="btn btn-success" type="button"><span class="mdi mdi-account-plus"></span>Create Applicant</button><div style="text-align:center;display:none" id="loaderDiv">
+            <button id="btnSave" class="btn btn-success" type="button"><span class="mdi mdi-account-plus"></span>Create Applicant</button>
+
+            <div style="text-align:center;display:none" id="loaderDiv">
                 <img src="~/Content/InternetSlowdown_Day.gif" width="70" />
             </div>
+
         </div>
     </div>
 
@@ -968,26 +971,20 @@
                 let fileName = $(this).find('.Aftimg:eq(0)').attr('data-id');
                 let fileBase = $(this).find('.Aftimg:eq(0)').attr('data-index');
 
-                switch (index) {
-                    case 0:
-                        Id_doc_array.push({ fileName, fileBase });
-                        break;
-                    case 1:
-                        marriage_certificate_array.push({ fileName, fileBase });
-                        break;
-                    case 2:
-                        id_doc_spouse_array.push({ fileName, fileBase });
-                        break;
-                    case 3:
-                        comp_reg_certificate_array.push({ fileName, fileBase });
-                        break;
-                    case 4:
-                        business_plan_array.push({ fileName, fileBase });
-                        break;
-                    case 5:
-                        proof_of_funding_array.push({ fileName, fileBase });
-                        break;
+                if (index === 0) {
+                    Id_doc_array.push({ fileName, fileBase });
+                } else if (index === 1) {
+                    marriage_certificate_array.push({ fileName, fileBase });
+                } else if (index === 2) {
+                    id_doc_spouse_array.push({ fileName, fileBase });
+                } else if (index === 3) {
+                    comp_reg_certificate_array.push({ fileName, fileBase });
+                } else if (index === 4) {
+                    business_plan_array.push({ fileName, fileBase });
+                } else if (index === 5) {
+                    proof_of_funding_array.push({ fileName, fileBase });
                 }
+
             })
         });
 

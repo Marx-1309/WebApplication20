@@ -316,14 +316,6 @@ namespace WebApplication20.Controllers
 
         }
 
-        //Remote Valindation
-        public JsonResult IsApplicantIDAvailable(int ApplicantID)
-        {
-            return Json(!db.App_Applicant.Any(x => x.ApplicantID == ApplicantID),
-                                                 JsonRequestBehavior.AllowGet);
-        }
-
-
 
 
         // GET: App_Applicant/Edit/5
@@ -339,6 +331,7 @@ namespace WebApplication20.Controllers
                 return HttpNotFound();
             }
 
+            try { 
             // ViewBag.ErfSizeID = new SelectList(db.Sys_ErfSize, "ErfSizeID", "ErfSize");
             // ViewBag.PlotTypeID = new SelectList(db.Sys_PlotType, "PlotTypeID", "PlotType");
 
@@ -435,6 +428,13 @@ namespace WebApplication20.Controllers
 
 
             return View(application_Financial);
+
+            }
+            catch(Exception ex)
+            {
+
+            }
+            return View();
         }
 
         // POST:  Edit
@@ -452,14 +452,6 @@ namespace WebApplication20.Controllers
 
             string updatedBy = User.Identity.Name ?? "admin";
             DateTime updatedDate = DateTime.UtcNow;
-
-            if (App_Applicant.FaxNumber == null)
-            {
-                App_Applicant.FaxNumber = "-";
-            }
-
-
-
 
             try
             {
@@ -829,7 +821,7 @@ namespace WebApplication20.Controllers
 
             renderedByte = localreport.Render(reportType, "", out mimeType, out encoding, out fileNameExtension
             , out streams, out warnings);
-            Response.AddHeader("content-disposition", "attachment ; filename= Applicant_report." + fileNameExtension);
+            Response.AddHeader("content-disposition", "attachment : filename= Applicant_report." + fileNameExtension);
             return File(renderedByte, fileNameExtension);
             return View();
         }

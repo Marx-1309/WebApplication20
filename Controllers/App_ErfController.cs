@@ -102,7 +102,8 @@ namespace WebApplication20.Controllers
             string createdBy = User.Identity.Name ?? "admin";
             DateTime? createdDate = DateTime.Now;
 
-            if (db.App_Erf.Any(a => a.ErfNumber.Equals(app_Erf.ErfNumber) && a.ErfAreaID.Equals(app_Erf.ErfAreaID) && a.ErfTownshipID.Equals(app_Erf.ErfTownshipID) && a.ErfNumberID != app_Erf.ErfNumberID))
+            if (db.App_Erf.Any(a => a.ErfNumber.Equals(app_Erf.ErfNumber) &&
+            a.ErfAreaID.Equals(app_Erf.ErfAreaID) && a.ErfTownshipID.Equals(app_Erf.ErfTownshipID) && a.ErfNumberID != app_Erf.ErfNumberID))
             {
                 ModelState.AddModelError("ErfNumber", "ErfNumber already exist in this extension! :" + app_Erf.ErfNumber);
             }

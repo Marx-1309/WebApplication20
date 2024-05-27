@@ -11,12 +11,8 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker3.min.css" integrity="sha512-rxThY3LYIfYsVCWPCW9dB0k+e3RZB39f23ylUYTEuZMDrN/vRqLdaCBo/FbvVT6uC2r0ObfPzotsfKF9Qc5W5g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-<style>
-    iframe {
-        width: 100%;
-        height: 500px;
-    }
 
+<style>
     .spad {
         padding-top: 150px !important;
     }
@@ -170,7 +166,7 @@
                                         <div class="mb-5">
                                             <label class="text-dark font-weight-medium">SURNAME</label>
                                             <div class="input-group mb-3">
-                                                @Html.EditorFor(model => model.App_Applicants.Surname, new { htmlAttributes = new { @id = "Surname", @class = "form-control rounded-pill", @placeholder = "Applicant  Surname", required = "required" } })
+                                                @Html.EditorFor(model => model.App_Applicants.Surname, new { htmlAttributes = new { @id = "Surname", @class = "form-control rounded-pill", @placeholder = "Enter Applicant  Surname", required = "required" } })
                                                 @Html.ValidationMessageFor(model => model.App_Applicants.Surname, "", new { @class = "text-danger" })
                                             </div>
                                         </div>
@@ -185,7 +181,7 @@
 
                                             <label class="text-dark font-weight-medium">NAME</label>
                                             <div class="input-group mb-3">
-                                                @Html.EditorFor(model => model.App_Applicants.Firstname, new { htmlAttributes = new { @id = "Firstname", @class = "form-control rounded-pill", @placeholder = "Applicant  Firstname", required = "required" } })
+                                                @Html.EditorFor(model => model.App_Applicants.Firstname, new { htmlAttributes = new { @id = "Firstname", @class = "form-control rounded-pill", @placeholder = "Enter Applicant  Firstname", required = "required" } })
                                                 @Html.ValidationMessageFor(model => model.App_Applicants.Firstname, "", new { @class = "text-danger" })
                                             </div>
 
@@ -199,7 +195,7 @@
                                             <label class="text-dark font-weight-medium">ID. NUMBER / COMPANY NO</label>
 
                                             <div class="input-group mb-3">
-                                                @Html.EditorFor(model => model.App_Applicants.IDNumber, new { htmlAttributes = new { @id = "IDNumber", @class = "form-control rounded-pill", @placeholder = "Applicant  IDNumber", required = "required" } })
+                                                @Html.EditorFor(model => model.App_Applicants.IDNumber, new { htmlAttributes = new { @id = "IDNumber", @class = "form-control rounded-pill", @placeholder = "Enter Applicant  IDNumber", required = "required" } })
                                                 @Html.ValidationMessageFor(model => model.App_Applicants.IDNumber, "", new { @class = "text-danger" })
                                             </div>
 
@@ -211,8 +207,8 @@
 
 
 
-                                    @*<div class="col-md-12 mb-">
-                                        </div>*@
+                                    <div class="col-md-12 mb-">
+                                    </div>
 
 
                                     <div class="col-xl-6">
@@ -221,7 +217,7 @@
                                             <label class="text-dark font-weight-medium">RESIDENTIAL ADDRESS</label>
 
                                             <div class="input-group mb-3">
-                                                @Html.TextAreaFor(model => model.App_Applicants.ResidentialAddress, new { @id = "ResidentialAddress", @class = "form-control rounded-pill", @placeholder = "Applicant  ResidentialAddress", required = "required" })
+                                                @Html.TextAreaFor(model => model.App_Applicants.ResidentialAddress, new { @id = "ResidentialAddress", @class = "form-control", @placeholder = "Enter Applicant  ResidentialAddress", required = "required" })
                                                 @Html.ValidationMessageFor(model => model.App_Applicants.ResidentialAddress, "", new { @class = "text-danger" })
                                             </div>
 
@@ -235,7 +231,7 @@
                                             <label class="text-dark font-weight-medium">POSTAL ADDRESS</label>
 
                                             <div class="input-group mb-3">
-                                                @Html.TextAreaFor(model => model.App_Applicants.PostalAddress, new { @id = "PostalAddress", @class = "form-control rounded-pill", @placeholder = "Applicant  PostalAddress", required = "required" })
+                                                @Html.TextAreaFor(model => model.App_Applicants.PostalAddress, new { @id = "PostalAddress", @class = "form-control", @placeholder = "Enter Applicant  PostalAddress", required = "required" })
                                                 @Html.ValidationMessageFor(model => model.App_Applicants.PostalAddress, "", new { @class = "text-danger" })
                                             </div>
 
@@ -244,8 +240,8 @@
 
 
                                     <!---->
-                                    @*<div class="col-md-12 mb-">
-                                        </div>*@
+                                    <div class="col-md-12 mb-">
+                                    </div>
 
 
                                     <div class="col-xl-6">
@@ -254,7 +250,7 @@
                                             <label class="text-dark font-weight-medium">TELEPHONE NUMBER</label>
 
                                             <div class="input-group mb-3">
-                                                @Html.EditorFor(model => model.App_Applicants.TelephoneNumber, new { htmlAttributes = new { @id = "TelephoneNumber", @class = "form-control rounded-pill", @placeholder = "Applicant  TelephoneNumber", required = "required" } })
+                                                @Html.EditorFor(model => model.App_Applicants.TelephoneNumber, new { htmlAttributes = new { @id = "TelephoneNumber", @class = "form-control rounded-pill", @placeholder = "Enter Applicant  TelephoneNumber", required = "required" } })
                                                 @Html.ValidationMessageFor(model => model.App_Applicants.TelephoneNumber, "", new { @class = "text-danger" })
                                             </div>
 
@@ -268,7 +264,7 @@
                                             <label class="text-dark font-weight-medium">FAX NUMBER</label>
 
                                             <div class="input-group mb-3">
-                                                @Html.EditorFor(model => model.App_Applicants.FaxNumber, new { htmlAttributes = new { @id = "FaxNumber", @class = "form-control rounded-pill", @placeholder = "Applicant  FaxNumber" } })
+                                                @Html.EditorFor(model => model.App_Applicants.FaxNumber, new { htmlAttributes = new { @id = "FaxNumber", @class = "form-control rounded-pill", @placeholder = "Enter Applicant  FaxNumber", required = "required" } })
                                                 @Html.ValidationMessageFor(model => model.App_Applicants.FaxNumber, "", new { @class = "text-danger" })
                                             </div>
 
@@ -277,8 +273,8 @@
 
 
 
-                                    @*<div class="col-md-12 mb-">
-                                        </div>*@
+                                    <div class="col-md-12 mb-">
+                                    </div>
 
 
                                     <div class="col-xl-6">
@@ -287,7 +283,7 @@
                                             <label class="text-dark font-weight-medium">EMAIL ADDRESS</label>
 
                                             <div class="input-group mb-3">
-                                                @Html.EditorFor(model => model.App_Applicants.EmailAddress, new { htmlAttributes = new { @id = "EmailAddress", @class = "form-control rounded-pill", @placeholder = "Applicant  TelephoneNumber", required = "required" } })
+                                                @Html.EditorFor(model => model.App_Applicants.EmailAddress, new { htmlAttributes = new { @id = "EmailAddress", @class = "form-control rounded-pill", @placeholder = "Enter Applicant  TelephoneNumber", required = "required" } })
                                                 @Html.ValidationMessageFor(model => model.App_Applicants.EmailAddress, "", new { @class = "text-danger" })
                                             </div>
 
@@ -301,7 +297,7 @@
                                             <label class="text-dark font-weight-medium">OCCUPATION</label>
 
                                             <div class="input-group mb-3">
-                                                @Html.EditorFor(model => model.App_Applicants.Occupation, new { htmlAttributes = new { @id = "Occupation", @class = "form-control rounded-pill", @placeholder = "Applicant Occupation", required = "required" } })
+                                                @Html.EditorFor(model => model.App_Applicants.Occupation, new { htmlAttributes = new { @id = "Occupation", @class = "form-control rounded-pill", @placeholder = "Enter Applicant  FaxNumber", required = "required" } })
                                                 @Html.ValidationMessageFor(model => model.App_Applicants.Occupation, "", new { @class = "text-danger" })
                                             </div>
 
@@ -310,8 +306,8 @@
 
 
 
-                                    @*<div class="col-md-12 mb-">
-                                        </div>*@
+                                    <div class="col-md-12 mb-">
+                                    </div>
 
 
                                     <div class="col-xl-6">
@@ -320,7 +316,7 @@
                                             <label class="text-dark font-weight-medium">INCOME PER MONTH</label>
 
                                             <div class="input-group mb-3">
-                                                @Html.EditorFor(model => model.App_Applicants.IncomePerMonth, new { htmlAttributes = new { @id = "IncomePerMonth", @class = "form-control rounded-pill", @placeholder = "Income Per Month", required = "required" } })
+                                                @Html.EditorFor(model => model.App_Applicants.IncomePerMonth, new { htmlAttributes = new { @id = "IncomePerMonth", @class = "form-control rounded-pill", @placeholder = "Enter Income Per Month", required = "required" } })
                                                 @Html.ValidationMessageFor(model => model.App_Applicants.IncomePerMonth, "", new { @class = "currency" })
                                             </div>
 
@@ -334,7 +330,7 @@
                                             <label class="text-dark font-weight-medium">EMPLOYER NAME</label>
 
                                             <div class="input-group mb-3">
-                                                @Html.EditorFor(model => model.App_Applicants.NameOfEmployer, new { htmlAttributes = new { @id = "NameOfEmployer", @class = "form-control rounded-pill", @placeholder = "NameOfEmployer", required = "required" } })
+                                                @Html.EditorFor(model => model.App_Applicants.NameOfEmployer, new { htmlAttributes = new { @id = "NameOfEmployer", @class = "form-control rounded-pill", @placeholder = "Enter NameOfEmployer", required = "required" } })
                                                 @Html.ValidationMessageFor(model => model.App_Applicants.NameOfEmployer, "", new { @class = "text-danger" })
                                             </div>
 
@@ -399,7 +395,7 @@
                                         <div class="mb-5">
                                             <label class="text-dark font-weight-medium">SURNAME</label>
                                             <div class="input-group mb-3">
-                                                @Html.EditorFor(model => model.App_Applicants.SpouseSurname, new { htmlAttributes = new { @id = "SpouseSurname", @class = "form-control rounded-pill", @placeholder = "Applicant  Surname" } })
+                                                @Html.EditorFor(model => model.App_Applicants.SpouseSurname, new { htmlAttributes = new { @id = "SpouseSurname", @class = "form-control rounded-pill", @placeholder = "Enter Applicant  Surname" } })
                                                 @Html.ValidationMessageFor(model => model.App_Applicants.SpouseSurname, "", new { @class = "text-danger" })
                                             </div>
                                         </div>
@@ -414,7 +410,7 @@
 
                                             <label class="text-dark font-weight-medium">FIRST NAME</label>
                                             <div class="input-group mb-3">
-                                                @Html.EditorFor(model => model.App_Applicants.SpouseFirstname, new { htmlAttributes = new { @id = "SpouseFirstname", @class = "form-control rounded-pill", @placeholder = "Applicant  Firstname" } })
+                                                @Html.EditorFor(model => model.App_Applicants.SpouseFirstname, new { htmlAttributes = new { @id = "SpouseFirstname", @class = "form-control rounded-pill", @placeholder = "Enter Applicant  Firstname" } })
                                                 @Html.ValidationMessageFor(model => model.App_Applicants.SpouseFirstname, "", new { @class = "text-danger" })
                                             </div>
 
@@ -428,7 +424,7 @@
                                             <label class="text-dark font-weight-medium">ID. NUMBER / COMPANY NO:</label>
 
                                             <div class="input-group mb-3">
-                                                @Html.EditorFor(model => model.App_Applicants.SpouseIDNumber, new { htmlAttributes = new { @id = "SpouseIDNumber", @class = "form-control rounded-pill", @placeholder = "Applicant  IDNumber" } })
+                                                @Html.EditorFor(model => model.App_Applicants.SpouseIDNumber, new { htmlAttributes = new { @id = "SpouseIDNumber", @class = "form-control rounded-pill", @placeholder = "Enter Applicant  IDNumber" } })
                                                 @Html.ValidationMessageFor(model => model.App_Applicants.SpouseIDNumber, "", new { @class = "text-danger" })
                                             </div>
 
@@ -440,8 +436,8 @@
 
 
 
-                                    @*<div class="col-md-12 mb-">
-                                        </div>*@
+                                    <div class="col-md-12 mb-">
+                                    </div>
 
 
                                     <div class="col-xl-6">
@@ -450,7 +446,7 @@
                                             <label class="text-dark font-weight-medium">RESIDENTIAL ADDRESS</label>
 
                                             <div class="input-group mb-3">
-                                                @Html.TextAreaFor(model => model.App_Applicants.SpouseResidentialAddress, new { @id = "SpouseResidentialAddress", @class = "form-control rounded-pill", @placeholder = "Applicant  ResidentialAddress" })
+                                                @Html.TextAreaFor(model => model.App_Applicants.SpouseResidentialAddress, new { @id = "SpouseResidentialAddress", @class = "form-control", @placeholder = "Enter Applicant  ResidentialAddress" })
                                                 @Html.ValidationMessageFor(model => model.App_Applicants.SpouseResidentialAddress, "", new { @class = "text-danger" })
                                             </div>
 
@@ -464,7 +460,7 @@
                                             <label class="text-dark font-weight-medium">POSTAL ADDRESS</label>
 
                                             <div class="input-group mb-3">
-                                                @Html.TextAreaFor(model => model.App_Applicants.SpousePostalAddress, new { @id = "SpousePostalAddress", @class = "form-control rounded-pill", @placeholder = "Applicant  PostalAddress" })
+                                                @Html.TextAreaFor(model => model.App_Applicants.SpousePostalAddress, new { @id = "SpousePostalAddress", @class = "form-control", @placeholder = "Enter Applicant  PostalAddress" })
                                                 @Html.ValidationMessageFor(model => model.App_Applicants.SpousePostalAddress, "", new { @class = "text-danger" })
                                             </div>
 
@@ -473,8 +469,8 @@
 
 
                                     <!---->
-                                    @*<div class="col-md-12 mb-">
-                                        </div>*@
+                                    <div class="col-md-12 mb-">
+                                    </div>
 
 
                                     <div class="col-xl-6">
@@ -483,7 +479,7 @@
                                             <label class="text-dark font-weight-medium">TELEPHONE NUMBER</label>
 
                                             <div class="input-group mb-3">
-                                                @Html.EditorFor(model => model.App_Applicants.SpouseTelephoneNumber, new { htmlAttributes = new { @id = "SpouseTelephoneNumber", @class = "form-control rounded-pill", @placeholder = "Applicant  TelephoneNumber" } })
+                                                @Html.EditorFor(model => model.App_Applicants.SpouseTelephoneNumber, new { htmlAttributes = new { @id = "SpouseTelephoneNumber", @class = "form-control rounded-pill", @placeholder = "Enter Applicant  TelephoneNumber" } })
                                                 @Html.ValidationMessageFor(model => model.App_Applicants.SpouseTelephoneNumber, "", new { @class = "text-danger" })
                                             </div>
 
@@ -497,7 +493,7 @@
                                             <label class="text-dark font-weight-medium">FAX NUMBER</label>
 
                                             <div class="input-group mb-3">
-                                                @Html.EditorFor(model => model.App_Applicants.SpouseFaxNumber, new { htmlAttributes = new { @id = "SpouseFaxNumber", @class = "form-control rounded-pill", @placeholder = "Applicant  FaxNumber" } })
+                                                @Html.EditorFor(model => model.App_Applicants.SpouseFaxNumber, new { htmlAttributes = new { @id = "SpouseFaxNumber", @class = "form-control rounded-pill", @placeholder = "Enter Applicant  FaxNumber" } })
                                                 @Html.ValidationMessageFor(model => model.App_Applicants.SpouseFaxNumber, "", new { @class = "text-danger" })
                                             </div>
 
@@ -506,8 +502,8 @@
 
 
 
-                                    @*<div class="col-md-12 mb-">
-                                        </div>*@
+                                    <div class="col-md-12 mb-">
+                                    </div>
 
 
                                     <div class="col-xl-6">
@@ -516,7 +512,7 @@
                                             <label class="text-dark font-weight-medium">EMAIL ADDRESS</label>
 
                                             <div class="input-group mb-3">
-                                                @Html.EditorFor(model => model.App_Applicants.SpouseEmailAddress, new { htmlAttributes = new { @id = "SpouseEmailAddress", @class = "form-control rounded-pill", @placeholder = "Applicant  TelephoneNumber" } })
+                                                @Html.EditorFor(model => model.App_Applicants.SpouseEmailAddress, new { htmlAttributes = new { @id = "SpouseEmailAddress", @class = "form-control rounded-pill", @placeholder = "Enter Applicant  TelephoneNumber" } })
                                                 @Html.ValidationMessageFor(model => model.App_Applicants.SpouseEmailAddress, "", new { @class = "text-danger" })
                                             </div>
 
@@ -530,7 +526,7 @@
                                             <label class="text-dark font-weight-medium">OCCUPATION</label>
 
                                             <div class="input-group mb-3">
-                                                @Html.EditorFor(model => model.App_Applicants.SpouseOccupation, new { htmlAttributes = new { @id = "SpouseOccupation", @class = "form-control rounded-pill", @placeholder = "Applicant  FaxNumber" } })
+                                                @Html.EditorFor(model => model.App_Applicants.SpouseOccupation, new { htmlAttributes = new { @id = "SpouseOccupation", @class = "form-control rounded-pill", @placeholder = "Enter Applicant  FaxNumber" } })
                                                 @Html.ValidationMessageFor(model => model.App_Applicants.SpouseOccupation, "", new { @class = "text-danger" })
                                             </div>
 
@@ -539,8 +535,8 @@
 
 
 
-                                    @*<div class="col-md-12 mb-">
-                                        </div>*@
+                                    <div class="col-md-12 mb-">
+                                    </div>
 
 
                                     <div class="col-xl-6">
@@ -549,7 +545,7 @@
                                             <label class="text-dark font-weight-medium">INCOME PER MONTH</label>
 
                                             <div class="input-group mb-3">
-                                                @Html.EditorFor(model => model.App_Applicants.SpouseIncomePerMonth, new { htmlAttributes = new { @id = "SpouseIncomePerMonth", @class = "form-control rounded-pill", @placeholder = "Income Per Month" } })
+                                                @Html.EditorFor(model => model.App_Applicants.SpouseIncomePerMonth, new { htmlAttributes = new { @id = "SpouseIncomePerMonth", @class = "form-control rounded-pill", @placeholder = "Enter Income Per Month" } })
                                                 @Html.ValidationMessageFor(model => model.App_Applicants.SpouseIncomePerMonth, "", new { @class = "currency" })
                                             </div>
 
@@ -563,7 +559,7 @@
                                             <label class="text-dark font-weight-medium">EMPLOYER NAME</label>
 
                                             <div class="input-group mb-3">
-                                                @Html.EditorFor(model => model.App_Applicants.SpouseNameOfEmployer, new { htmlAttributes = new { @id = "SpouseNameOfEmployer", @class = "form-control rounded-pill", @placeholder = "NameOfEmployer" } })
+                                                @Html.EditorFor(model => model.App_Applicants.SpouseNameOfEmployer, new { htmlAttributes = new { @id = "SpouseNameOfEmployer", @class = "form-control rounded-pill", @placeholder = "Enter NameOfEmployer" } })
                                                 @Html.ValidationMessageFor(model => model.App_Applicants.SpouseNameOfEmployer, "", new { @class = "text-danger" })
                                             </div>
 
@@ -614,9 +610,13 @@
 
 
 @*<div style="padding-left: 30px;padding-right:760px">*@
-<div class="card card-default" style="margin-left: 2rem;margin-right: 2rem; ">
+<div class="card card-default">
     <div class="card-header">
         <h2 style="color: rebeccapurple;font-weight: bold">DESCRIPTION OF ERVEN/PLOT</h2>
+
+        <a class="btn mdi mdi-code-tags" data-toggle="collapse" href="#collapse-nav-pull-justified" role="button"
+           aria-expanded="false" aria-controls="collapse-nav-pull-justified"> </a>
+
 
     </div>
     <div class="card-body">
@@ -665,7 +665,7 @@
                                     <label class="text-dark font-weight-medium">PLOT TYPE</label>
 
                                     <div class="input-group mb-3">
-                                        @Html.DropDownListFor(model => model.App_Applicants.PlotTypeID, ViewBag.PlotTypeID as SelectList, htmlAttributes: new { @id = "PlotTypeID", @class = "form-control rounded-pill", @placeholder = "Your FirstName", required = "required" })
+                                        @Html.DropDownListFor(model => model.App_Applicants.PlotTypeID, ViewBag.PlotTypeID as SelectList, htmlAttributes: new { @id = "PlotTypeID", @class = "form-control rounded-pill", @placeholder = "Enter Your FirstName", required = "required" })
                                         @Html.ValidationMessageFor(model => model.App_Applicants.PlotTypeID, "", new { @class = "text-danger" })
                                     </div>
 
@@ -679,7 +679,7 @@
                                     <label class="text-dark font-weight-medium">ERF SIZE</label>
 
                                     <div class="input-group mb-3">
-                                        @Html.DropDownListFor(model => model.App_ExistingOwnerships.ErfSize, ViewBag.ErfSizeID as SelectList, htmlAttributes: new { @id = "ErfSizeID", @class = "form-control rounded-pill", @placeholder = "Your FirstName", required = "required" })
+                                        @Html.DropDownListFor(model => model.App_ExistingOwnerships.ErfSize, ViewBag.ErfSizeID as SelectList, htmlAttributes: new { @id = "ErfSizeID", @class = "form-control rounded-pill", @placeholder = "Enter Your FirstName", required = "required" })
                                         @Html.ValidationMessageFor(model => model.App_ExistingOwnerships.ErfSize, "", new { @class = "text-danger" })
                                     </div>
 
@@ -692,7 +692,7 @@
 
                                     <label class="text-dark font-weight-medium">APPLICATION DATE</label>
                                     <div class="input-group mb-3">
-                                        @Html.TextBoxFor(model => model.App_Applicants.ApplicationDate, new { @id = "ApplicationDate", @class = "datepicker form-control rounded-pill datepicker", @placeholder = " ApplicationDate", required = "required" })
+                                        @Html.TextBoxFor(model => model.App_Applicants.ApplicationDate, new { @id = "ApplicationDate", @class = "datepicker form-control rounded-pill datepicker", @placeholder = "Enter  ApplicationDate", required = "required" })
                                         @Html.ValidationMessageFor(model => model.App_Applicants.ApplicationDate, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
@@ -864,7 +864,7 @@
                 </div>
 
                 <div class="tab-pane fade" id="App_AttachmentDocuments" role="tabpanel" aria-labelledby="nav-profile-tab">
-                    <h4 class="mb-3 font-weight-bold">Upload the following documents by clicking on below tabs.<span style="color:red"> (Max:1MB per upload.)</span></h4>
+                    <h4 class="mb-3 font-weight-bold">Upload the following documents by clicking on below tabs.</h4>
 
                     <div class="accordion" id="accordionExample">
                         <div class="card">
@@ -1063,38 +1063,17 @@
                 </div>
             </div>
         </div>
-        <br />
-        <button id="btnSave" class="btn btn-success " type="button"> Update Applicant</button>  <div style="text-align:center;display:none" id="loaderDiv">
-            <img src="~/Content/InternetSlowdown_Day.gif" width="70" />
-        </div>
     </div>
 </div>
 
 @*<form action="/Customer/UploadCustomerFile" method="post" enctype="multipart/form-data" style="display: inline-grid;padding-left:100px">*@
-
+<button id="btnSave" class="btn btn-success " type="button"> Update Applicant</button>
 @*</form>*@
 @*}*@
-
-
-<div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">File</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <iframe src="" id="fileContent" frameborder="0"></iframe>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
+<br />
+<br />
+<div>
 </div>
-
 
 
 
@@ -1110,22 +1089,9 @@
 
 <script type="text/javascript">
 
-    var OpenDocument = function ($this) {
-        debugger;
-
-        //var fileName = $this.className;
-        //var headerName = fileName.split('_')[1].split('.')[0];
-        //$("#fileContent").attr('src', '/UploadedFiles/' + fileName);
-        $("#staticBackdropLabel").html($this.firstChild.getAttribute('data-id'));
-        $("#fileContent").attr('src', $this.firstChild.getAttribute('imgsrc')); //$this.firstChild.attributes[3].value
-        $("#staticBackdrop").modal('show');
-    }
-
     $(function () {
 
-
         $('#btnSave').on('click', function () {
-            $("#loaderDiv").show(500);
 
             //  if (!$("#frmApp_Applicant").valid()) return;
 
@@ -1260,7 +1226,6 @@
                 cache: false,
                 success: function (response) {
                     if (response.status == true) {
-                        $("#loaderDiv").hide();
                         swalWithBootstrapButtons.fire(
                             'Updated!',
                             'Your record has been Updated.',
@@ -1276,7 +1241,6 @@
                             'Your record was not Updated. Please verify your input',
                             'error'
                         )
-                        $("#loaderDiv").hide();
                     }
                 }
             });
@@ -1309,44 +1273,45 @@
                             debugger
                             switch (item.AttachmentDocumentTypeID) {
                                 case 1:
-                                    $('.' + 'IdDoc_files').append(" <div class='AddedFile' onclick='OpenDocument(this)' id='AfterDiv" + num + "'><div class='cssImg Aftimg' id='ImgPreview" + num + "' ></div ><i class='fa fa-trash-o' onclick='ImageAfterDeleteEvent(" + num + ")'></i> <span>" + item.AttachmentDocumentFileName + "</span> </div>");
-                                    $('#ImgPreview' + num).attr('style', 'background-image: url("' + base64 + '")').attr('imgsrc', base64);
+                                    $('.' + 'IdDoc_files').append(" <div class='AddedFile' id='AfterDiv" + num + "'><div class='cssImg Aftimg' id='ImgPreview" + num + "' ></div ><i class='fa fa-trash-o' onclick='ImageAfterDeleteEvent(" + num + ")'></i> </div>");
+                                    $('#ImgPreview' + num).attr('style', 'background-image: url("' + base64 + '")');
                                     $('#ImgPreview' + num).attr('data-index', base64);
                                     $('#ImgPreview' + num).attr('data-id', item.AttachmentDocumentFileName);
 
                                     break;
                                 case 2:
-                                    $('.' + 'Marriage_cert_files').append(" <div class='AddedFile' onclick='OpenDocument(this)' id='AfterDiv" + num + "'><div class='cssImg Aftimg' id='ImgPreview" + num + "' ></div ><i class='fa fa-trash-o' onclick='ImageAfterDeleteEvent(" + num + ")'></i><span>" + item.AttachmentDocumentFileName + "</span> </div>");
-                                    $('#ImgPreview' + num).attr('style', 'background-image: url("' + base64 + '")').attr('imgsrc', base64);;
+                                    $('.' + 'Marriage_cert_files').append(" <div class='AddedFile' id='AfterDiv" + num + "'><div class='cssImg Aftimg' id='ImgPreview" + num + "' ></div ><i class='fa fa-trash-o' onclick='ImageAfterDeleteEvent(" + num + ")'></i> </div>");
+                                    $('#ImgPreview' + num).attr('style', 'background-image: url("' + base64 + '")');
                                     $('#ImgPreview' + num).attr('data-index', base64);
                                     $('#ImgPreview' + num).attr('data-id', item.AttachmentDocumentFileName);
 
                                     break;
                                 case 3:
-                                    $('.' + 'IdDocSpouse_files').append(" <div class='AddedFile' onclick='OpenDocument(this)' id='AfterDiv" + num + "'><div class='cssImg Aftimg' id='ImgPreview" + num + "' ></div ><i class='fa fa-trash-o' onclick='ImageAfterDeleteEvent(" + num + ")'></i><span>" + item.AttachmentDocumentFileName + "</span> </div>");
-                                    $('#ImgPreview' + num).attr('style', 'background-image: url("' + base64 + '")').attr('imgsrc', base64);;
+                                    $('.' + 'IdDocSpouse_files').append(" <div class='AddedFile' id='AfterDiv" + num + "'><div class='cssImg Aftimg' id='ImgPreview" + num + "' ></div ><i class='fa fa-trash-o' onclick='ImageAfterDeleteEvent(" + num + ")'></i> </div>");
+                                    $('#ImgPreview' + num).attr('style', 'background-image: url("' + base64 + '")');
                                     $('#ImgPreview' + num).attr('data-index', base64);
                                     $('#ImgPreview' + num).attr('data-id', item.AttachmentDocumentFileName);
                                     break;
                                 case 6:
-                                    $('.' + 'Comp_Reg_cert_files').append(" <div class='AddedFile' onclick='OpenDocument(this)' id='AfterDiv" + num + "'><div class='cssImg Aftimg' id='ImgPreview" + num + "' ></div ><i class='fa fa-trash-o' onclick='ImageAfterDeleteEvent(" + num + ")'></i><span>" + item.AttachmentDocumentFileName + "</span> </div>");
-                                    $('#ImgPreview' + num).attr('style', 'background-image: url("' + base64 + '")').attr('imgsrc', base64);;
+                                    $('.' + 'Comp_Reg_cert_files').append(" <div class='AddedFile' id='AfterDiv" + num + "'><div class='cssImg Aftimg' id='ImgPreview" + num + "' ></div ><i class='fa fa-trash-o' onclick='ImageAfterDeleteEvent(" + num + ")'></i> </div>");
+                                    $('#ImgPreview' + num).attr('style', 'background-image: url("' + base64 + '")');
                                     $('#ImgPreview' + num).attr('data-index', base64);
                                     $('#ImgPreview' + num).attr('data-id', item.AttachmentDocumentFileName);
                                     break;
                                 case 7:
-                                    $('.' + 'BPlan_files').append(" <div class='AddedFile' onclick='OpenDocument(this)' id='AfterDiv" + num + "'><div class='cssImg Aftimg' id='ImgPreview" + num + "' ></div ><i class='fa fa-trash-o' onclick='ImageAfterDeleteEvent(" + num + ")'></i><span>" + item.AttachmentDocumentFileName + "</span> </div>");
-                                    $('#ImgPreview' + num).attr('style', 'background-image: url("' + base64 + '")').attr('imgsrc', base64);;
+                                    $('.' + 'BPlan_files').append(" <div class='AddedFile' id='AfterDiv" + num + "'><div class='cssImg Aftimg' id='ImgPreview" + num + "' ></div ><i class='fa fa-trash-o' onclick='ImageAfterDeleteEvent(" + num + ")'></i> </div>");
+                                    $('#ImgPreview' + num).attr('style', 'background-image: url("' + base64 + '")');
                                     $('#ImgPreview' + num).attr('data-index', base64);
                                     $('#ImgPreview' + num).attr('data-id', item.AttachmentDocumentFileName);
                                     break;
                                 case 8:
-                                    $('.' + 'POFDoc_files').append(" <div class='AddedFile' onclick='OpenDocument(this)' id='AfterDiv" + num + "'><div class='cssImg Aftimg' id='ImgPreview" + num + "' ></div ><i class='fa fa-trash-o' onclick='ImageAfterDeleteEvent(" + num + ")'></i><span>" + item.AttachmentDocumentFileName + "</span> </div>");
-                                    $('#ImgPreview' + num).attr('style', 'background-image: url("' + base64 + '")').attr('imgsrc', base64);;
+                                    $('.' + 'POFDoc_files').append(" <div class='AddedFile' id='AfterDiv" + num + "'><div class='cssImg Aftimg' id='ImgPreview" + num + "' ></div ><i class='fa fa-trash-o' onclick='ImageAfterDeleteEvent(" + num + ")'></i> </div>");
+                                    $('#ImgPreview' + num).attr('style', 'background-image: url("' + base64 + '")');
                                     $('#ImgPreview' + num).attr('data-index', base64);
                                     $('#ImgPreview' + num).attr('data-id', item.AttachmentDocumentFileName);
                                     break;
                             }
+
                         });
                     }
                     else {
@@ -1457,7 +1422,4 @@
     $('.datepicker').datepicker({
         format: 'mm-dd-yyyy'
     });
-
-
-
 </script>
